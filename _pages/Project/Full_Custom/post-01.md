@@ -9,8 +9,8 @@ thumbnail: "/assets/img/thumbnail/not_sim.jpg"
 
 **Fill the image path to the 'thumbnail' attribute, if you want a main image to be displayed on the post header image.**
 
-![library](/assets/img/full_custom/library1.png)
-![library](/assets/img/full_custom/library2.png)
+![library](/assets/img/full_custom/library1.png "Library")
+![library](/assets/img/full_custom/library2.png "Library")
 ![cellview](/assets/img/full_custom/cellview1.png)
 ![cellview](/assets/img/full_custom/cellview2.png)
 ![design](/assets/img/full_custom/design1.png)
