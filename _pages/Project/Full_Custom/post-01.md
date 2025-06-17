@@ -89,7 +89,7 @@ VSS : 0
 * Tools -> PrimeWave
 
 ![primewave](/assets/img/full_custom/primewave2.png "primewave2")
-*Setup -> Model Files
+* Setup -> Model Files
 
 ![primewave](/assets/img/full_custom/primewave3.png "primewave3")
 * Click Folder shape 
@@ -108,29 +108,30 @@ VSS : 0
 **설정하지 않으면 simulation이 안나올 수 있다**
 
 ![primewave](/assets/img/full_custom/primewave8.png "primewave8")
+* Simulation -> Options
+
 ![primewave](/assets/img/full_custom/primewave9.png "primewave9")
 * PrimeSim HSPICE -> OK
 
 ![primewave](/assets/img/full_custom/primewave10.png "primewave10")
 * Setup -> Analyses
 
-![primewave](/assets/img/full_custom/primewave11.png "primewave11")
+![primewave](/assets/img/full_custom/primewave12.png "primewave12")
 * Analysis Type: dc
 * DC Analysis -> Design Variable
 * Variable Name, Sweep Type 
 * Setting Start, Stop, Step Size
 
-![primewave](/assets/img/full_custom/primewave12.png "primewave12")
+![primewave](/assets/img/full_custom/primewave13.png "primewave13")
 * Click the blank field under expression
 * Click Pick from Design on the right
 
-![primewave](/assets/img/full_custom/primewave13.png "primewave13")
+![primewave](/assets/img/full_custom/primewave14.png "primewave14")
 * Simulation -> Netlist and Run
 
-![primewave](/assets/img/full_custom/primewave14.png "primewave14")
+![primewave](/assets/img/full_custom/primewave15.png "primewave15")
 * Run
 
-![primewave](/assets/img/full_custom/primewave15.png "primewave15")
 ![primewave](/assets/img/full_custom/primewave16.png "primewave16")
 **NOT WaveView**
 
