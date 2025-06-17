@@ -32,16 +32,15 @@ Snap Spacing (X, Y) 부품/배선 배치 격자 간격 설정
 Solder Dot Size	    배선 연결점(솔더 점) 크기 설정
 Fat Wire Width  	굵은 배선의 선 굵기 설정
 Default Net Prefix	자동 생성 신호선 이름의 접두사
----
+
 
 ![add](/assets/img/full_custom/add.png "add")
 ---
 **Add**
-I     instance
-W     wire
-L     label(wire name)
-P     pin
----
+I  instance  
+W  wire  
+L  label(wire name)  
+P  pin  
 
 ![cmos_not](/assets/img/full_custom/cmos_not.png "cmos_not")
 **CMOS Schematic**
@@ -50,19 +49,18 @@ P     pin
 ![property](/assets/img/full_custom/property2.png "property")
 ---
 q     property
----
 
 ![symbol](/assets/img/full_custom/symbol1.png "symbol")
 * Design -> New CellView -> From CellView
 
 ![symbol](/assets/img/full_custom/symbol2.png "symbol")
 ---
-*Adjust Pins
+**Adjust Pins**
 Left     VIN
 Right    VOUT
 Top      VDD
 Bottom   VSS
----
+
 ![symbol](/assets/img/full_custom/symbol3.png "symbol")
 ![symbol](/assets/img/full_custom/symbol4.png "symbol")
 ![not_test](/assets/img/full_custom/not_test1.png "not_test")
