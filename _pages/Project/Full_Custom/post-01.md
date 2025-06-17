@@ -10,7 +10,7 @@ date: "2023-12-01"
 
 ```
 ---
-title: "Day1: "
+title: "Day1: CMOS Inverter"
 date: "2025-06-16"
 thumbnail: "/assets/img/thumbnail/not_sim.jpg"
 ---
