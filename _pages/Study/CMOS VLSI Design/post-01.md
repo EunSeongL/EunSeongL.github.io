@@ -54,7 +54,6 @@ q     property
 
 ![symbol](/assets/img/full_custom/symbol2.png "symbol")
 ![symbol](/assets/img/full_custom/symbol3.png "symbol")
----
 **Adjust Pins**
 Left     VIN
 Right    VOUT
