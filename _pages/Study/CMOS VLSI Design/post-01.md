@@ -103,7 +103,7 @@ VSS : 0
 * Variables -> Copy from Design
 
 ![primewave](/assets/img/full_custom/primewave7.png "primewave7")
-* VIN 의 Value 값은 0으로 입력해줘야한다. 
+* VIN 의 Value 값은 0으로 입력. 
 **설정하지 않으면 simulation이 안나올 수 있다**
 
 ![primewave](/assets/img/full_custom/primewave8.png "primewave8")
