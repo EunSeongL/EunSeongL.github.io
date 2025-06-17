@@ -1,6 +1,6 @@
 ---
 title: "Example Post: no thumbnail image"
-date: "2023-12-01"
+date: "2025-06-16"
 ---
 
 # Follow the guidance
