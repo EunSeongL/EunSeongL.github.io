@@ -7,7 +7,7 @@ thumbnail: "/assets/img/thumbnail/not_sim.jpg"
 # DAY1
 ---
 
-**Fill the image path to the 'thumbnail' attribute, if you want a main image to be displayed on the post header image.**
+**Practice: Simulating the Schematic Symbol of a CMOS Inverter with Synopsys Custom Compiler**
 
 ![library](/assets/img/full_custom/library1.png "Library")
 * New -> Library
