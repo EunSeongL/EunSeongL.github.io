@@ -72,10 +72,10 @@ Bottom   VSS
 * Instance Not
 
 ![instance_gnd](/assets/img/full_custom/instance_gnd.png "instance_gnd")
-* Instance gnd
+* Instance GND
 
 ![instance_vdc](/assets/img/full_custom/instance_vdc.png "instance_vdc")
-* Instance vdc
+* Instance VDC
 
 ![property](/assets/img/full_custom/property3.png "property")
 ---
