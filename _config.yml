@@ -1,15 +1,15 @@
-title: example.com
+title: Eunsung Lee Portfolio
 description: "Satellite - jekyll blog theme"
 logo_img: "/assets/img/favicon.webp"
 profile_img: "/assets/img/profile.webp"
 
 # Social Links
-email: example@gmail.com
-github_username: github
-twitter_username: twitter
-instagram_username: instagram
-linkedin_username: linkedin
-facebook_username: facebook
+email: dldmstjd07272@gmail.com
+github_username: EunSeongL
+#twitter_username: twitter
+#instagram_username: instagram
+linkedin_username: 이은성
+#facebook_username: facebook
 
 # External API
 giscus_repo: "byanko55/jekyll-theme-satellite"
