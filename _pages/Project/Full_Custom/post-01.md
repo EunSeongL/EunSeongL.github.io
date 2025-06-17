@@ -47,7 +47,6 @@ P  pin
 
 ![property](/assets/img/full_custom/property1.png "property")
 ![property](/assets/img/full_custom/property2.png "property")
----
 q     property
 
 ![symbol](/assets/img/full_custom/symbol1.png "symbol")
