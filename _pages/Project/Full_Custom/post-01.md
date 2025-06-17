@@ -9,4 +9,4 @@ thumbnail: "/assets/img/thumbnail/not_sim.jpg"
 
 **Fill the image path to the 'thumbnail' attribute, if you want a main image to be displayed on the post header image.**
 
-
+![library1](/assets/img/full_custom/library.jpg)
