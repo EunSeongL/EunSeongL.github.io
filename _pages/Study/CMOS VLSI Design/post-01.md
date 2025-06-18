@@ -61,11 +61,9 @@ Default Net Prefix	자동 생성 신호선 이름의 접두사
 <span style="font-size:20px"><strong>Adjust Pins</strong></span>
 </div>
 
-<center>
 |Left|Right|Top|Bottom|
 |:-----:|:-----:|:-----:|:-----:|
 |VIN|VOUT|VDD|VSS|
-</center>
 
 ![symbol](/assets/img/full_custom/symbol4.png "symbol")
 <div align="center">
