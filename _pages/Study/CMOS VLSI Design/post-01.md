@@ -139,3 +139,14 @@ VSS : 0
 **Schematic이 Read전용일때 해결하는 방법**
 - 비정상 종료 등으로 인해 lck 파일이 남아있으면, 파일이 계속 사용 중인 것으로 인식되어 접근이 제한된다.
 =>*sch.oa.cdslck 삭제하여 해결한다.*
+
+
+![variable1](/assets/img/full_custom/variable1.png "variable1")
+![variable2](/assets/img/full_custom/variable2.png "variable2")
+![variable3](/assets/img/full_custom/variable3.png "variable3")
+![variable4](/assets/img/full_custom/variable4.png "variable4")
+
+![tools1](/assets/img/full_custom/tools1.png "tools1")
+![tools2](/assets/img/full_custom/tools2.png "tools2")
+![tools3](/assets/img/full_custom/tools3.png "tools3")
+![tools4](/assets/img/full_custom/tools4.png "tools4")
