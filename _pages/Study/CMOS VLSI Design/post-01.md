@@ -37,9 +37,11 @@ Default Net Prefix	자동 생성 신호선 이름의 접두사
 ![add](/assets/img/full_custom/add.png "add")
 
 **Add**
-|I|W|L|P|
-|:-----:|:-----:|:-----:|:-----:|
-|Instance|Wire|Label|Pin|
+
+| I        | W    | L     | P   |
+|:--------:|:----:|:-----:|:---:|
+| Instance | Wire | Label | Pin |
+
 
 
 ![cmos_not](/assets/img/full_custom/cmos_not.png "cmos_not")
@@ -48,9 +50,7 @@ Default Net Prefix	자동 생성 신호선 이름의 접두사
 
 ![property](/assets/img/full_custom/property1.png "property")
 ![property](/assets/img/full_custom/property2.png "property")
-|q|
-|:-----:|
-|property|
+*q property
 
 ![symbol](/assets/img/full_custom/symbol1.png "symbol")
 * Design -> New CellView -> From CellView
@@ -68,7 +68,9 @@ Default Net Prefix	자동 생성 신호선 이름의 접두사
 </center>
 
 ![symbol](/assets/img/full_custom/symbol4.png "symbol")
-**NOT Symbol**
+<div align="center">
+<span style="font-size:20px"><strong>Not symbol</strong></span>
+</div>
 
 ![not_test](/assets/img/full_custom/not_test1.png "not_test")
 * File -> New -> CellView
