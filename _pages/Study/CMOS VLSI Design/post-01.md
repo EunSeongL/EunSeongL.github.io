@@ -26,7 +26,7 @@ thumbnail: "/assets/img/thumbnail/not_sim.jpg"
 * Options -> Design
 
 ![design](/assets/img/full_custom/design2.png "design")
----
+
 **Editing**
 Snap Spacing (X, Y) 부품/배선 배치 격자 간격 설정
 Solder Dot Size	    배선 연결점(솔더 점) 크기 설정
@@ -35,30 +35,37 @@ Default Net Prefix	자동 생성 신호선 이름의 접두사
 
 
 ![add](/assets/img/full_custom/add.png "add")
----
+
 **Add**
-I  instance  
-W  wire  
-L  label(wire name)  
-P  pin  
+|I|W|L|P|
+|:-----:|:-----:|:-----:|:-----:|
+|Instance|Wire|Label|Pin|
+
 
 ![cmos_not](/assets/img/full_custom/cmos_not.png "cmos_not")
-**CMOS Schematic**
+
+<div align="center"><span style="font-size:20px"><strong>CMOS Schematic</strong></span></div>
 
 ![property](/assets/img/full_custom/property1.png "property")
 ![property](/assets/img/full_custom/property2.png "property")
-q     property
+|q|
+|:-----:|
+|property|
 
 ![symbol](/assets/img/full_custom/symbol1.png "symbol")
 * Design -> New CellView -> From CellView
 
 ![symbol](/assets/img/full_custom/symbol2.png "symbol")
 ![symbol](/assets/img/full_custom/symbol3.png "symbol")
-**Adjust Pins**
-Left     VIN
-Right    VOUT
-Top      VDD
-Bottom   VSS
+<div align="center">
+<span style="font-size:20px"><strong>Adjust Pins</strong></span>
+</div>
+
+<center>
+|Left|Right|Top|Bottom|
+|:-----:|:-----:|:-----:|:-----:|
+|VIN|VOUT|VDD|VSS|
+</center>
 
 ![symbol](/assets/img/full_custom/symbol4.png "symbol")
 **NOT Symbol**
