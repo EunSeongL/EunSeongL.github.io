@@ -1,7 +1,7 @@
 ---
 title: "CMOS 2NAND"
 date: "2025-06-18"
-thumbnail: "/assets/img/NAND2/waveview1.jpg"
+thumbnail: "/assets/img/NAND2/waveview1.png"
 ---
 
 # CMOS 2NAND
