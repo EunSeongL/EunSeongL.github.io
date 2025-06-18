@@ -1,6 +1,6 @@
 ---
 title: "CMOS Inverter"
-date: "25-06-16 ~ 25-06-17"
+date: "2025-06-16"
 thumbnail: "/assets/img/thumbnail/not_sim.jpg"
 ---
 
