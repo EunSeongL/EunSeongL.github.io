@@ -36,8 +36,7 @@ Default Net Prefix	자동 생성 신호선 이름의 접두사
 
 ![add](/assets/img/full_custom/add.png "add")
 
-**Add**
-
+<div align="center"><span style="font-size:20px"><strong>Add</strong></span></div>
 | I        | W    | L     | P   |
 |:--------:|:----:|:-----:|:---:|
 | Instance | Wire | Label | Pin |
