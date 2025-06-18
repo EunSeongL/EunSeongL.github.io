@@ -1,10 +1,10 @@
 ---
-title: "Day1: CMOS Inverter"
-date: "2025-06-16"
+title: "CMOS Inverter"
+date: "25-06-16 ~ 25-06-17"
 thumbnail: "/assets/img/thumbnail/not_sim.jpg"
 ---
 
-# DAY1
+# CMOS INVERTER
 ---
 
 **Practice: Simulating the Schematic Symbol of a CMOS Inverter with Synopsys Custom Compiler**
@@ -87,7 +87,8 @@ Default Net Prefix	자동 생성 신호선 이름의 접두사
 ![property](/assets/img/full_custom/property3.png "property")
 ---
 * P: property
-VDD : 1
+|VDD|VIN|VSS|
+
 VIN : VIN
 VSS : 0
 
