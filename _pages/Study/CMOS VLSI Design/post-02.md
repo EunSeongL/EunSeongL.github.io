@@ -1,6 +1,6 @@
 ---
-title: "Day2: CMOS 2NAND"
-date: "2025-06-17"
+title: "CMOS 2NAND"
+date: "2025-06-18"
 thumbnail: "/assets/img/thumbnail/not_sim.jpg"
 ---
 
