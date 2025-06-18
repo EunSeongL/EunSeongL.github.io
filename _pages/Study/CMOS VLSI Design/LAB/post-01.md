@@ -1,7 +1,7 @@
 ---
 title: "CMOS Inverter"
 date: "2025-06-16"
-thumbnail: "/assets/img/thumbnail/not_sim.jpg"
+thumbnail: "/assets/img/full_custom/not_sim.png"
 ---
 
 # CMOS INVERTER
