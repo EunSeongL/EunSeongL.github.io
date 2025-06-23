@@ -9,6 +9,7 @@ thumbnail: "/assets/img/AI/ai_thumbnail.png"
 1. **폰 노이만 구조**
 2. **폰 노이만 병목 현상**
 3. **하버드 구조**
+4. **파이프라인**
 
 ---
 
@@ -34,6 +35,7 @@ thumbnail: "/assets/img/AI/ai_thumbnail.png"
 4. 명령어 실행(Execute): 명령어를 실행한다.<br>
 5. 저장(WriteBack): 연산 결과를 메모리에 저장한다.<br>
 
+## 2. 폰 노이만 구조의 병목 현상
 **폰 노이만 구조의 단점**<br>
 - 폰노이만 구조의 가장 치명적인 단점은 폰노이만 병목현상이다. 
 1. 단일 버스 구조
