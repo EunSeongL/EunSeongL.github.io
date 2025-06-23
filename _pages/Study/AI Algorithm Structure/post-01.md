@@ -1,5 +1,5 @@
 ---
-title: "Example Post: no thumbnail image"
+title: "Day1: AI Algotirhm and Structure"
 date: "2025-06-23"
 thumbnail: "/assets/img/AI/ai_thumbnail.png"
 ---
