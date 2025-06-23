@@ -25,7 +25,7 @@ thumbnail: "/assets/img/AI/ai_thumbnail.png"
 - 3. 입출력장치(In.Out Device)
 - 4. 버스 시스템(Bus)
 
-// 사진 넣기<br>
+![Von Neumann Architecture](/assets/img/AI/von_neumann.png "Von Neumann Architecture")
 
 **폰 노이만 구조의 동작 원리**<br>
 - 폰 노이만 구조의 컴퓨터는 명령어 실행 사이클을 반복 동작한다.<br>
@@ -63,7 +63,8 @@ thumbnail: "/assets/img/AI/ai_thumbnail.png"
 ## 3. 하버드 구조
 **하버드 구조란?**<br>
 - 폰 노이만 구조에서는 하나의 버스 시스템에서 데이터와 명령어가 이동했지만, 하버드 구조는 명령어와 데이터를 물리적으로 분리된 메모리에 저장하고 접근하는 구조이다. <br>
-//사진 넣기
+
+![harvard Architecture](/assets/img/AI/harvard.png "harvard Architecture")
 
 **폰 노이만 구조 vs 하버드 구조**<br>
 1. 하버드 구조에서는 폰 노이만 구조와 달리 명령어를 메모리로부터 읽는 것과 데이터를 메모리로부터 읽는 것을 동시에 할 수 있다. 
