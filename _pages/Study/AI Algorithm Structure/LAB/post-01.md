@@ -1,7 +1,7 @@
 ---
 title: "Basic Operation"
 date: "2025-06-24"
-thumbnail: "/assets/img/AI/opencv.png"
+thumbnail: "/assets/img/thumbnail/opencv.png"
 ---
 
 # 📝 학습목표
