@@ -13,7 +13,8 @@ thumbnail: "/assets/img/AI/ai_thumbnail.png"
 
 - 이미지 파일 준비
 
-<img src="/assets/img/AI/image.jpg " width="200" height="200"/>
+<img src="/assets/img/AI/image.jpg" width="50%" height="50%">
+
 
 ```
 import numpy as np
