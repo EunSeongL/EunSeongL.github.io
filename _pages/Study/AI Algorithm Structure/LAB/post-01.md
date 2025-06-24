@@ -117,7 +117,6 @@ cv2.destroyAllWindows()
 - 이미지 파일 준비
 <img src="/assets/img/AI/image.jpg" width="50%">
 
-
 ```
 import numpy as np
 import cv2
@@ -149,6 +148,7 @@ cv2.imshow("dst", dst)
 cv2.waitKey()
 cv2.destroyAllWindows()
 ```
+
 - 출력 결과 <br>
 <img src="/assets/img/AI/image10.png" alt="image10" width="50%">
 
