@@ -101,9 +101,13 @@ cv2.imshow("Rotated 90 image", rotated_90)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-- 출력 결과 <br>
-| 이미지 | 설명 |
-|:--------:|:--------:|
-| ![cropped](/assets/img/AI/image6.png "image6") | cropped |
-| ![resized](/assets/img/AI/image7.png "image7") | resized |
-| ![rotated_90](/assets/img/AI/image8.png "image8") | rotated_90 |
+**출력 결과** <br>
+
+![cropped](/assets/img/AI/image6.png "image6")
+- **cropped**
+
+![resized](/assets/img/AI/image7.png "image7")
+- **resized**
+
+![rotated_90](/assets/img/AI/image8.png "image8")
+- **rotated_90**
