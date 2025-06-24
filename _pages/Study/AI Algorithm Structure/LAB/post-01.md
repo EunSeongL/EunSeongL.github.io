@@ -112,7 +112,7 @@ cv2.destroyAllWindows()
   <strong>resized</strong>
 </div>
 
-<img src="/assets/img/AI/image8.png" style="width:50%; height:250px; !important;">
+<img src="/assets/img/AI/image8.png" style="width:50%; height:350px; !important;">
 <div style="text-align:center;">
   <strong>rotated_90</strong>
 </div>
