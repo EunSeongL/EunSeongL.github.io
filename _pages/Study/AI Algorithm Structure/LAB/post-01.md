@@ -33,13 +33,13 @@ cv2.imwrite("output.png", img)
 cv2.destroyAllWindows()
 ```
 - 출력 결과 <br>
-![image1](/assets/img/AI/image1.png "image1")
-![image2](/assets/img/AI/image2.png "image2")
+<img src="/assets/img/AI/image1.png" style="width:50% !important;">
+<img src="/assets/img/AI/image2.png" style="width:50% !important;">
 
 ## 2. Basic Operation
 **색상 채널 분리와 색공간 변환**<br>
 - 이미지 파일 준비
-![image3](/assets/img/AI/image3.png "image3")
+<img src="/assets/img/AI/image3.png" style="width:75% !important;">
 
 ```
 import numpy as np
