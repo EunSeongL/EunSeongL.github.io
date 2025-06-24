@@ -74,6 +74,7 @@ cv2.imwrite("hsv2rgb_split.png", hsv_split)
 **이미지 일부 영역을 자르기, 크기를 바꾸기, 회전하기**<br>
 - 이미지 파일 준비
 <img src="/assets/img/AI/image.jpg" style="width:75% !important;">
+
 ```
 import numpy as np
 import cv2
