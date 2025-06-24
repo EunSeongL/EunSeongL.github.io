@@ -102,10 +102,9 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 - 출력 결과 <br>
-| 이미지         | 설명         |
+| 이미지         | 결과         |
 |:-------------:|:------------|
 | ![cropped](/assets/img/AI/image6.png "image6") | cropped      |
 | ![resized](/assets/img/AI/image7.png "image7") | resized      |
 | ![rotated_90](/assets/img/AI/image8.png "image8") | rotated_90   |
-
 
