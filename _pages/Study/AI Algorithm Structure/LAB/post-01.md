@@ -8,8 +8,7 @@ thumbnail: "/assets/img/AI/ai_thumbnail.png"
 
 ---
 
-## 1. Basic Operation
-**이미지 Read & Write**<br>
+## 1. **이미지 Read & Write**<br>
 
 - 이미지 파일 준비
 <center><img src="/assets/img/AI/image.jpg" width="150" height="100"></center>
