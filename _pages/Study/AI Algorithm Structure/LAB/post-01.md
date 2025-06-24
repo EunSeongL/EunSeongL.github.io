@@ -103,13 +103,19 @@ cv2.destroyAllWindows()
 **출력 결과** <br>
 
 <img src="/assets/img/AI/image6.png" style="width:50% !important;">
-- **cropped**
+<div style="text-align:center;">
+  <strong>cropped</strong>
+</div>
 
 <img src="/assets/img/AI/image7.png" style="width:50% !important;">
-- **resized**
+<div style="text-align:center;">
+  <strong>resized</strong>
+</div>
 
 <img src="/assets/img/AI/image8.png" style="width:50%; height:100px; !important;">
-- **rotated_90**
+<div style="text-align:center;">
+  <strong>rotated_90</strong>
+</div>
 
 ## 4. **원본 색상 반전시키기**<br>
 - 이미지 파일 준비
