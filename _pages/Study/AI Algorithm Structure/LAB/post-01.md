@@ -108,7 +108,7 @@ cv2.destroyAllWindows()
 <img src="/assets/img/AI/image7.png" style="width:50% !important;">
 - **resized**
 
-<img src="/assets/img/AI/image8.png" style="width:50% !important;">
+<img src="/assets/img/AI/image8.png" style="width:50% height:50% !important;">
 - **rotated_90**
 
 ## 4. **원본 색상 반전시키기**<br>
