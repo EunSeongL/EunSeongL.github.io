@@ -198,6 +198,7 @@ cv2.imshow("canny", canny)
 cv2.waitKey()
 cv2.destroyAllWindows()
 ```
+
 **출력 결과** <br>
 
 ![image12](/assets/img/AI/image12.png "image12")
