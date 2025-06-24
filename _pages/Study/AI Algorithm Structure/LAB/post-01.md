@@ -335,41 +335,50 @@ cv2.destroyAllWindows()
 ![image15](/assets/img/AI/image15.png "image15")
 ![image16](/assets/img/AI/image16.png "image16")
 
-## 11. Basic Operation
-**웹캠으로 촬영한 실시간 영상을 mp4파일로 저장하기**<br>
+## 12. Basic Operation
+**다양한 OpenCV 그리기 함수 사용해보기**<br>
 ```
 import numpy as np
 import cv2
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(5)
 
-w = 1280
-h = 720
-cap.set(cv2.CAP_PROP_FRAME_WIDTH, w)
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, h)
+circle_centers = []
 
-fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-out = cv2.VideoWriter('output.mp4', fourcc, 30.0, (w, h))
+def draw_circle(event, x, y, flags, param):
+    if event == cv2.EVENT_LBUTTONDOWN:
+        circle_centers.append((x, y))
 
-if not cap.isOpened():
-    print("Error: Cannot open camera")
-    exit()
+cv2.namedWindow("Camera")
+cv2.setMouseCallback("Camera", draw_circle)
+
+topLeft = (50, 50)
+bottomRight = (300, 300)
 
 while cap.isOpened():
     ret, frame = cap.read()
     if not ret:
-        print("Can't receive frame (stream end?). Exiting ...")
         break
 
-    out.write(frame)
-    cv2.imshow("Camera", frame)
+    cv2.line(frame, topLeft, bottomRight, (0, 255, 0), 3)
 
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    cv2.rectangle(frame,
+                  [pt+30 for pt in topLeft], [pt-30 for pt in bottomRight], (255, 0, 255), 3)
+
+    font = cv2.FONT_ITALIC
+    cv2.putText(frame, 'me',
+                [pt+40 for pt in bottomRight], font, 2, (255, 0, 255), 5)
+
+    for center in circle_centers:
+        cv2.circle(frame, center, 30, (255, 255, 0), 3)
+
+    cv2.imshow("Camera", frame)
+    key = cv2.waitKey(1)
+    if key & 0xFF == ord('q'):
         break
 
 cap.release()
-out.release()
 cv2.destroyAllWindows()
 ```
 - 출력 결과 <br>
-![image17](/assets/img/AI/image17.png "image17")
+![image18](/assets/img/AI/image18.png "image18")
