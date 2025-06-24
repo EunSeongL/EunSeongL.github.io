@@ -140,6 +140,7 @@ cv2.destroyAllWindows()
 
 - 출력 결과 <br>
 <img src="/assets/img/AI/image9.png" style="width:75% !important;">
+
 ---
 
 ## 5. **임계값 기준으로 이진화시키기**<br>
@@ -162,6 +163,7 @@ cv2.destroyAllWindows()
 - 출력 결과 <br>
 <img src="/assets/img/AI/image10.png" style="width:75% !important;">
 
+---
 ## 6. **이미지 흐리게(블러) 처리**<br>
 - 이미지 파일 준비
 <img src="/assets/img/AI/image.jpg" style="width:75% !important;">
