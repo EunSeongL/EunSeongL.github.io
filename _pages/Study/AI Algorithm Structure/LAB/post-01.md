@@ -181,7 +181,7 @@ cv2.waitKey()
 cv2.destroyAllWindows()
 ```
 
-#### **출력 결과** <br>
+#### 💡 **출력 결과** <br>
 <img src="/assets/img/AI/image11.png" style="width:75% !important;">
 
 ---
