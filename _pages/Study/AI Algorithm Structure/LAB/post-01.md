@@ -12,7 +12,7 @@ thumbnail: "/assets/img/AI/ai_thumbnail.png"
 **이미지 Read & Write**<br>
 
 - 이미지 파일 준비
-![image](/assets/img/AI/image.jpg "image")
+<img src="/assets/img/AI/image.jpg " width="50" height="50"/>
 
 ```
 import numpy as np
