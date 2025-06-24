@@ -204,8 +204,7 @@ cv2.destroyAllWindows()
 <img src="/assets/img/AI/image14.png" style="width:75% !important;">
 - **canny**
 
-## 8. Basic Operation
-**컬러 이미지의 BGR(Blue, Green, Red) 채널을 분리 후 채널 순서를 바꿔서 이미지 합치기**<br>
+## 8. **컬러 이미지의 BGR(Blue, Green, Red) 채널을 분리 후 채널 순서를 바꿔서 이미지 합치기**<br>
 - 이미지 파일 준비
 <img src="/assets/img/AI/rgb.png" style="width:50% !important;">
 
