@@ -178,8 +178,8 @@ cv2.destroyAllWindows()
 
 - 출력 결과 <br>
 <img src="/assets/img/AI/image11.png" style="width:75% !important;">
----
 
+---
 ## 7. **세 가지 대표적인 엣지(경계) 검출 알고리즘**<br>
 - 이미지 파일 준비
 <img src="/assets/img/AI/image.jpg" style="width:75% !important;">
@@ -219,8 +219,8 @@ cv2.destroyAllWindows()
 <div style="text-align:center;">
   <strong>canny</strong>
 </div>
----
 
+---
 ## 8. **컬러 이미지의 BGR(Blue, Green, Red) 채널을 분리 후 채널 순서를 바꿔서 이미지 합치기**<br>
 - 이미지 파일 준비
 <img src="/assets/img/AI/bgr.png" style="width:35% !important;">
@@ -266,8 +266,8 @@ cv2.destroyAllWindows()
 <div style="text-align:center;">
   <strong>inverse</strong>
 </div>
----
 
+---
 ## 9. **컬러 이미지의 BGR(Blue, Green, Red) 채널을 분리 후 Red 채널만 0(검정색)**<br>
 - 이미지 파일 준비
 <img src="/assets/img/AI/bgr.png" style="width:35% !important;">
