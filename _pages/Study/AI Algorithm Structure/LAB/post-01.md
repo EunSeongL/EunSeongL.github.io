@@ -80,9 +80,7 @@ import numpy as np
 import cv2
 
 img = cv2.imread("image.jpg")
-print(img.shape)
-
-# 0,100  
+print(img.shape) # 0,100  
 cropped = img[0:220, 185:385]       #220, 200, 3
 print(cropped.shape)
 
