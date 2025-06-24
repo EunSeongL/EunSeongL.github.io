@@ -73,16 +73,13 @@ cv2.imwrite("hsv2rgb_split.png", hsv_split)
 ## 3. Basic Operation
 **이미지 일부 영역을 자르기, 크기를 바꾸기, 회전하기**<br>
 - 이미지 파일 준비
-![image](/assets/img/AI/image.jpg "image")
-
+<img src="/assets/img/AI/image.jpg" style="width:75% !important;">
 ```
 import numpy as np
 import cv2
 
 img = cv2.imread("image.jpg")
-print(img.shape)
-
-# 0,100  
+print(img.shape) # 0,100  
 cropped = img[0:220, 185:385]       #220, 200, 3
 print(cropped.shape)
 
