@@ -12,7 +12,7 @@ thumbnail: "/assets/img/AI/ai_thumbnail.png"
 **이미지 Read & Write**<br>
 
 - 이미지 파일 준비
-<img src="/assets/img/AI/image.jpg" alt="image" width="50%">
+![image](/assets/img/AI/image.jpg "image")
 
 ```
 import numpy as np
@@ -33,13 +33,13 @@ cv2.imwrite("output.png", img)
 cv2.destroyAllWindows()
 ```
 - 출력 결과 <br>
-<img src="/assets/img/AI/image1.png" alt="image1" width="50%">
-<img src="/assets/img/AI/image2.png" alt="image2" width="50%">
+![image1](/assets/img/AI/image1.png "image1")
+![image2](/assets/img/AI/image2.png "image2")
 
 ## 2. Basic Operation
 **색상 채널 분리와 색공간 변환**<br>
 - 이미지 파일 준비
-<img src="/assets/img/AI/image3.png" alt="image3" width="50%">
+![image3](/assets/img/AI/image3.png "image3")
 
 ```
 import numpy as np
@@ -67,13 +67,13 @@ cv2.waitKey(0)
 cv2.imwrite("hsv2rgb_split.png", hsv_split)
 ```
 - 출력 결과 <br>
-<img src="/assets/img/AI/image4.png" alt="image4" width="50%">
-<img src="/assets/img/AI/image5.png" alt="image5" width="50%">
+![image4](/assets/img/AI/image4.png "image4")
+![image5](/assets/img/AI/image5.png "image5")
 
 ## 3. Basic Operation
 **이미지 일부 영역을 자르기, 크기를 바꾸기, 회전하기**<br>
 - 이미지 파일 준비
-<img src="/assets/img/AI/image.jpg" alt="image" width="50%">
+![image](/assets/img/AI/image.jpg "image")
 
 ```
 import numpy as np
@@ -103,19 +103,19 @@ cv2.destroyAllWindows()
 ```
 **출력 결과** <br>
 
-<img src="/assets/img/AI/image6.png" alt="cropped" width="50%">  
+![cropped](/assets/img/AI/image6.png "image6")
 - **cropped**
 
-<img src="/assets/img/AI/image7.png" alt="resized" width="50%">  
+![resized](/assets/img/AI/image7.png "image7")
 - **resized**
 
-<img src="/assets/img/AI/image8.png" alt="rotated_90" width="50%">  
+![rotated_90](/assets/img/AI/image8.png "image8")
 - **rotated_90**
 
 ## 4. Basic Operation
 **원본 색상 반전시키기**<br>
 - 이미지 파일 준비
-<img src="/assets/img/AI/image.jpg" width="50%">
+![image](/assets/img/AI/image.jpg "image")
 
 ```
 import numpy as np
@@ -130,12 +130,13 @@ cv2.waitKey()
 cv2.destroyAllWindows()
 ```
 - 출력 결과 <br>
-<img src="/assets/img/AI/image9.png" alt="image9" width="50%">
+![image9](/assets/img/AI/image9.png "image9")
 
 ## 5. Basic Operation
 **임계값을 기준으로 이진화시키기**<br>
 - 이미지 파일 준비
-<img src="/assets/img/AI/image.jpg" alt="image" width="50%">
+![image](/assets/img/AI/image.jpg "image")
+
 ```
 import cv2
 
@@ -148,14 +149,14 @@ cv2.imshow("dst", dst)
 cv2.waitKey()
 cv2.destroyAllWindows()
 ```
-
 - 출력 결과 <br>
-<img src="/assets/img/AI/image10.png" alt="image10" width="50%">
+![image10](/assets/img/AI/image10.png "image10")
 
 ## 6. Basic Operation
 **이미지 흐리게(블러) 처리**<br>
 - 이미지 파일 준비
-<img src="/assets/img/AI/image.jpg" alt="image" width="50%">
+![image](/assets/img/AI/image.jpg "image")
+
 ```
 import cv2
 
@@ -168,7 +169,7 @@ cv2.waitKey()
 cv2.destroyAllWindows()
 ```
 - 출력 결과 <br>
-<img src="/assets/img/AI/image11.png" alt="image11" width="50%">
+![image11](/assets/img/AI/image11.png "image11")
 
 ## 7. Basic Operation
 **세 가지 대표적인 엣지(경계) 검출 알고리즘**<br>
