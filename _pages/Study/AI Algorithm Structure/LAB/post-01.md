@@ -32,6 +32,7 @@ cv2.imwrite("output.png", img)
 
 cv2.destroyAllWindows()
 ```
+
 - 출력 결과 <br>
 <img src="/assets/img/AI/image1.png" style="width:50% !important;">
 <img src="/assets/img/AI/image2.png" style="width:50% !important;">
@@ -66,6 +67,7 @@ cv2.waitKey(0)
 
 cv2.imwrite("hsv2rgb_split.png", hsv_split)
 ```
+
 - 출력 결과 <br>
 <img src="/assets/img/AI/image4.png" style="width:75% !important;">
 <img src="/assets/img/AI/image5.png" style="width:75% !important;">
@@ -99,6 +101,7 @@ cv2.imshow("Rotated 90 image", rotated_90)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
+
 **출력 결과** <br>
 
 <img src="/assets/img/AI/image6.png" style="width:50% !important;">
