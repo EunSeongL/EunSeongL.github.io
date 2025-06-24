@@ -202,13 +202,19 @@ cv2.destroyAllWindows()
 **출력 결과** <br>
 
 <img src="/assets/img/AI/image12.png" style="width:75% !important;">
-- **sobel**
+<div style="text-align:center;">
+  <strong>sobel</strong>
+</div>
 
 <img src="/assets/img/AI/image13.png" style="width:75% !important;">
-- **laplacian**
+<div style="text-align:center;">
+  <strong>laplacian</strong>
+</div>
 
 <img src="/assets/img/AI/image14.png" style="width:75% !important;">
-- **canny**
+<div style="text-align:center;">
+  <strong>canny</strong>
+</div>
 
 ## 8. **컬러 이미지의 BGR(Blue, Green, Red) 채널을 분리 후 채널 순서를 바꿔서 이미지 합치기**<br>
 - 이미지 파일 준비
@@ -237,16 +243,25 @@ cv2.destroyAllWindows()
 - 출력 결과 <br>
 
 <img src="/assets/img/AI/imageb.png" style="width:35% !important;">
-- **b**
+<div style="text-align:center;">
+  <strong>B</strong>
+</div>
 
 <img src="/assets/img/AI/imageg.png" style="width:35% !important;">
-- **g**
+<div style="text-align:center;">
+  <strong>G</strong>
+</div>
 
 <img src="/assets/img/AI/imager.png" style="width:35% !important;">
-- **r**
+<div style="text-align:center;">
+  <strong>R</strong>
+</div>
 
 <img src="/assets/img/AI/inverse.png" style="width:35% !important;">
-- **inverse**
+<div style="text-align:center;">
+  <strong>inverse</strong>
+</div>
+
 
 ## 9. **컬러 이미지의 BGR(Blue, Green, Red) 채널을 분리 후 Red 채널만 0(검정색)**<br>
 - 이미지 파일 준비
