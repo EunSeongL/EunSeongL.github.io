@@ -320,7 +320,7 @@ cv2.destroyAllWindows()
 ---
 ## 10. **동영상에서 원하는 장면을 이미지로 캡처하기**<br>
 - 동영상 파일 준비
-![son](/assets/img/AI/son.mp4 "son")
+<video src="/assets/img/AI/son.mp4" controls width="400"></video>
 
 ```
 import numpy as np
