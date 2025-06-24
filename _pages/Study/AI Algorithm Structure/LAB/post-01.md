@@ -147,12 +147,12 @@ cv2.waitKey()
 cv2.destroyAllWindows()
 ```
 - 출력 결과 <br>
-![image10](/assets/img/AI/image10.png "image10")
+<img src="/assets/img/AI/image10.png" style="width:75% !important;">
 
 ## 6. Basic Operation
 **이미지 흐리게(블러) 처리**<br>
 - 이미지 파일 준비
-![image](/assets/img/AI/image.jpg "image")
+<img src="/assets/img/AI/image.jpg" style="width:75% !important;">
 
 ```
 import cv2
@@ -166,7 +166,7 @@ cv2.waitKey()
 cv2.destroyAllWindows()
 ```
 - 출력 결과 <br>
-![image11](/assets/img/AI/image11.png "image11")
+<img src="/assets/img/AI/image11.png" style="width:75% !important;">
 
 ## 7. Basic Operation
 **세 가지 대표적인 엣지(경계) 검출 알고리즘**<br>
