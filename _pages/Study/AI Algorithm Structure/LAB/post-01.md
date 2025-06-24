@@ -15,7 +15,6 @@ thumbnail: "/assets/img/AI/ai_thumbnail.png"
 
 <img src="/assets/img/AI/image.jpg" width="50%" height="50%">
 
-
 ```
 import numpy as np
 import cv2
