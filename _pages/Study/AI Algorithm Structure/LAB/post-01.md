@@ -7,7 +7,6 @@ thumbnail: "/assets/img/AI/ai_thumbnail.png"
 # Basic Operation
 
 ---
-
 ## 1. **이미지 Read & Write**<br>
 
 - 이미지 파일 준비
@@ -38,7 +37,6 @@ cv2.destroyAllWindows()
 <img src="/assets/img/AI/image2.png" style="width:50% !important;">
 
 ---
-
 ## 2. **색상 채널 분리와 색공간 변환**<br>
 - 이미지 파일 준비
 <img src="/assets/img/AI/image3.png" style="width:50% !important;">
