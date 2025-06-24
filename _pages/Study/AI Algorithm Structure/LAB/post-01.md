@@ -68,8 +68,8 @@ cv2.waitKey(0)
 cv2.imwrite("hsv2rgb_split.png", hsv_split)
 ```
 - 출력 결과 <br>
-<img src="/assets/img/AI/image4.png" width="50%" height="50%">
-<img src="/assets/img/AI/image5.png" width="50%" height="50%">
+<img src="/assets/img/AI/image4.png" width="50%" height="25%">
+<img src="/assets/img/AI/image5.png" width="50%" height="25%">
 
 ## 3. Basic Operation
 **이미지 일부 영역을 자르기, 크기를 바꾸기, 회전하기**<br>
