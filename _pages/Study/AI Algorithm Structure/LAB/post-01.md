@@ -100,20 +100,19 @@ cv2.destroyAllWindows()
 ```
 **출력 결과** <br>
 
-![cropped](/assets/img/AI/image6.png "image6")
+<img src="/assets/img/AI/image6.png" style="width:50% !important;">
 - **cropped**
 
-![resized](/assets/img/AI/image7.png "image7")
+<img src="/assets/img/AI/image7.png" style="width:50% !important;">
 - **resized**
 
-![rotated_90](/assets/img/AI/image8.png "image8")
+<img src="/assets/img/AI/image8.png" style="width:50% !important;">
 - **rotated_90**
 
 ## 4. Basic Operation
 **원본 색상 반전시키기**<br>
 - 이미지 파일 준비
-![image](/assets/img/AI/image.jpg "image")
-
+<img src="/assets/img/AI/image.jpg" style="width:75% !important;">
 ```
 import numpy as np
 import cv2
@@ -127,7 +126,7 @@ cv2.waitKey()
 cv2.destroyAllWindows()
 ```
 - 출력 결과 <br>
-![image9](/assets/img/AI/image9.png "image9")
+<img src="/assets/img/AI/image9.png" style="width:75% !important;">
 
 ## 5. Basic Operation
 **임계값을 기준으로 이진화시키기**<br>
