@@ -206,7 +206,7 @@ cv2.destroyAllWindows()
 
 ## 8. **컬러 이미지의 BGR(Blue, Green, Red) 채널을 분리 후 채널 순서를 바꿔서 이미지 합치기**<br>
 - 이미지 파일 준비
-<img src="/assets/img/AI/bgr.png" style="width:50% !important;">
+<img src="/assets/img/AI/bgr.png" style="width:35% !important;">
 
 ```
 import numpy as np
@@ -230,21 +230,21 @@ cv2.destroyAllWindows()
 
 - 출력 결과 <br>
 
-<img src="/assets/img/AI/imageb.png" style="width:50% !important;">
+<img src="/assets/img/AI/imageb.png" style="width:35% !important;">
 - **b**
 
-<img src="/assets/img/AI/imageg.png" style="width:50% !important;">
+<img src="/assets/img/AI/imageg.png" style="width:35% !important;">
 - **g**
 
-<img src="/assets/img/AI/imager.png" style="width:50% !important;">
+<img src="/assets/img/AI/imager.png" style="width:35% !important;">
 - **r**
 
-<img src="/assets/img/AI/inverse.png" style="width:50% !important;">
+<img src="/assets/img/AI/inverse.png" style="width:35% !important;">
 - **inverse**
 
 ## 9. **컬러 이미지의 BGR(Blue, Green, Red) 채널을 분리 후 Red 채널만 0(검정색)**<br>
 - 이미지 파일 준비
-<img src="/assets/img/AI/bgr.png" style="width:50% !important;">
+<img src="/assets/img/AI/bgr.png" style="width:35% !important;">
 
 ```
 import numpy as np
@@ -271,16 +271,16 @@ cv2.destroyAllWindows()
 
 - 출력 결과 <br>
 
-<img src="/assets/img/AI/imageb.png" style="width:50% !important;">
+<img src="/assets/img/AI/imageb.png" style="width:35% !important;">
 - **b**
 
-<img src="/assets/img/AI/imageg.png" style="width:50% !important;">
+<img src="/assets/img/AI/imageg.png" style="width:35% !important;">
 - **g**
 
-<img src="/assets/img/AI/imager.png" style="width:50% !important;">
+<img src="/assets/img/AI/imager.png" style="width:35% !important;">
 - **r**
 
-<img src="/assets/img/AI/bgz.png" style="width:50% !important;">
+<img src="/assets/img/AI/bgz.png" style="width:35% !important;">
 - **bgz**
 
 ## 10. **동영상에서 원하는 장면을 이미지로 캡처하기**<br>
