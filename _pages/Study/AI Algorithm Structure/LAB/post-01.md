@@ -7,6 +7,7 @@ thumbnail: "/assets/img/thumbnail/opencv.png"
 # 📝 학습목표
 
 - OpenCV(Open Source Computer Vision Library)를 활용하여 이미지/비디오 처리하기
+
 ---
 
 ## 1. **이미지 Read & Write**<br>
