@@ -170,8 +170,7 @@ cv2.destroyAllWindows()
 - 출력 결과 <br>
 <img src="/assets/img/AI/image11.png" style="width:75% !important;">
 
-## 7. Basic Operation
-**세 가지 대표적인 엣지(경계) 검출 알고리즘**<br>
+## 7. **세 가지 대표적인 엣지(경계) 검출 알고리즘**<br>
 - 이미지 파일 준비
 <img src="/assets/img/AI/image.jpg" style="width:75% !important;">
 
