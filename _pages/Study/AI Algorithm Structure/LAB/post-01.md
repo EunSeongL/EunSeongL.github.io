@@ -4,12 +4,13 @@ date: "2025-06-24"
 thumbnail: "/assets/img/AI/ai_thumbnail.png"
 ---
 
-# Basic Operation
+# 📝 학습목표
 
+- OpenCV(Open Source Computer Vision Library)를 활용하여 이미지/비디오 처리해보기
 ---
 ## 1. **이미지 Read & Write**<br>
 
-#### 이미지 파일 준비
+#### 📂 이미지 파일 준비
 
 <img src="/assets/img/AI/image.jpg" style="width:75% !important;">
 
@@ -32,13 +33,13 @@ cv2.imwrite("output.png", img)
 cv2.destroyAllWindows()
 ```
 
-#### 출력 결과 <br>
+#### 💡 출력 결과 <br>
 <img src="/assets/img/AI/image1.png" style="width:50% !important;">
 <img src="/assets/img/AI/image2.png" style="width:50% !important;">
 
 ---
 ## 2. **색상 채널 분리와 색공간 변환**<br>
-#### 이미지 파일 준비
+#### 📂 이미지 파일 준비
 <img src="/assets/img/AI/image3.png" style="width:50% !important;">
 
 ```
@@ -73,7 +74,7 @@ cv2.imwrite("hsv2rgb_split.png", hsv_split)
 
 ---
 ## 3. **이미지 일부 영역 자르기, 크기 바꾸기, 회전하기**<br>
-#### 이미지 파일 준비
+#### 📂 이미지 파일 준비
 <img src="/assets/img/AI/image.jpg" style="width:75% !important;">
 
 ```
@@ -101,7 +102,7 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
-#### **출력 결과** <br>
+#### 💡 **출력 결과** <br>
 
 <img src="/assets/img/AI/image6.png" style="width:50% !important;">
 <div style="text-align:center;">
@@ -121,7 +122,7 @@ cv2.destroyAllWindows()
 ---
 ## 4. **원본 색상 반전시키기**
 
-#### 이미지 파일 준비
+#### 📂 이미지 파일 준비
 <img src="/assets/img/AI/image.jpg" style="width:75% !important;">
 
 ```
@@ -137,12 +138,12 @@ cv2.waitKey()
 cv2.destroyAllWindows()
 ```
 
-#### **출력 결과** <br>
+#### 💡 **출력 결과** <br>
 <img src="/assets/img/AI/image9.png" style="width:75% !important;">
 
 ---
 ## 5. **임계값 기준으로 이진화시키기**<br>
-#### 이미지 파일 준비
+#### 📂 이미지 파일 준비
 <img src="/assets/img/AI/image.jpg" style="width:75% !important;">
 
 ```
@@ -158,12 +159,12 @@ cv2.waitKey()
 cv2.destroyAllWindows()
 ```
 
-#### **출력 결과** <br>
+#### 💡 **출력 결과** <br>
 <img src="/assets/img/AI/image10.png" style="width:75% !important;">
 
 ---
 ## 6. **이미지 흐리게(블러) 처리**<br>
-#### 이미지 파일 준비
+#### 📂 이미지 파일 준비
 <img src="/assets/img/AI/image.jpg" style="width:75% !important;">
 
 ```
@@ -183,7 +184,7 @@ cv2.destroyAllWindows()
 
 ---
 ## 7. **세 가지 대표적인 엣지(경계) 검출 알고리즘**<br>
-#### 이미지 파일 준비
+#### 📂 이미지 파일 준비
 <img src="/assets/img/AI/image.jpg" style="width:75% !important;">
 
 ```
@@ -205,7 +206,7 @@ cv2.waitKey()
 cv2.destroyAllWindows()
 ```
 
-#### **출력 결과** <br>
+#### 💡 **출력 결과** <br>
 
 <img src="/assets/img/AI/image12.png" style="width:75% !important;">
 <div style="text-align:center;">
@@ -225,7 +226,7 @@ cv2.destroyAllWindows()
 ---
 ## 8. **컬러 이미지의 BGR(Blue, Green, Red) 채널을 분리 후 채널 순서를 바꿔서 이미지 합치기**
 
-#### 이미지 파일 준비
+#### 📂 이미지 파일 준비
 <img src="/assets/img/AI/bgr.png" style="width:35% !important;">
 
 ```
@@ -248,7 +249,7 @@ cv2.waitKey()
 cv2.destroyAllWindows()
 ```
 
-#### **출력 결과** <br>
+#### 💡 **출력 결과** <br>
 
 <img src="/assets/img/AI/imageb.png" style="width:35% !important;">
 <div style="text-align:center;">
@@ -273,7 +274,7 @@ cv2.destroyAllWindows()
 ---
 ## 9. **컬러 이미지의 BGR(Blue, Green, Red) 채널을 분리 후 Red 채널만 0(검정색)**
 
-#### 이미지 파일 준비
+#### 📂 이미지 파일 준비
 <img src="/assets/img/AI/bgr.png" style="width:35% !important;">
 
 ```
@@ -299,7 +300,7 @@ cv2.waitKey()
 cv2.destroyAllWindows()
 ```
 
-#### **출력 결과** <br>
+#### 💡 **출력 결과** <br>
 
 <img src="/assets/img/AI/imageb.png" style="width:35% !important;">
 <div style="text-align:center;">
@@ -324,7 +325,7 @@ cv2.destroyAllWindows()
 ---
 ## 10. **동영상에서 원하는 장면을 이미지로 캡처하기**
 
-#### 동영상 파일 준비
+#### 📂 동영상 파일 준비
 <div style="text-align:center;">
   <video src="/assets/img/AI/son.mp4" controls width="500"></video>
 </div>
@@ -371,7 +372,7 @@ cap.release()
 cv2.destroyAllWindows()
 ```
 
-#### **출력 결과**<br>
+#### 💡 **출력 결과**<br>
 
 <img src="/assets/img/AI/image15.png" style="width:35% !important;">
 <img src="/assets/img/AI/image16.png" style="width:50% !important;">
@@ -423,5 +424,6 @@ cap.release()
 cv2.destroyAllWindows()
 ```
 
-#### **출력 결과** <br>
+#### 💡 **출력 결과** <br>
 <img src="/assets/img/AI/image18.png" style="width:75% !important;">
+
