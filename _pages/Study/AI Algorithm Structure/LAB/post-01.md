@@ -71,6 +71,7 @@ cv2.imwrite("hsv2rgb_split.png", hsv_split)
 - 출력 결과 <br>
 <img src="/assets/img/AI/image4.png" style="width:75% !important;">
 <img src="/assets/img/AI/image5.png" style="width:75% !important;">
+---
 
 ## 3. **이미지 일부 영역 자르기, 크기 바꾸기, 회전하기**<br>
 - 이미지 파일 준비
@@ -117,6 +118,7 @@ cv2.destroyAllWindows()
 <div style="text-align:center;">
   <strong>rotated_90</strong>
 </div>
+---
 
 ## 4. **원본 색상 반전시키기**<br>
 - 이미지 파일 준비
