@@ -36,6 +36,7 @@ cv2.destroyAllWindows()
 - 출력 결과 <br>
 <img src="/assets/img/AI/image1.png" style="width:50% !important;">
 <img src="/assets/img/AI/image2.png" style="width:50% !important;">
+---
 
 ## 2. **색상 채널 분리와 색공간 변환**<br>
 - 이미지 파일 준비
