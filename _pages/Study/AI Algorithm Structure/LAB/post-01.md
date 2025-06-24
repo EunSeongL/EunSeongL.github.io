@@ -279,14 +279,13 @@ cv2.destroyAllWindows()
 
 - 출력 결과 <br>
 
-![imageb](/assets/img/AI/imageb.png "imageb")
+<img src="/assets/img/AI/imageb.png" style="width:50% !important;">
 - **b**
 
-![imageg](/assets/img/AI/imageg.png "imageg")
+<img src="/assets/img/AI/imageg.png" style="width:50% !important;">
 - **g**
 
-![imager](/assets/img/AI/imager.png "imager")
-- **r**
+<img src="/assets/img/AI/imager.png" style="width:50% !important;">
 
 ![bgz](/assets/img/AI/bgz.png "bgz")
 - **bgz**
