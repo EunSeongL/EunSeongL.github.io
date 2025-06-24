@@ -114,6 +114,7 @@ cv2.destroyAllWindows()
 **원본 색상 반전시키기**<br>
 - 이미지 파일 준비
 <img src="/assets/img/AI/image.jpg" style="width:75% !important;">
+
 ```
 import numpy as np
 import cv2
