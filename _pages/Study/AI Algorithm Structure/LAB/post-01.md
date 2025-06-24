@@ -252,7 +252,7 @@ cv2.destroyAllWindows()
 ## 9. Basic Operation
 **컬러 이미지의 BGR(Blue, Green, Red) 채널을 분리 후 Red 채널만 0(검정색)**<br>
 - 이미지 파일 준비
-![rgb](/assets/img/AI/bgr.png "rgb")
+<img src="/assets/img/AI/bgr.png" style="width:50% !important;">
 
 ```
 import numpy as np
@@ -275,8 +275,8 @@ cv2.imshow("r", r)
 cv2.imshow("bgz", bgz)
 cv2.waitKey()
 cv2.destroyAllWindows()
-
 ```
+
 - 출력 결과 <br>
 
 ![imageb](/assets/img/AI/imageb.png "imageb")
