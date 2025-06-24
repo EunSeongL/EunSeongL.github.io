@@ -132,7 +132,7 @@ cv2.destroyAllWindows()
 ## 5. Basic Operation
 **임계값을 기준으로 이진화시키기**<br>
 - 이미지 파일 준비
-![image](/assets/img/AI/image.jpg "image")
+<img src="/assets/img/AI/image.jpg" style="width:75% !important;">
 
 ```
 import cv2
