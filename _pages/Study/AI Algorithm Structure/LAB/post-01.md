@@ -286,8 +286,9 @@ cv2.destroyAllWindows()
 - **g**
 
 <img src="/assets/img/AI/imager.png" style="width:50% !important;">
+- **r**
 
-![bgz](/assets/img/AI/bgz.png "bgz")
+<img src="/assets/img/AI/bgz.png" style="width:50% !important;">
 - **bgz**
 
 ## 10. Basic Operation
@@ -336,12 +337,14 @@ while cap.isOpened():
 cap.release()
 cv2.destroyAllWindows()
 ```
+
 - 출력 결과 <br>
-![image15](/assets/img/AI/image15.png "image15")
-![image16](/assets/img/AI/image16.png "image16")
+<img src="/assets/img/AI/image15.png" style="width:50% !important;">
+<img src="/assets/img/AI/image16.png" style="width:50% !important;">
 
 ## 12. Basic Operation
 **다양한 OpenCV 그리기 함수 사용해보기**<br>
+
 ```
 import numpy as np
 import cv2
@@ -385,5 +388,6 @@ while cap.isOpened():
 cap.release()
 cv2.destroyAllWindows()
 ```
+
 - 출력 결과 <br>
-![image18](/assets/img/AI/image18.png "image18")
+<img src="/assets/img/AI/image18.png" style="width:75% !important;">
