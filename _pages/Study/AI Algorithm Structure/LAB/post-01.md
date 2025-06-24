@@ -293,16 +293,24 @@ cv2.destroyAllWindows()
 - 출력 결과 <br>
 
 <img src="/assets/img/AI/imageb.png" style="width:35% !important;">
-- **b**
+<div style="text-align:center;">
+  <strong>B</strong>
+</div>
 
 <img src="/assets/img/AI/imageg.png" style="width:35% !important;">
-- **g**
+<div style="text-align:center;">
+  <strong>G</strong>
+</div>
 
 <img src="/assets/img/AI/imager.png" style="width:35% !important;">
-- **r**
+<div style="text-align:center;">
+  <strong>R</strong>
+</div>
 
 <img src="/assets/img/AI/bgz.png" style="width:35% !important;">
-- **bgz**
+<div style="text-align:center;">
+  <strong>bgz</strong>
+</div>
 
 ## 10. **동영상에서 원하는 장면을 이미지로 캡처하기**<br>
 - 동영상 파일 준비
