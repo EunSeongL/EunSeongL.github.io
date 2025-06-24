@@ -201,19 +201,19 @@ cv2.destroyAllWindows()
 
 **출력 결과** <br>
 
-![image12](/assets/img/AI/image12.png "image12")
+<img src="/assets/img/AI/image12.png" style="width:75% !important;">
 - **sobel**
 
-![image13](/assets/img/AI/image13.png "image13")
+<img src="/assets/img/AI/image13.png" style="width:75% !important;">
 - **laplacian**
 
-![image14](/assets/img/AI/image14.png "image14")
+<img src="/assets/img/AI/image14.png" style="width:75% !important;">
 - **canny**
 
 ## 8. Basic Operation
 **컬러 이미지의 BGR(Blue, Green, Red) 채널을 분리 후 채널 순서를 바꿔서 이미지 합치기**<br>
 - 이미지 파일 준비
-![rgb](/assets/img/AI/bgr.png "rgb")
+<img src="/assets/img/AI/rgb.png" style="width:50% !important;">
 
 ```
 import numpy as np
@@ -234,18 +234,19 @@ cv2.imshow("inverse", inverse)
 cv2.waitKey()
 cv2.destroyAllWindows()
 ```
+
 - 출력 결과 <br>
 
-![imageb](/assets/img/AI/imageb.png "imageb")
+<img src="/assets/img/AI/imageb.png" style="width:50% !important;">
 - **b**
 
-![imageg](/assets/img/AI/imageg.png "imageg")
+<img src="/assets/img/AI/imageg.png" style="width:50% !important;">
 - **g**
 
-![imager](/assets/img/AI/imager.png "imager")
+<img src="/assets/img/AI/imager.png" style="width:50% !important;">
 - **r**
 
-![inverse](/assets/img/AI/inverse.png "inverse")
+<img src="/assets/img/AI/inverse.png" style="width:50% !important;">
 - **inverse**
 
 ## 9. Basic Operation
