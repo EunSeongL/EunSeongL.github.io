@@ -333,8 +333,7 @@ cv2.destroyAllWindows()
 <img src="/assets/img/AI/image15.png" style="width:50% !important;">
 <img src="/assets/img/AI/image16.png" style="width:50% !important;">
 
-## 12. Basic Operation
-**다양한 OpenCV 그리기 함수 사용해보기**<br>
+## 11. **다양한 OpenCV 그리기 함수 사용해보기**<br>
 
 ```
 import numpy as np
