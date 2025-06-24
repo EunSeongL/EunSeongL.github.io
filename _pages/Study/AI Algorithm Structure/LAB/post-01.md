@@ -240,7 +240,7 @@ cv2.waitKey()
 cv2.destroyAllWindows()
 ```
 
-- 출력 결과 <br>
+**출력 결과** <br>
 
 <img src="/assets/img/AI/imageb.png" style="width:35% !important;">
 <div style="text-align:center;">
@@ -290,7 +290,7 @@ cv2.waitKey()
 cv2.destroyAllWindows()
 ```
 
-- 출력 결과 <br>
+**출력 결과** <br>
 
 <img src="/assets/img/AI/imageb.png" style="width:35% !important;">
 <div style="text-align:center;">
@@ -358,7 +358,8 @@ cap.release()
 cv2.destroyAllWindows()
 ```
 
-- 출력 결과 <br>
+**출력 결과**<br>
+
 <img src="/assets/img/AI/image15.png" style="width:35% !important;">
 <img src="/assets/img/AI/image16.png" style="width:50% !important;">
 
@@ -408,5 +409,5 @@ cap.release()
 cv2.destroyAllWindows()
 ```
 
-- 출력 결과 <br>
+**출력 결과** <br>
 <img src="/assets/img/AI/image18.png" style="width:75% !important;">
