@@ -39,7 +39,7 @@ cv2.destroyAllWindows()
 ## 2. Basic Operation
 **색상 채널 분리와 색공간 변환**<br>
 - 이미지 파일 준비
-<img src="/assets/img/AI/image3.png" style="width:75% !important;">
+<img src="/assets/img/AI/image3.png" style="width:50% !important;">
 
 ```
 import numpy as np
