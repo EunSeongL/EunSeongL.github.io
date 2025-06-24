@@ -74,7 +74,6 @@ cv2.imwrite("hsv2rgb_split.png", hsv_split)
 <img src="/assets/img/AI/image5.png" style="width:75% !important;">
 
 ---
-
 ## 3. **이미지 일부 영역 자르기, 크기 바꾸기, 회전하기**<br>
 - 이미지 파일 준비
 <img src="/assets/img/AI/image.jpg" style="width:75% !important;">
