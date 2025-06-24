@@ -11,7 +11,8 @@ thumbnail: "/assets/img/AI/ai_thumbnail.png"
 ## 1. **이미지 Read & Write**<br>
 
 - 이미지 파일 준비
-<img src="/assets/img/AI/image.jpg" class="img-md">
+
+<img src="/assets/img/AI/image.jpg" style="width:75% !important;">
 
 ```
 import numpy as np
