@@ -37,8 +37,7 @@ cv2.destroyAllWindows()
 <img src="/assets/img/AI/image1.png" style="width:50% !important;">
 <img src="/assets/img/AI/image2.png" style="width:50% !important;">
 
-## 2. Basic Operation
-**색상 채널 분리와 색공간 변환**<br>
+## 2. **색상 채널 분리와 색공간 변환**<br>
 - 이미지 파일 준비
 <img src="/assets/img/AI/image3.png" style="width:50% !important;">
 
@@ -72,8 +71,7 @@ cv2.imwrite("hsv2rgb_split.png", hsv_split)
 <img src="/assets/img/AI/image4.png" style="width:75% !important;">
 <img src="/assets/img/AI/image5.png" style="width:75% !important;">
 
-## 3. Basic Operation
-**이미지 일부 영역을 자르기, 크기를 바꾸기, 회전하기**<br>
+## 3. **이미지 일부 영역을 자르기, 크기를 바꾸기, 회전하기**<br>
 - 이미지 파일 준비
 <img src="/assets/img/AI/image.jpg" style="width:75% !important;">
 
@@ -113,8 +111,7 @@ cv2.destroyAllWindows()
 <img src="/assets/img/AI/image8.png" style="width:50% !important;">
 - **rotated_90**
 
-## 4. Basic Operation
-**원본 색상 반전시키기**<br>
+## 4. **원본 색상 반전시키기**<br>
 - 이미지 파일 준비
 <img src="/assets/img/AI/image.jpg" style="width:75% !important;">
 
@@ -134,8 +131,7 @@ cv2.destroyAllWindows()
 - 출력 결과 <br>
 <img src="/assets/img/AI/image9.png" style="width:75% !important;">
 
-## 5. Basic Operation
-**임계값을 기준으로 이진화시키기**<br>
+## 5. **임계값을 기준으로 이진화시키기**<br>
 - 이미지 파일 준비
 <img src="/assets/img/AI/image.jpg" style="width:75% !important;">
 
@@ -155,8 +151,7 @@ cv2.destroyAllWindows()
 - 출력 결과 <br>
 <img src="/assets/img/AI/image10.png" style="width:75% !important;">
 
-## 6. Basic Operation
-**이미지 흐리게(블러) 처리**<br>
+## 6. **이미지 흐리게(블러) 처리**<br>
 - 이미지 파일 준비
 <img src="/assets/img/AI/image.jpg" style="width:75% !important;">
 
