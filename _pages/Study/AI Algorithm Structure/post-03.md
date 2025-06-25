@@ -16,6 +16,7 @@ thumbnail: "/assets/img/thumbnail/perceptron.jpg"
 
 # 📝 Perceptron AND_GATE 실습
 ---
+## 🔍 AND 게이트 모델 훈련 후 결과 확인
 ```
 import numpy as np
 import matplotlib.pyplot as plt
