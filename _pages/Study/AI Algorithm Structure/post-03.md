@@ -60,9 +60,65 @@ print("\nAND Gate Test:")
 for x in X_and:
     print(f"Input: {x}, Predicted Output: {ppn_and.predict(x)}")
 ```
+#### 💡 **출력 결과** <br>
+
+<img src="/assets/img/AI/perceptron_and.png" style="width:25% !important;">
+
+---
+
+## 🔍 AND 게이트 결정 경계 시각화
+```
+from matplotlib.colors import ListedColormap
+
+def plot_decision_boundary(X, y, model):
+    cmap_light = ListedColormap(['#FFAAAA', '#AAAAFF'])
+    cmap_bold = ListedColormap(['#FF0000', '#0000FF'])
+
+    h = .02  # mesh grid 간격
+    x_min, x_max = X[:, 0].min() - 1, X[:, 0].max() + 1
+    y_min, y_max = X[:, 1].min() - 1, X[:, 1].max() + 1
+    xx, yy = np.meshgrid(np.arange(x_min, x_max, h),
+                         np.arange(y_min, y_max, h))
+
+    Z = model.predict(np.c_[xx.ravel(), yy.ravel()])
+    Z = Z.reshape(xx.shape)
+
+    plt.figure(figsize=(8, 6))
+    plt.contourf(xx, yy, Z, cmap=cmap_light)
+
+    # 실제 데이터 포인트 표시
+    plt.scatter(X[:, 0], X[:, 1], c=y, cmap=cmap_bold,
+                edgecolor='k', s=100, marker='o')
+
+    plt.xlabel('Input 1')
+    plt.ylabel('Input 2')
+    plt.title('Perceptron Decision Boundary')
+    plt.show()
+
+# AND 게이트 결정 경계 시각화
+plot_decision_boundary(X_and, y_and, ppn_and)
+```
 
 #### 💡 **출력 결과** <br>
 
 <img src="/assets/img/AI/perceptron_and.png" style="width:25% !important;">
+
+---
+
+
+## 🔍 오류 시각화
+```
+plt.figure(figsize=(8, 5))
+plt.plot(range(1, len(ppn_and.errors) + 1), ppn_and.errors, marker='o')
+plt.xlabel('Epochs')
+plt.ylabel('Number of Errors')
+plt.title('Perceptron Learning Error Over Epochs (AND Gate)')
+plt.grid(True)
+plt.show()
+```
+
+#### 💡 **출력 결과** <br>
+
+<img src="/assets/img/AI/lr_err.png" style="width:50% !important;">
 
 ---
