@@ -570,5 +570,3 @@ cv2.destroyAllWindows()
 
 ---
 
-### - sudo apt install v4l-utils : 카메라 지원 해상도 확인용 도구 설치
-- v4l2-ctl -d /dev/video0 --list-formats-ext : 해당 카메라의 해상도 및 포맷 목록 출력
