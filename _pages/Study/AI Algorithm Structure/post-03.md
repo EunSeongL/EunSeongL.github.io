@@ -449,3 +449,6 @@ plt.show()
 #### 💡 **출력 결과** <br>
 
 <img src="/assets/img/AI/lr_err_xor.png" style="width:50% !important;">
+
+## 🚨 단층 Perceptron의 한계점
+- XOR GATE는 퍼셉트론으로 학습이 되지 않는 문제가 발생하였다.
