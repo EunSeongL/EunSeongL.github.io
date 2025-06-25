@@ -428,3 +428,71 @@ cv2.destroyAllWindows()
 #### 💡 **출력 결과** <br>
 <img src="/assets/img/AI/image18.png" style="width:75% !important;">
 
+---
+## 12. **실시간 카메라 영상 위에 글자 출력하고 트랙바로 굵기, 크기, 색상 조절하기**<br>
+
+```
+import numpy as np
+import cv2
+
+cap = cv2.VideoCapture(4)
+
+#initial
+topLeft = (100, 100)
+bold = 0
+font_size = 1  
+r, g, b = 0, 255, 255
+
+def on_bold_trackbar(value):
+    global bold
+    bold = value
+
+def on_fontsize_trackbar(value):
+    global font_size
+    font_size = max(1, value)
+
+def on_r(val):
+    global r
+    r = val
+
+def on_g(val):
+    global g
+    g = val
+
+def on_b(val):
+    global b
+    b = val
+
+cv2.namedWindow("Camera")
+cv2.createTrackbar("bold", "Camera", bold, 10, on_bold_trackbar)
+cv2.createTrackbar("font size", "Camera", font_size, 10, on_fontsize_trackbar)
+cv2.createTrackbar('R', 'Camera', 0, 255, on_r)
+cv2.createTrackbar('G', 'Camera', 255, 255, on_g)
+cv2.createTrackbar('B', 'Camera', 255, 255, on_b)
+
+
+while cap.isOpened():
+    ret, frame = cap.read()
+    if ret is False:
+        print("Can't receive frame (stream end?). Exiting . . .")
+        break
+
+    # Text
+    cv2.putText(frame, 'TEXT', topLeft, cv2.FONT_HERSHEY_SIMPLEX, font_size, (b, g, r), 1 + bold)
+
+    # Display
+    cv2.imshow("Camera", frame)
+    key = cv2.waitKey(1)
+    if key & 0xFF == ord('q'):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
+```
+
+#### 💡 **출력 결과** <br>
+<img src="/assets/img/AI/image19.png" style="width:50% !important;">
+
+
+### - sudo apt install v4l-utils : 카메라 지원 해상도 확인용 도구 설치
+- v4l2-ctl -d /dev/video0 --list-formats-ext : 해당 카메라의 해상도 및 포맷 목록 출력
