@@ -568,6 +568,7 @@ cv2.destroyAllWindows()
 #### 💡 **출력 결과** <br>
 <img src="/assets/img/AI/image20.png" style="width:50% !important;">
 
+---
 
 ### - sudo apt install v4l-utils : 카메라 지원 해상도 확인용 도구 설치
 - v4l2-ctl -d /dev/video0 --list-formats-ext : 해당 카메라의 해상도 및 포맷 목록 출력
