@@ -106,7 +106,6 @@ plot_decision_boundary(X_and, y_and, ppn_and)
 
 ---
 
-
 ## 🔍 오류 시각화
 ```
 plt.figure(figsize=(8, 5))
@@ -216,7 +215,6 @@ plot_decision_boundary(X_or, y_or, ppn_or)
 <img src="/assets/img/AI/decision_boundary_or.png" style="width:50% !important;">
 
 ---
-
 
 ## 🔍 오류 시각화
 ```
@@ -436,7 +434,6 @@ plot_decision_boundary(X_xor, y_xor, ppn_xor)
 <img src="/assets/img/AI/decision_boundary_xor.png" style="width:50% !important;">
 
 ---
-
 
 ## 🔍 오류 시각화
 ```
