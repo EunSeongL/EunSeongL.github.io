@@ -60,3 +60,9 @@ print("\nAND Gate Test:")
 for x in X_and:
     print(f"Input: {x}, Predicted Output: {ppn_and.predict(x)}")
 ```
+
+#### 💡 **출력 결과** <br>
+
+<img src="/assets/img/AI/perceptron_and.png" style="width:50% !important;">
+
+---
