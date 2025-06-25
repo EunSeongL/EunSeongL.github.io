@@ -101,7 +101,7 @@ plot_decision_boundary(X_and, y_and, ppn_and)
 
 #### 💡 **출력 결과** <br>
 
-<img src="/assets/img/AI/perceptron_and.png" style="width:25% !important;">
+<img src="/assets/img/AI/decision_boundary.png" style="width:50% !important;">
 
 ---
 
