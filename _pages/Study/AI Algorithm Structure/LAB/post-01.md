@@ -493,6 +493,81 @@ cv2.destroyAllWindows()
 #### 💡 **출력 결과** <br>
 <img src="/assets/img/AI/image19.png" style="width:50% !important;">
 
+---
+## 13. **실시간 카메라 영상 위에 한글 출력하고 트랙바로 굵기, 크기, 색상 조절하기**<br>
+
+```
+import numpy as np
+import cv2
+from PIL import ImageFont, ImageDraw, Image
+
+cap = cv2.VideoCapture(4)
+
+topLeft = (100, 100)
+bold = 0
+font_size = 10
+r, g, b = 0, 255, 255
+
+def on_bold_trackbar(value):
+    global bold
+    bold = value
+
+def on_fontsize_trackbar(value):
+    global font_size
+    font_size = max(10, value * 5)
+
+def on_r(val):
+    global r
+    r = val
+
+def on_g(val):
+    global g
+    g = val
+
+def on_b(val):
+    global b
+    b = val
+
+cv2.namedWindow("Camera")
+cv2.createTrackbar("bold", "Camera", bold, 10, on_bold_trackbar)
+cv2.createTrackbar("font size", "Camera", font_size//5, 10, on_fontsize_trackbar)
+cv2.createTrackbar('R', 'Camera', 0, 255, on_r)
+cv2.createTrackbar('G', 'Camera', 255, 255, on_g)
+cv2.createTrackbar('B', 'Camera', 255, 255, on_b)
+
+font_path = "NanumGothic.ttf"
+
+while cap.isOpened():
+    ret, frame = cap.read()
+    if not ret:
+        print("Can't receive frame (stream end?). Exiting . . .")
+        break
+
+    img_pil = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
+    draw = ImageDraw.Draw(img_pil)
+    font = ImageFont.truetype(font_path, font_size)
+
+    text = 'LEE 은성'
+
+    # Bold 효과: 여러 번 겹쳐 그리기
+    for dx in range(-bold, bold+1):
+        for dy in range(-bold, bold+1):
+            draw.text((topLeft[0]+dx, topLeft[1]+dy), text, font=font, fill=(r, g, b, 0))
+
+    frame = cv2.cvtColor(np.array(img_pil), cv2.COLOR_RGB2BGR)
+
+    cv2.imshow("Camera", frame)
+    key = cv2.waitKey(1)
+    if key & 0xFF == ord('q'):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
+```
+
+#### 💡 **출력 결과** <br>
+<img src="/assets/img/AI/image20.png" style="width:50% !important;">
+
 
 ### - sudo apt install v4l-utils : 카메라 지원 해상도 확인용 도구 설치
 - v4l2-ctl -d /dev/video0 --list-formats-ext : 해당 카메라의 해상도 및 포맷 목록 출력
