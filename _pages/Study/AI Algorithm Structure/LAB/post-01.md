@@ -69,7 +69,7 @@ cv2.waitKey(0)
 cv2.imwrite("hsv2rgb_split.png", hsv_split)
 ```
 
-#### **출력 결과** <br>
+#### 💡 **출력 결과** <br>
 <img src="/assets/img/AI/image4.png" style="width:75% !important;">
 <img src="/assets/img/AI/image5.png" style="width:75% !important;">
 
