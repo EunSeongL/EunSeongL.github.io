@@ -375,8 +375,8 @@ cv2.destroyAllWindows()
 
 #### 💡 **출력 결과**<br>
 
-<img src="/assets/img/AI/image15.png" style="width:35% !important;">
-<img src="/assets/img/AI/image16.png" style="width:50% !important;">
+<img src="/assets/img/AI/image15.png" style="width:25% !important;">
+<img src="/assets/img/AI/image16.png" style="width:25% !important;">
 
 ---
 ## 11. **다양한 OpenCV 그리기 함수 사용해보기**<br>
