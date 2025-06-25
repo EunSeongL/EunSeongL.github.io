@@ -63,6 +63,6 @@ for x in X_and:
 
 #### 💡 **출력 결과** <br>
 
-<img src="/assets/img/AI/perceptron_and.png" style="width:50% !important;">
+<img src="/assets/img/AI/perceptron_and.png" style="width:25% !important;">
 
 ---
