@@ -8,10 +8,31 @@ thumbnail: "/assets/img/thumbnail/Linux_logo.png"
 bookmark: true
 ---
 # Git Blog User Guide
-- ## 1. 이모티콘<br>
-- ## 2. 마크다운<br>
-- ## 3. 홈페이지 꾸미기<br>
+- ### 1. 이모티콘<br>
+- ### 2. 마크다운<br>
+- ### 3. 홈페이지 꾸미기<br>
 ---
+
+### 우선 매번 이 세줄을 적는 것이 귀찮기 때문에 
+
+![alt text](<assets/img/tips/git push.png>)
+
+### - vi push -> (파일명)은 마음대로
+
+```bash
+git add .
+git commit -m "update"
+git push 
+```
+
+```bash
+# 터미널에서 실행 파일로 변경하기
+chmod 755 push
+# ./push 하면 실행된다
+```
+
+### - git pull 도 마찬가지로 하면 된다.
+
 ## <추가적으로 필요한 건 GPT 활용>
 ### - 핵심/중요 표시
 📌 (핀)
@@ -131,7 +152,11 @@ source .env/bin/activate    # 가상 환경 활성화
 ```
 
 ### ❗Tip 
-### loading 글씨 색을 바꾸고 싶다하면 
+### 다크 모드일 때 loading 글씨 색을 바꾸고 싶다하면 
 
 <img src="/assets/img/tips/img_tip2.png" style="width:25%; height:25%; object-fit:contain;">
 
+<img src="/assets/img/tips/loading_p.png" style="width:25%; height:25%; object-fit:contain;">
+
+- ### loading p { color:#FFB6C1; }의 #FFB6C1 값을 바꿔주면 된다
+- ### 추가적으로, 마우스 커서를 색 위에 갖다대면 색깔 바꿀 수 있음!
