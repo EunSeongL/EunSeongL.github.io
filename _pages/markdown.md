@@ -1,3 +1,12 @@
+---
+title: "Git Post Guide"
+tags:
+    - user manual
+date: "2025-06-26"
+thumbnail: "https://i.ibb.co/V9j2Qsg/giscus-Wl0-X3byd-az-U68-1.webp"
+bookmark: true
+---
+
 # Git Blog User Guide
 - ### 1. 이모티콘<br>
 - ### 2. 마크다운<br>
