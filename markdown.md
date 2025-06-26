@@ -47,8 +47,8 @@ bookmark: true
 ---
 
 # 2. Markdown
-vscode를 사용하면 extend에서 markdown all in one을 설치
-
+vscode를 사용하면 extend에서 markdown all in one을 설치 <br>
+git push 하기 전에 markdown 으로 작성한 것을 미리 볼수 있다. 
 ![alt text](assets/img/tips/md_view.png)
 
 - 
