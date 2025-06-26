@@ -65,7 +65,7 @@ chmod 755 push
 ### - ❗ vscode를 사용하면 extend에서 markdown all in one을 설치 
 ### -> git push 하기 전에 markdown 으로 작성한 것을 미리 볼수 있다. 
 
-![alt text](assets/img/tips/md_view.png)
+![alt text](assets/img/tips/md_view1.png)
 
 - 
 1.
