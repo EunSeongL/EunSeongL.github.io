@@ -67,13 +67,71 @@ git push 하기 전에 markdown 으로 작성한 것을 미리 볼수 있다.
 
 
 ## 코드 넣는 법
+### - ```옆에 파일명 적지 않아도 되긴 한데 이런 차이가 있음
 ```py
+import numpy
+```
 
 ```
+import numpy
+```
+
 ```bash
 # 가상 환경 생성 및 활성화
 python3 -m venv .env        # 가상 환경 생성 (폴더 이름: .env)
 source .env/bin/activate    # 가상 환경 활성화
 ```
+---
+## 이미지 파일 넣을 때 팁
 
+### - 마크다운 형식에서는 이 방법이 적용가능
+
+![alt text](assets/img/tips/img.gif)[dnjsdud] 
+
+### ![alt text] 는 이미지 경로가 잘못되었을 경우 alt text문구가 업데이트 
+### (file_path) 를 적어주면 된다 이 블로그 형식은 assets/img/ 인데 디렉토리마다 이미지를 정리해주는 것이 좋다
+### [dnjsdud] 이 부분은 git blog 에서 이미지 위에 커서를 갖다대면 []안에 입력한 글씨가 보인다
+### ❗ 이미지를 넣을때 그냥 위아래로는 한칸씩 비워둔다.
+### ❗Tip 
+- ### 이미지 파일을 markdown 코드 안으로 드래그 -> 원하는 라인에 커서 위치 -> shift 키 입력 후 drop 하면 아래와 같이 이미지가 불러와진다!  
+
+![alt text](assets/img/tips/img_tip1.png)
+
+### - 이미지 크기 조절하는 방법
+
+### 마크다운에서도 이미지 크기가 조절가능하지만 이미 만들어진 형식 안을 수정하려면 파일을 찾아야함 -> 그래서 html 코드 방식을 활용하면 쉽게 바꿀 수 있음
+---
+### 예시
+
+```
+<style="width:75%; height:75%; object-fit:contain; border-radius:75%;">
+```
+### width는 가로 height은 세로 *object-fit:contain;* 이거 **꼭** 적어줘야함 
+### border-radius:75%; 이거는 사진 원형으로 만든거임 
+
+```
+<img src="/assets/img/tips/img.gif" style="width:25% !important;">
+```
+
+### style="width:25% !important; 이렇게 조건을 주면 가로 배율만 가능 12.5, 25, 50, 75, 100이렇게 가능하고 세로는 height=숫자값만; 이렇게도 넣어서 구현 가능함 (비 추천)
+
+## 로딩 이미지 바꾸기
+
+<img src="/assets/img/tips/loading.png" style="width:25%; height:25%; object-fit:contain;">
+
+### - 위 사진에 있는 loading.html파일에 들어가서
+
+```html
+<div id="loading">
+    <div class="loading_box">
+        <img src="{{ '/assets/img/img.gif' | prepend: site.baseurl }}" style="width:75%; height:75%; object-fit:contain; border-radius:75%;">
+        <p>Please wait ...</p>  /* 이미지 밑에 적을 내용 */
+    </div>
+</div>
+```
+
+### ❗Tip 
+### loading 글씨 색을 바꾸고 싶다하면 
+
+<img src="/assets/img/tips/img_tip2.png" style="width:25%; height:25%; object-fit:contain;">
 
