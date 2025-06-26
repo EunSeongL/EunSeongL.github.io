@@ -1,6 +1,15 @@
-<div id="loading">
-    <div class="loading_box">
-        <img src="{{ '/assets/img/img.gif' | prepend: site.baseurl }}" style="width:75%; height:75%; object-fit:contain;">
-        <p>Please wait ...</p>
-    </div>
-</div>
+<head>
+  <style>
+    .wait-text {
+      color: #3498db; /* 예시: 파란색 */
+    }
+  </style>
+</head>
+<body>
+  <div id="loading">
+      <div class="loading_box">
+          <img src="{{ '/assets/img/img.gif' | prepend: site.baseurl }}" style="width:75%; height:75%; object-fit:contain;">
+          <p class="wait-text">Please wait ...</p>
+      </div>
+  </div>
+</body>
