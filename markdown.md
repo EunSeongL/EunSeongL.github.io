@@ -1,12 +1,3 @@
----
-title: "Day2 : OpenCV"
-tags:
-    - Study
-    - Language
-date: "2025-06-24"
-thumbnail: "/assets/img/thumbnail/Linux_logo.png"
-bookmark: true
----
 # Git Blog User Guide
 - ### 1. 이모티콘<br>
 - ### 2. 마크다운<br>
