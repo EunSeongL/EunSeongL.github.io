@@ -4,7 +4,9 @@
 - ### 3. 홈페이지 꾸미기<br>
 ---
 
-### 우선 매번 이 세줄을 적는 것이 귀찮기 때문에 
+## 🚧 처음 이 블로그를 만졌을 때 docs 파일안의 _config.yml 말고 이 블로그 파일의 최상단의 _config.yml를 수정해야 한다. 이거는 그냥 보면 쉽게 수정할 수 있다. 
+
+### ⭐ 우선 매번 이 세줄을 적는 것이 귀찮기 때문에 
 
 ![alt text](<assets/img/tips/git push.png>)
 
@@ -20,6 +22,7 @@ git push
 # 터미널에서 실행 파일로 변경하기
 chmod 755 push
 # ./push 하면 실행된다
+# 주의할 점은 위 사진의 디렉토리 위치에서 실행해야 함!
 ```
 
 ### - git pull 도 마찬가지로 하면 된다.
@@ -59,8 +62,9 @@ chmod 755 push
 ---
 
 # 2. Markdown
-vscode를 사용하면 extend에서 markdown all in one을 설치 <br>
-git push 하기 전에 markdown 으로 작성한 것을 미리 볼수 있다. 
+### - ❗ vscode를 사용하면 extend에서 markdown all in one을 설치 
+### -> git push 하기 전에 markdown 으로 작성한 것을 미리 볼수 있다. 
+
 ![alt text](assets/img/tips/md_view.png)
 
 - 
