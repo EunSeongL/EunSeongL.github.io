@@ -1,3 +1,9 @@
+---
+title: "Day4: Deep Learning"
+date: "2025-06-26"
+thumbnail: "/assets/img/thumbnail/deeplr.png"
+---
+
 # Compare Perceptron, Multi Layer perceptron XOR Gate
 
 ---
