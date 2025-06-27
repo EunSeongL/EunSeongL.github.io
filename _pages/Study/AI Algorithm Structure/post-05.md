@@ -53,6 +53,11 @@ print(test_x2.shape)    # (10000, 784)
 
 md = Sequential()
 md.add(Dense(10, activation = 'softmax', input_shape = (28*28,)))
+
+md.summary()
+
+md.compile(loss='sparse_categorical_crossentropy', optimizer = 'sgd', metrics=['acc'])
+hist = md.fit(train_x2, train_y, epochs = 30, batch_size = 64, validation_split = 0.2)
 ```
 
 ## Cifar_10 데이터셋
@@ -79,7 +84,12 @@ print(train_x2.shape)   #(50000, 3072)
 print(test_x2.shape)    #(10000, 3072)
 
 md = Sequential()
-md.add(Dense(10, activation = 'softmax', input_shape = (3072,)))
+md.add(Dense(10, activation = 'softmax', input_shape = (32*32*3,)))
+
+md.summary()
+
+md.compile(loss='sparse_categorical_crossentropy', optimizer = 'sgd', metrics=['acc'])
+hist = md.fit(train_x2, train_y, epochs = 30, batch_size = 128, validation_split = 0.2)
 ```
 
 # 3. 코드 실행 및 결과 시각화
