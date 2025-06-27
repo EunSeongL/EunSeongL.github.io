@@ -97,6 +97,8 @@ md.compile(loss='sparse_categorical_crossentropy', optimizer = 'sgd', metrics=['
 hist = md.fit(train_x2, train_y, epochs = 30, batch_size = 128, validation_split = 0.2)
 ```
 
+---
+
 # 3. 코드 실행 및 결과 시각화
 
 ## Mnist 데이터셋 
