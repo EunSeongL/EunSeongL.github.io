@@ -114,6 +114,7 @@ hist = md.fit(train_x2, train_y, epochs = 30, batch_size = 128, validation_split
 
  <img src="/assets/img/AI/cifar10_loss.png" style="width:50%; height:50%; object-fit:contain;">
  
+---
 
 # 4. 두 코드의 주요 차이점
 
