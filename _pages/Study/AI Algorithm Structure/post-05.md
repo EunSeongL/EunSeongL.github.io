@@ -4,7 +4,7 @@ date: "2025-06-27"
 thumbnail: "/assets/img/AI/linear_model.jpg"
 ---
 
-# Mnist 손글씨, Cifar_10 Dataset
+# (Mnist, Cifar_10) Dataset
 
 ---
 
