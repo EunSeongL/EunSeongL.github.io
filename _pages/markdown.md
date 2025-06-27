@@ -150,7 +150,8 @@ source .env/bin/activate    # 가상 환경 활성화
 <img src="/assets/img/tips/img.gif" style="width:25% !important;">
 ```
 
-### style="width:25% !important; 이렇게 조건을 주면 가로 배율만 가능 12.5, 25, 50, 75, 100이렇게 가능하고 세로는 height=숫자값만; 이렇게도 넣어서 구현 가능함 (비 추천)
+### style="width:25% !important; 이렇게 조건을 주면 가로 배율만 가능 
+### 12.5, 25, 50, 75, 100이렇게 가능하고 세로는 height=숫자값만; 이렇게도 넣어서 구현 가능함 (비 추천)
 
 ## 로딩 이미지 바꾸기
 
