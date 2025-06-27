@@ -63,6 +63,8 @@ md.compile(loss='sparse_categorical_crossentropy', optimizer = 'sgd', metrics=['
 hist = md.fit(train_x2, train_y, epochs = 30, batch_size = 64, validation_split = 0.2)
 ```
 
+---
+
 ## Cifar_10 데이터셋
 
 - ### 데이터: (50000, 32, 32, 3) 크기의 컬러 이미지, 라벨(0~9)
