@@ -4,7 +4,7 @@ date: "2025-06-27"
 thumbnail: "/assets/img/AI/linear_model.jpg"
 ---
 
-# Compare Perceptron, Multi Layer perceptron XOR Gate
+# Linear Model
 
 ---
 
