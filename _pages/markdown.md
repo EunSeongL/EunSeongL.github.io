@@ -76,10 +76,10 @@ chmod 755 push
 
 ![alt text](assets/img/tips/md_view1.png)
 
-- 
-1.
-- 1.
-- ### 1 
+-<br>
+1.<br>
+- 1.<br>
+- ### 1<br>
 - ### **글씨 굵게** vs 글씨 굵게
 - ### 이런식으로 활용가능
 
