@@ -1,5 +1,5 @@
 ---
-title: "Day5: Linear Model"
+title: "Day5: Neural Network Model"
 date: "2025-06-27"
 thumbnail: "/assets/img/AI/neural.png"
 ---
