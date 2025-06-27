@@ -171,9 +171,9 @@ source .env/bin/activate    # 가상 환경 활성화
 ### ❗Tip 
 ### 다크 모드일 때 loading 글씨 색을 바꾸고 싶다하면 
 
-<img src="/assets/img/tips/img_tip2.png" style="width:25%; height:25%; object-fit:contain;">
+<img src="/assets/img/tips/img_tip2.png" style="width:50%; height:25%; object-fit:contain;">
 
-<img src="/assets/img/tips/loading_p.png" style="width:25%; height:25%; object-fit:contain;">
+<img src="/assets/img/tips/loading_p.png" style="width:50%; height:25%; object-fit:contain;">
 
 - #### loading p { color:#FFB6C1; }의 #FFB6C1 값을 바꿔주면 된다
 - #### 추가적으로, 마우스 커서를 색 위에 갖다대면 색깔 바꿀 수 있음!
