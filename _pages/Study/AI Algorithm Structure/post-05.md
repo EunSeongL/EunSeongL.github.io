@@ -1,6 +1,6 @@
 ---
-title: "Day4: Deep Learning"
-date: "2025-06-26"
+title: "Day5: Linear Model"
+date: "2025-06-27"
 thumbnail: "/assets/img/AI/linear_model.jpg"
 ---
 
