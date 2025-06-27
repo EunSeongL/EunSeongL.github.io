@@ -123,11 +123,11 @@ source .env/bin/activate    # 가상 환경 활성화
 
 ### - 마크다운 형식에서는 이 방법이 적용가능
 
-![alt text](assets/img/tips/img.gif)[dnjsdud] 
+![alt text](assets/img/tips/img.gif "alt text") 
 
 ### ![alt text] 는 이미지 경로가 잘못되었을 경우 alt text문구가 업데이트 
 ### (file_path) 를 적어주면 된다 이 블로그 형식은 assets/img/ 인데 디렉토리마다 이미지를 정리해주는 것이 좋다
-### [dnjsdud] 이 부분은 git blog 에서 이미지 위에 커서를 갖다대면 []안에 입력한 글씨가 보인다
+### "alt text" 이 부분은 git blog 에서 이미지 위에 커서를 갖다대면 []안에 입력한 글씨가 보인다
 ### ❗ 이미지를 넣을때 그냥 위아래로는 한칸씩 비워둔다.
 ### ❗Tip 
 - ### 이미지 파일을 markdown 코드 안으로 드래그 -> 원하는 라인에 커서 위치 -> shift 키 입력 후 drop 하면 아래와 같이 이미지가 불러와진다!  
