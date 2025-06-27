@@ -27,6 +27,8 @@ thumbnail: "/assets/img/AI/linear_model.jpg"
 
 <img src="/assets/img/AI/cifar10_data.png" style="width:50%; height:50%; object-fit:contain;">
 
+---
+
 # 2. 데이터 전처리 및 모델 구조
 
 ## Mnist 데이터셋
