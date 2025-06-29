@@ -342,7 +342,8 @@ main {
     border-radius:10px;
     border-collapse:collapse;
     line-height:1.2;
-    box-shadow:0 0 40px 0 rgba(0,0,0,.15);
+    /*box-shadow:0 0 40px 0 rgba(0,0,0,.15);*/
+    box-shadow: none; /* 그림자 없음 */
 
     thead { box-shadow:0 0 40px 0 rgba(0,0,0,.15); }
     th, td {
