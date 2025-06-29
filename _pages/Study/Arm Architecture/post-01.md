@@ -1,5 +1,5 @@
 ---
-title: "[ex30] ASM_TOGGLING"
+title: "[ex46] "
 tags:
     - Study
     - Language
@@ -10,103 +10,119 @@ bookmark: true
 # 문제 설명
 ---
 
-```armasm
-   .syntax unified
-   .thumb
-
-   .text
-
-   .word   0x20005000
-   .word   __start
-
-   .global   __start
-     .type    __start, %function
-__start:
-
-   .equ GPIOB_CRH,   0x40010C04
-   .equ GPIOB_ODR,   0x40010C0C
-   .equ APB2ENR,     0x40021018
-
-   @ 이부분은 수정하지 말 것 @
-
-   LDR   r0, =APB2ENR
-   LDR   r1, =0x8
-   STR   r1, [r0]
-
-    @ 초기 LED 모두 OFF @
-
-   LDR   r0, =GPIOB_CRH
-   LDR   r1, [r0]
-   BIC   r1, r1, #0xFF<<0
-   ORR   r1, r1, #0x66<<0
-   STR   r1, [r0]
-
-   LDR   r0, =GPIOB_ODR
-   LDR   r1, [r0]
-   ORR   r1, r1, #0x3<<8
-   STR   r1, [r0]
-
-   @ 여기부터 코드 작성 @
-
-
-
-
-
-
-
-
-   b      .
-         
-   .end
-```
 
 # 정답 코드
 ---
 
-```armasm
-   .syntax unified
-   .thumb
+```c
+//stm32f10x_it.c
+volatile int Uart1_Rx_In = 0;
+volatile int Uart1_Rx_Data = 0;
 
-   .text
+void USART1_IRQHandler(void)
+{
+   Uart1_Rx_Data = (unsigned char)USART1->DR;
+  Uart1_Send_Byte(Uart1_Rx_Data);
 
-   .word   0x20005000
-   .word   __start
+   Uart1_Rx_In = 1;
+   NVIC_ClearPendingIRQ(37);
+}
 
-   .global   __start
-     .type    __start, %function
-__start:
+volatile int note_end = 0;
 
-   .equ GPIOB_CRH,   0x40010C04
-   .equ GPIOB_ODR,   0x40010C0C
-   .equ APB2ENR,     0x40021018
+void TIM2_IRQHandler(void)
+{
+  Macro_Clear_Bit(TIM2->SR, 0);
+   NVIC_ClearPendingIRQ(28);
+   note_end = 1;
+}
 
-   LDR   r0, =APB2ENR
-   LDR   r1, =0x8
-   STR   r1, [r0]
+//main.c
+#include "device_driver.h"
 
-   LDR   r0, =GPIOB_CRH
-   LDR   r1, [r0]
-   BIC   r1, r1, #0xFF<<0
-   ORR   r1, r1, #0x66<<0
-   STR   r1, [r0]
+static void Sys_Init(void)
+{
+   Clock_Init();
+   LED_Init();
+   Uart_Init(115200);
+   Key_Poll_Init();
 
-   LDR   r0, =GPIOB_ODR
-   LDR   r1, [r0]
-   ORR   r1, r1, #0x3<<8
-   STR   r1, [r0]
+   SCB->VTOR = 0x08003000;
+   SCB->SHCSR = 0;
+}
 
-1:
-   LDR   r3, =0xFFFFF
-2:   SUBS  r3, r3, #1
-   BHI   2b
+#define BASE  (500) //msec
 
-   LDR   r1, [r0]
-   EOR   r1, r1, #0x3<<8
-   STR   r1, [r0]
+enum key{C1, C1_, D1, D1_, E1, F1, F1_, G1, G1_, A1, A1_, B1, C2, C2_, D2, D2_, E2, F2, F2_, G2, G2_, A2, A2_, B2};
+enum note{N16=BASE/4, N8=BASE/2, N4=BASE, N2=BASE*2, N1=BASE*4};
+const int song1[][2] = {{G1,N4},{G1,N4},{E1,N8},{F1,N8},{G1,N4},{A1,N4},{A1,N4},{G1,N2},{G1,N4},{C2,N4},{E2,N4},{D2,N8},{C2,N8},{D2,N2}};
 
-   B     1b
-         
-   .end
+static void Buzzer_Beep(unsigned char tone, int duration)
+{
+   const static unsigned short tone_value[] = {261,277,293,311,329,349,369,391,415,440,466,493,523,554,587,622,659,698,739,783,830,880,932,987};
+
+   TIM3_Out_Freq_Generation(tone_value[tone]);
+   TIM2_Delay(duration);
+
+}
+
+extern volatile int Uart1_Rx_In;
+extern volatile int Uart1_Rx_Data;
+extern volatile int note_end;
+
+void Main(void)
+{
+   Sys_Init();
+   TIM4_Out_Init();
+   TIM3_Out_Init();
+   Uart1_RX_Interrupt_Enable(1);
+
+   static int timer_run = 0;
+   
+   volatile int i = 0;
+   Buzzer_Beep(song1[i][0], song1[i][1]);
+
+   for(;;)
+   {
+      if (Uart1_Rx_In)
+      {
+         Uart1_Rx_Data = Uart1_Rx_Data - '0';
+         if (Uart1_Rx_Data == 0)
+         {
+            TIM4_Out_Stop();
+            timer_run = 0;
+         }
+         else
+         {
+            if (timer_run == 0)
+            {
+               TIM4_Out_PWM_Generation(1000, Uart1_Rx_Data);
+               timer_run = 1;
+            }
+            else
+            {
+               TIM4_Change_Duty(Uart1_Rx_Data);
+            }
+         }
+         Uart1_Rx_In = 0;
+      }
+
+      if (note_end)
+      {
+
+         TIM3_Out_Stop();
+         i++;
+
+         if (i >= sizeof(song1)/sizeof(song1[0]))
+         {
+            i = 0;
+         }
+         Buzzer_Beep(song1[i][0], song1[i][1]);
+
+         note_end = 0;
+      }
+   }
+}
 ```
 
 # 메모
