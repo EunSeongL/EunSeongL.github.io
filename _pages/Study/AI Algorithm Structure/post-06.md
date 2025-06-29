@@ -40,6 +40,7 @@ thumbnail: "/assets/img/AI/neural.png"
 | Batch Size   | 128                                           | 64                                 |
 | 모델 복잡도  | 높음                                          | 매우 단순(로지스틱 회귀와 유사)    |
 
+---
 ### 2. 모델 구조 및 복잡도
 #### op_mnist.py는 3개의 은닉층(512, 256, 128 유닛)과 Dropout(0.3) 레이어를 포함해, 심층 신경망 구조를 가집니다. 출력층은 10개 유닛의 softmax입니다.
 #### mnist.py는 은닉층 없이 입력(784차원)에서 바로 10개 유닛의 softmax 출력층으로 연결된 매우 단순한 구조입니다. 이는 다중 클래스 로지스틱 회귀와 동일합니다.
@@ -64,10 +65,12 @@ md.add(Dropout(0.3))
 md.add(Dense(10, activation='softmax'))
 ```
 
+---
 ### 3. 정규화(Dropout) 적용 유무
 #### op_mnist.py는 과적합 방지를 위해 Dropout 레이어를 3번 사용합니다.
 #### mnist.py는 Dropout 레이어가 없습니다.
 
+---
 ### 4. Optimizer 및 하이퍼파라미터 설정
 ##### mnist.py 
 
@@ -83,6 +86,7 @@ md.compile(loss='sparse_categorical_crossentropy', optimizer=Adam(learning_rate=
 hist = md.fit(train_x2, train_y, epochs = 35, batch_size = 128, validation_split = 0.2)
 ```
 
+---
 ### 5. 결론
 #### op_mnist.py는 심층 신경망(MLP) 구조에 Dropout과 Adam 옵티마이저를 적용해, 복잡한 패턴 학습과 과적합 방지에 중점을 둔 코드입니다.
 #### mnist.py는 단일층 신경망(로지스틱 회귀) 구조로, 구현이 간단하고 빠르지만, 복잡한 데이터 표현력은 떨어집니다.
