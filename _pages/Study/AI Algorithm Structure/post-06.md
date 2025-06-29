@@ -147,8 +147,8 @@ md.add(Dense(10, activation='softmax'))
 
 ---
 ### 3. 정규화(Dropout) 적용 유무
-#### 신경망 구조(op_cifar_10.py): 과적합 방지를 위해 Dropout 레이어를 3번 사용합니다.
-#### 신경망❌구조(cifar_10.py): Dropout 레이어가 없습니다.
+#### 신경망 구조(op_cifar_10.py): 과적합 방지를 위해 Dropout 레이어를 3번 사용.
+#### 신경망❌구조(cifar_10.py): Dropout 레이어가 없다.
 
 
 ---
@@ -185,6 +185,6 @@ hist = md.fit(train_x2, train_y, epochs = 35, batch_size = 128, validation_split
 <img src="/assets/img/AI/op_cifar_result.png" style="width:100%; height:100%; object-fit:contain;">
 
 ### 6. 결론
-#### 신경망❌구조는 단일층 신경망(로지스틱 회귀) 구조로, 구현이 간단하고 빠르지만, 복잡한 데이터 표현력은 떨어집니다.
-#### 신경망 구조는 심층 신경망(MLP) 구조에 Dropout과 Adam 옵티마이저를 적용해, 복잡한 패턴 학습과 과적합 방지에 중점을 둔 코드입니다.
-#### 두 코드의 차이는 모델 구조(심층 vs. 단층), 정규화 적용, 옵티마이저 종류, 학습 파라미터 등에서 뚜렷하게 나타납니다.
+#### 신경망❌구조는 단일층 신경망(로지스틱 회귀) 구조로, 구현이 간단하고 빠르지만, 복잡한 데이터 표현력은 떨어진다.
+#### 신경망 구조는 심층 신경망(MLP) 구조에 Dropout과 Adam 옵티마이저를 적용해, 복잡한 패턴 학습과 과적합 방지.
+#### 두 코드의 차이는 모델 구조(심층 vs. 단층), 정규화 적용, 옵티마이저 종류, 학습 파라미터.
