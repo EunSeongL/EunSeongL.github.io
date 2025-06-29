@@ -341,7 +341,7 @@ main {
     background-color:#fff;
     border-radius:10px;
     border-collapse:collapse;
-    line-height:1.5;
+    line-height:1.2;
     box-shadow:0 0 40px 0 rgba(0,0,0,.15);
 
     thead { box-shadow:0 0 40px 0 rgba(0,0,0,.15); }
@@ -353,7 +353,7 @@ main {
     }
     thead tr { height:3.5rem; }
     tbody tr { height:3rem; }
-    tbody td, thead th { padding:8px; }
+    tbody td, thead th { padding:6px; }
 
     tr:first-child th { border-top:0; }
     td:first-child, th:first-child { border-left:0; }
