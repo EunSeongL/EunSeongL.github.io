@@ -352,9 +352,9 @@ main {
       white-space:initial;
       max-width:16rem;
     }
-    thead tr { height:3rem; }
-    tbody tr { height:2.5rem; }
-    tbody td, thead th { padding:3px; }
+    thead tr { height:2.5rem; }
+    tbody tr { height:2rem; }
+    tbody td, thead th { padding:2px; }
 
     tr:first-child th { border-top:0; }
     td:first-child, th:first-child { border-left:0; }
