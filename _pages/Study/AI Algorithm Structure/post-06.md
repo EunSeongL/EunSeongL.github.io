@@ -42,14 +42,14 @@ thumbnail: "/assets/img/AI/neural.png"
 #### 신경망❌구조: 은닉층 없이 입력(784차원)에서 바로 10개 유닛의 softmax 출력층으로 연결된 매우 단순한 구조. 이는 다중 클래스 로지스틱 회귀와 동일.
 #### 신경망 구조: 3개의 은닉층(512, 256, 128 유닛)과 Dropout(0.3) 레이어를 포함해, 심층 신경망 구조. 출력층은 10개 유닛의 softmax.
 
-##### mnist.py 
+##### 신경망❌구조 
 
 ```py
 md = Sequential()
 md.add(Dense(10, activation = 'softmax', input_shape = (28*28,)))
 ```
 
-##### op_mnist.py
+##### 신경망 구조
 
 ```py
 md = Sequential()
@@ -64,19 +64,19 @@ md.add(Dense(10, activation='softmax'))
 
 ---
 ### 3. 정규화(Dropout) 적용 유무
-#### op_mnist.py는 과적합 방지를 위해 Dropout 레이어를 3번 사용합니다.
-#### mnist.py는 Dropout 레이어가 없습니다.
+#### op_mnist.py는 과적합 방지를 위해 Dropout 레이어를 3번 사용.
+#### mnist.py는 Dropout 레이어 ❌
 
 ---
 ### 4. Optimizer 및 하이퍼파라미터 설정
-##### mnist.py 
+##### 신경망❌구조 
 
 ```py
 md.compile(loss='sparse_categorical_crossentropy', optimizer = 'sgd', metrics=['acc'])
 hist = md.fit(train_x2, train_y, epochs = 30, batch_size = 64, validation_split = 0.2)
 ```
 
-##### op_mnist.py
+##### 신경망 구조
 
 ```py
 md.compile(loss='sparse_categorical_crossentropy', optimizer=Adam(learning_rate=0.0003), metrics=['acc'])
