@@ -94,12 +94,11 @@ hist = md.fit(train_x2, train_y, epochs = 35, batch_size = 128, validation_split
 | :--: | :--: |
 | <img src="/assets/img/AI/mnist_loss.png" style="width:100%; height:100%; object-fit:contain;"> | <img src="/assets/img/AI/op_mnist_loss.png" style="width:100%; height:100%; object-fit:contain;"> |
 
-| 신경망❌ 구조 |
-| :--: |
-| <img src="/assets/img/AI/op_mnist_result.png" style="width:100%; height:100%; object-fit:contain;"> | 
-| 신경망 구조 |
-| :--: |
-| <img src="/assets/img/AI/op_mnist_result.png" style="width:100%; height:100%; object-fit:contain;"> |
+### 신경망❌ 구조
+<img src="/assets/img/AI/op_mnist_result.png" style="width:100%; height:100%; object-fit:contain;"> 
+
+### 신경망 구조 
+<img src="/assets/img/AI/op_mnist_result.png" style="width:100%; height:100%; object-fit:contain;">
 
 ### 6. 결론
 #### - 신경망❌구조는 단일층 신경망(로지스틱 회귀) 구조로, 구현이 간단하고 빠르지만, 복잡한 데이터 표현력은 떨어진다.
