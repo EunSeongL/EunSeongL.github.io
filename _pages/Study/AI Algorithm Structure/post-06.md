@@ -87,7 +87,7 @@ hist = md.fit(train_x2, train_y, epochs = 35, batch_size = 128, validation_split
 ### 5. 결과 비교
 
 | 신경망❌ 구조 | 신경망 구조 |
- :--: | :--: 
+| :--: | :--: |
 <img src="/assets/img/AI/mnist_acc.png" style="width:50%; height:50%; object-fit:contain;">
 |<img src="/assets/img/AI/op_mnist_acc.png" style="width:50%; height:50%; object-fit:contain;">
 
