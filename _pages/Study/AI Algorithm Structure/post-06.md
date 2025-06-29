@@ -27,7 +27,7 @@ thumbnail: "/assets/img/AI/neural.png"
 
 ### 1. 차이점<br>
 
-| 항목 | op_mnist.py | mnist.py |
+| 항목 | 신경망 구조 | 신경망❌구조 |
 | :--: | :--: | :--: |
 | 모델 구조 | 4개 Dense 계층(512→256→128→10), Dropout 3회 | 1개 Dense 계층(10) |
 | 활성화 함수 | relu(은닉층), softmax(출력층) | softmax(출력층) |
@@ -42,7 +42,7 @@ thumbnail: "/assets/img/AI/neural.png"
 #### 신경망❌구조: 은닉층 없이 입력(784차원)에서 바로 10개 유닛의 softmax 출력층으로 연결된 매우 단순한 구조. 이는 다중 클래스 로지스틱 회귀와 동일.
 #### 신경망 구조: 3개의 은닉층(512, 256, 128 유닛)과 Dropout(0.3) 레이어를 포함해, 심층 신경망 구조. 출력층은 10개 유닛의 softmax.
 
-##### 신경망❌구조 
+##### 신경망❌구조조 
 
 ```py
 md = Sequential()
