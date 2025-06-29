@@ -48,8 +48,8 @@ thumbnail: "/assets/img/AI/neural.png"
 |---------------|------------------|
 | ```py
 md = Sequential()
-md.add(Dense(10, activation = 'softmax', input_shape = (28*28,)))``` 
-| ```py
+md.add(Dense(10, activation = 'softmax', input_shape = (28*28,)))``` |
+```py
 md = Sequential()
 md.add(Dense(512, activation='relu', input_shape=(28*28,)))
 md.add(Dropout(0.3))
@@ -58,7 +58,8 @@ md.add(Dropout(0.3))
 md.add(Dense(128, activation='relu'))
 md.add(Dropout(0.3))
 md.add(Dense(10, activation='softmax'))
-``` |
+```
+
 
 #### 2. Optimizer 및 하이퍼파라미터 설정
 ##### mnist.py 
