@@ -1,21 +1,114 @@
 ---
-title: "Example Post: no thumbnail image"
-date: "2023-12-01"
+title: "[ex30] ASM_TOGGLING"
+tags:
+    - Study
+    - Language
+date: "2025-03-18"
+thumbnail: "/assets/img/AI/neural.png"
+bookmark: true
+---
+# 문제 설명
 ---
 
-# Follow the guidance
----
+```armasm
+   .syntax unified
+   .thumb
 
-**Fill the image path to the 'thumbnail' attribute, if you want a main image to be displayed on the post header image.**
+   .text
 
+   .word   0x20005000
+   .word   __start
+
+   .global   __start
+     .type    __start, %function
+__start:
+
+   .equ GPIOB_CRH,   0x40010C04
+   .equ GPIOB_ODR,   0x40010C0C
+   .equ APB2ENR,     0x40021018
+
+   @ 이부분은 수정하지 말 것 @
+
+   LDR   r0, =APB2ENR
+   LDR   r1, =0x8
+   STR   r1, [r0]
+
+    @ 초기 LED 모두 OFF @
+
+   LDR   r0, =GPIOB_CRH
+   LDR   r1, [r0]
+   BIC   r1, r1, #0xFF<<0
+   ORR   r1, r1, #0x66<<0
+   STR   r1, [r0]
+
+   LDR   r0, =GPIOB_ODR
+   LDR   r1, [r0]
+   ORR   r1, r1, #0x3<<8
+   STR   r1, [r0]
+
+   @ 여기부터 코드 작성 @
+
+
+
+
+
+
+
+
+   b      .
+         
+   .end
 ```
+
+# 정답 코드
 ---
-title: "Example Post: thumbnail exists"
-date: "2023-12-02"
-thumbnail: "/assets/img/thumbnail/bricks.webp"
----
+
+```armasm
+   .syntax unified
+   .thumb
+
+   .text
+
+   .word   0x20005000
+   .word   __start
+
+   .global   __start
+     .type    __start, %function
+__start:
+
+   .equ GPIOB_CRH,   0x40010C04
+   .equ GPIOB_ODR,   0x40010C0C
+   .equ APB2ENR,     0x40021018
+
+   LDR   r0, =APB2ENR
+   LDR   r1, =0x8
+   STR   r1, [r0]
+
+   LDR   r0, =GPIOB_CRH
+   LDR   r1, [r0]
+   BIC   r1, r1, #0xFF<<0
+   ORR   r1, r1, #0x66<<0
+   STR   r1, [r0]
+
+   LDR   r0, =GPIOB_ODR
+   LDR   r1, [r0]
+   ORR   r1, r1, #0x3<<8
+   STR   r1, [r0]
+
+1:
+   LDR   r3, =0xFFFFF
+2:   SUBS  r3, r3, #1
+   BHI   2b
+
+   LDR   r1, [r0]
+   EOR   r1, r1, #0x3<<8
+   STR   r1, [r0]
+
+   B     1b
+         
+   .end
 ```
 
-The rest content is just meaningless dummy text.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+# 메모
+---
+> printf 내부의 **\n** 습관화 필요
