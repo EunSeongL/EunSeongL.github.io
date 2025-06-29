@@ -345,7 +345,7 @@ main {
     /*box-shadow:0 0 40px 0 rgba(0,0,0,.15);*/
     box-shadow: none; /* 그림자 없음 */
 
-    thead { box-shadow:0 0 40px 0 rgba(0,0,0,.15); }
+    thead { box-shadow: none; /* 그림자 없음 */ }
     th, td {
       border:1px solid lightgrey;
       word-wrap:break-word;
