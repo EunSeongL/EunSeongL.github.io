@@ -47,7 +47,7 @@ thumbnail: "/assets/img/AI/neural.png"
 ##### mnist.py 
 
 ```py
-md = Sequential()도
+md = Sequential()
 md.add(Dense(10, activation = 'softmax', input_shape = (28*28,)))
 ```
 
