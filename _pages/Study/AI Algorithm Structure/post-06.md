@@ -30,15 +30,15 @@ thumbnail: "/assets/img/AI/neural.png"
 #### 데이터 전처리(reshape, 정규화), 모델 학습, 성능 시각화, 평가 등 전반적인 워크플로우가 유사합니다.
 #### Keras의 Sequential 모델을 사용하며, 손실 함수로 'sparse_categorical_crossentropy', 평가지표로 'acc'(정확도)를 사용합니다.
 
-| 항목         | op_mnist.py                                   | mnist.py                           |
-|--------------|-----------------------------------------------|------------------------------------|
-| 모델 구조    | 4개 Dense 계층(512→256→128→10), Dropout 3회   | 1개 Dense 계층(10)                 |
-| 활성화 함수  | relu(은닉층), softmax(출력층)                 | softmax(출력층)                    |
-| Dropout 사용 | 있음(0.3 비율, 3회)                           | 없음                               |
-| Optimizer    | Adam(learning_rate=0.0003)                    | SGD(기본값)                        |
-| Epoch 수     | 35                                            | 30                                 |
-| Batch Size   | 128                                           | 64                                 |
-| 모델 복잡도  | 높음                                          | 매우 단순(로지스틱 회귀와 유사)    |
+| 항목 | op_mnist.py | mnist.py |
+| :--: | :--: | :--: |
+| 모델 구조 | 4개 Dense 계층(512→256→128→10), Dropout 3회 | 1개 Dense 계층(10) |
+| 활성화 함수 | relu(은닉층), softmax(출력층) | softmax(출력층) |
+| Dropout 사용 | 있음(0.3 비율, 3회) | 없음 |
+| Optimizer | Adam(learning_rate=0.0003) | SGD(기본값) |
+| Epoch 수 | 35 | 30 |
+| Batch Size | 128 | 64 |
+| 모델 복잡도 | 높음 | 매우 단순(로지스틱 회귀와 유사) |
 
 ---
 ### 2. 모델 구조 및 복잡도
