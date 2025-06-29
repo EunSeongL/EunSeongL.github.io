@@ -25,10 +25,7 @@ thumbnail: "/assets/img/AI/neural.png"
 ---
 ## Mnist 실습
 
-### 1. 공통점 및 차이점<br>
-#### 모두 MNIST 손글씨 숫자 이미지 데이터셋을 사용합니다.
-#### 데이터 전처리(reshape, 정규화), 모델 학습, 성능 시각화, 평가 등 전반적인 워크플로우가 유사합니다.
-#### Keras의 Sequential 모델을 사용하며, 손실 함수로 'sparse_categorical_crossentropy', 평가지표로 'acc'(정확도)를 사용합니다.
+### 1. 차이점<br>
 
 | 항목 | op_mnist.py | mnist.py |
 | :--: | :--: | :--: |
