@@ -175,7 +175,7 @@ hist = md.fit(train_x2, train_y, epochs = 35, batch_size = 128, validation_split
 
 | 신경망❌ 구조 | 신경망 구조 |
 | :--: | :--: |
-| <img src="/assets/img/AI/cifar_loss.png" style="width:100%; height:100%; object-fit:contain;"> | <img src="/assets/img/AI/op_cifar_loss.png" style="width:100%; height:100%; object-fit:contain;"> |
+| <img src="/assets/img/AI/cifar10_loss.png" style="width:100%; height:100%; object-fit:contain;"> | <img src="/assets/img/AI/op_cifar_loss.png" style="width:100%; height:100%; object-fit:contain;"> |
 
 ### 신경망❌ 구조
 <img src="/assets/img/AI/op_mnist_result.png" style="width:100%; height:100%; object-fit:contain;"> 
