@@ -239,8 +239,6 @@ history = model.fit(x=train_x, y=train_y, epochs=20, batch_size=256, verbose=2, 
 ## 결론
 
 - 현재 학습곡선은 모델이 학습 데이터에는 과하게 맞추고, 새로운 데이터에는 일반화하지 못하는 전형적인 오버피팅 상태다.
-- 위의 대책을 적용해 개선할 수 있다.
-
 ---
 # CNN 모델 개선
 
