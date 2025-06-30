@@ -180,7 +180,7 @@ history = model.fit(x=train_x, y=train_y, epochs=20, batch_size=256, verbose=2, 
 
 | Accuracy | Loss |
 | :--: | :--: |
-| <img src="/assets/img/AI/cnn_acc.png" style="width:50%; height:50%; object-fit:contain;"> | <img src="/assets/img/AI/cnn_loss.png" style="width:50%; height:50%; object-fit:contain;"> |
+| <img src="/assets/img/AI/cnn_acc.png" style="width:100%; height:100%; object-fit:contain;"> | <img src="/assets/img/AI/cnn_loss.png" style="width:100%; height:100%; object-fit:contain;"> |
 
 ---
 # 학습곡선 해석 및 오버피팅 개선 방안
