@@ -89,36 +89,40 @@ CNN(합성곱 신경망)은 기존 신경망보다 정교한 분석이 가능하
 
 ## CNN 아키텍처
 
-<table>
-  <tr>
-    <th style="width:90px;">아키텍처</th>
-    <th style="width:360px;">주요 특징 및 구조</th>
-  </tr>
-  <tr>
-    <td>LeNet-5</td>
-    <td>1998년에 제안되었으며, 2개의 합성곱+풀링층과 3개의 완전 연결층으로 구성된다. 소형 이미지(28x28, MNIST 등) 분류에 적합하다.</td>
-  </tr>
-  <tr>
-    <td>AlexNet</td>
-    <td>2012년 ILSVRC에서 우승하였으며, 5개의 합성곱층+3개의 완전 연결층, ReLU 활성화 함수 도입, 대규모 이미지(224x224) 분류에 사용된다.</td>
-  </tr>
-  <tr>
-    <td>VGG-16</td>
-    <td>13개의 합성곱층+3개의 완전 연결층, 모든 합성곱 커널 크기를 3x3으로 통일하여 깊은 구조(16층)로 일관된 구조를 가진다.</td>
-  </tr>
-  <tr>
-    <td>ResNet</td>
-    <td>2015년 ILSVRC에서 우승하였으며, 50~152개 층의 초심층 구조와 잔차 연결(residual connection)로 학습 효율을 극대화한다.</td>
-  </tr>
-  <tr>
-    <td>Inception</td>
-    <td>다양한 크기의 필터를 병렬로 적용(Inception 모듈), 1x1 합성곱으로 연산량을 감소시키고 GlobalAveragePooling을 사용한다.</td>
-  </tr>
-  <tr>
-    <td>MobileNet</td>
-    <td>모바일/임베디드 환경에 최적화된 경량화 구조로 실시간 분류가 가능하다.</td>
-  </tr>
-</table>
+<!-- 표가 충분히 넓게 보이도록 상위 div의 width를 넓게 지정 -->
+<div style="width:900px; margin: 0 auto;">
+  <table style="width:100%; border-collapse:collapse;">
+    <tr>
+      <th style="width:120px; border:1px solid #ccc; padding:8px;">아키텍처</th>
+      <th style="width:600px; border:1px solid #ccc; padding:8px;">주요 특징 및 구조</th>
+    </tr>
+    <tr>
+      <td style="border:1px solid #ccc; padding:8px;">LeNet-5</td>
+      <td style="border:1px solid #ccc; padding:8px;">1998년에 제안되었으며, 2개의 합성곱+풀링층과 3개의 완전 연결층으로 구성된다. 소형 이미지(28x28, MNIST 등) 분류에 적합하다.</td>
+    </tr>
+    <tr>
+      <td style="border:1px solid #ccc; padding:8px;">AlexNet</td>
+      <td style="border:1px solid #ccc; padding:8px;">2012년 ILSVRC에서 우승하였으며, 5개의 합성곱층+3개의 완전 연결층, ReLU 활성화 함수 도입, 대규모 이미지(224x224) 분류에 사용된다.</td>
+    </tr>
+    <tr>
+      <td style="border:1px solid #ccc; padding:8px;">VGG-16</td>
+      <td style="border:1px solid #ccc; padding:8px;">13개의 합성곱층+3개의 완전 연결층, 모든 합성곱 커널 크기를 3x3으로 통일하여 깊은 구조(16층)로 일관된 구조를 가진다.</td>
+    </tr>
+    <tr>
+      <td style="border:1px solid #ccc; padding:8px;">ResNet</td>
+      <td style="border:1px solid #ccc; padding:8px;">2015년 ILSVRC에서 우승하였으며, 50~152개 층의 초심층 구조와 잔차 연결(residual connection)로 학습 효율을 극대화한다.</td>
+    </tr>
+    <tr>
+      <td style="border:1px solid #ccc; padding:8px;">Inception</td>
+      <td style="border:1px solid #ccc; padding:8px;">다양한 크기의 필터를 병렬로 적용(Inception 모듈), 1x1 합성곱으로 연산량을 감소시키고 GlobalAveragePooling을 사용한다.</td>
+    </tr>
+    <tr>
+      <td style="border:1px solid #ccc; padding:8px;">MobileNet</td>
+      <td style="border:1px solid #ccc; padding:8px;">모바일/임베디드 환경에 최적화된 경량화 구조로 실시간 분류가 가능하다.</td>
+    </tr>
+  </table>
+</div>
+
 
 
 > **전이학습(Transfer Learning) 활용**  
