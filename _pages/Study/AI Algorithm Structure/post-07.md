@@ -1,5 +1,5 @@
 ---
-title: "Day5: Neural Network Model"
+title: "Day6: Neural Network Model"
 tags:
     - CNN Model
     - CNN Arichitecture
