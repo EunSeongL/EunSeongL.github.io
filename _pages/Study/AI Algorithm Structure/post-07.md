@@ -92,7 +92,7 @@ CNN(합성곱 신경망)은 기존 신경망보다 정교한 분석이 가능하
 <table>
   <tr>
     <th style="width:90px;">아키텍처</th>
-    <th style="width:270px;">주요 특징 및 구조</th>
+    <th style="width:360px;">주요 특징 및 구조</th>
   </tr>
   <tr>
     <td>LeNet-5</td>
