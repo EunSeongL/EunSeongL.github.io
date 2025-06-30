@@ -177,6 +177,7 @@ model.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=['ac
 # 모델 학습
 history = model.fit(x=train_x, y=train_y, epochs=20, batch_size=256, verbose=2, validation_split=0.2)
 ```
+
 | Accuracy | Loss |
 | :--: | :--: |
 | <img src="/assets/img/AI/cnn_acc.png" style="width:50%; height:50%; object-fit:contain;"> | <img src="/assets/img/AI/cnn_loss.png" style="width:50%; height:50%; object-fit:contain;"> |
