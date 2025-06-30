@@ -151,5 +151,5 @@ CNN(합성곱 신경망)은 기존 신경망보다 정교한 분석이 가능하
 
 ## 실습
 
-### 합성곱 연산, MaxPooling, ReLU, FC Layer 등 직접 구현 예시
+### CNN Layer 구현
 
