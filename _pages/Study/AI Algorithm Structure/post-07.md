@@ -153,3 +153,62 @@ CNN(합성곱 신경망)은 기존 신경망보다 정교한 분석이 가능하
 
 ### CNN Layer 구현
 
+#### CNN 모델 디자인
+```py
+from tensorflow.keras import models, layers
+model = models.Sequential()
+# (32, 32, 3) => (30, 30, 32)
+model.add(layers.Conv2D(filters=32, kernel_size=(3, 3), activation='relu', input_shape=(32, 32, 3)))
+# (30, 30, 32) => (15, 15, 32)
+model.add(layers.MaxPool2D(pool_size=(2, 2)))
+# (15, 15, 32) => (13, 13, 64)
+model.add(layers.Conv2D(filters=64, kernel_size=(3, 3), activation='relu'))
+# (13, 13, 64) => (6, 6, 64)
+model.add(layers.MaxPool2D(pool_size=(2, 2)))
+# (6, 6, 64) => (4, 4, 64)
+model.add(layers.Conv2D(filters=64, kernel_size=(3, 3), activation='relu'))
+# 3D를 1D로 변환
+model.add(layers.Flatten())
+# Classification : Fully Connected Layer 추가
+model.add(layers.Dense(units=64, activation='relu'))
+model.add(layers.Dense(units=10, activation='softmax'))
+# 모델의 학습 정보 설정
+model.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=['accuracy'])
+# 모델 학습
+history = model.fit(x=train_x, y=train_y, epochs=20, batch_size=256, verbose=2, validation_split=0.2)
+```
+| Accuracy | Loss |
+| :--: | :--: |
+| <img src="/assets/img/AI/cnn_acc.png" style="width:100%; height:100%; object-fit:contain;"> | <img src="/assets/img/AI/cnn_loss.png" style="width:100%; height:100%; object-fit:contain;"> |
+
+#### CNN 모델 개선
+
+```py
+from tensorflow.keras import models, layers
+
+model = models.Sequential()
+model.add(layers.Conv2D(32, (3, 3), activation='relu', input_shape=(32, 32, 3)))
+model.add(BatchNormalization())
+model.add(layers.Conv2D(64, (3, 3), activation='relu'))
+model.add(BatchNormalization())
+model.add(layers.MaxPool2D((2, 2)))
+model.add(Dropout(0.5))
+
+model.add(layers.Conv2D(128, (3, 3), activation='relu'))
+model.add(BatchNormalization())
+model.add(layers.MaxPool2D((2, 2)))
+model.add(Dropout(0.5))
+
+model.add(layers.Flatten())
+model.add(layers.Dense(256, activation='relu'))
+model.add(Dropout(0.5))
+model.add(layers.Dense(10, activation='softmax'))
+
+model.compile(optimizer=Adam(learning_rate=0.0002), loss='categorical_crossentropy', metrics=['accuracy'])
+
+history = model.fit(x=train_x, y=train_y, epochs=50, batch_size=128, validation_split=0.2, verbose=2)
+```
+
+| Accuracy | Loss |
+| :--: | :--: |
+| <img src="/assets/img/AI/cnn_acc.png" style="width:100%; height:100%; object-fit:contain;"> | <img src="/assets/img/AI/cnn_loss.png" style="width:100%; height:100%; object-fit:contain;"> |
