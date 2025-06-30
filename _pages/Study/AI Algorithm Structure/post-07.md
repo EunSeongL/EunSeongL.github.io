@@ -276,4 +276,4 @@ history = model.fit(x=train_x, y=train_y, epochs=50, batch_size=128, validation_
 
 | Accuracy | Loss |
 | :--: | :--: |
-| <img src="/assets/img/AI/cnn_acc.png" style="width:50%; height:50%; object-fit:contain;"> | <img src="/assets/img/AI/cnn_loss.png" style="width:50%; height:50%; object-fit:contain;"> |
+| <img src="/assets/img/AI/cnn_acc1.png" style="width:50%; height:50%; object-fit:contain;"> | <img src="/assets/img/AI/cnn_loss1.png" style="width:50%; height:50%; object-fit:contain;"> |
