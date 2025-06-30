@@ -196,10 +196,10 @@ history = model.fit(x=train_x, y=train_y, epochs=20, batch_size=256, verbose=2, 
 
 ## 2. 원인 분석
 
-- 이런 곡선은 전형적인 **오버피팅(overfitting)** 현상이다.
+- **오버피팅(overfitting)** 현상.
 
 - **오버피팅이란?**
-  - 모델이 학습 데이터에는 매우 잘 맞지만, 새로운 데이터(검증/테스트)에는 일반화가 잘 안 되는 상태를 말한다.
+  - 모델이 학습 데이터에는 매우 잘 맞지만, 새로운 데이터(검증/테스트)에는 일반화가 잘 안 되는 상태.
 
 - **구체적 신호**
   - 학습 손실은 계속 감소(=학습 데이터에 점점 더 잘 맞춤)
@@ -241,7 +241,13 @@ history = model.fit(x=train_x, y=train_y, epochs=20, batch_size=256, verbose=2, 
 - 현재 학습곡선은 모델이 학습 데이터에는 과하게 맞추고, 새로운 데이터에는 일반화하지 못하는 전형적인 오버피팅 상태다.
 - 위의 대책을 적용해 개선할 수 있다.
 
-#### CNN 모델 개선
+---
+# CNN 모델 개선
+
+- ### **드롭아웃(Dropout)·정규화(BatchNorm) 추가:**
+- ### **학습률(learning rate) 조정:**
+
+--- 
 
 ```py
 from tensorflow.keras import models, layers
