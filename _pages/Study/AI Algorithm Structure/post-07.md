@@ -190,6 +190,8 @@ history = model.fit(x=train_x, y=train_y, epochs=20, batch_size=256, verbose=2, 
 | :--: | :--: |
 | <img src="/assets/img/AI/cnn_acc.png" style="width:100%; height:100%; object-fit:contain;"> | <img src="/assets/img/AI/cnn_loss.png" style="width:100%; height:100%; object-fit:contain;"> |
 
+<img src="/assets/img/AI/cnn_result.png" style="width:50%; height:50%; object-fit:contain;"> 
+
 ---
 # 학습곡선 해석 및 오버피팅 개선 방안
 
@@ -285,3 +287,13 @@ history = model.fit(x=train_x, y=train_y, epochs=50, batch_size=128, validation_
 | Accuracy | Loss |
 | :--: | :--: |
 | <img src="/assets/img/AI/cnn_acc1.png" style="width:100%; height:100%; object-fit:contain;"> | <img src="/assets/img/AI/cnn_loss1.png" style="width:100%; height:100%; object-fit:contain;"> |
+
+<img src="/assets/img/AI/cnn_result1.png" style="width:50%; height:50%; object-fit:contain;"> 
+
+## 결론
+
+이번 학습을 통해 합성곱 신경망(CNN)의 구조와 원리를 이해하고, 실제 이미지 분류 문제에 적용해봄으로써 딥러닝 기반 컴퓨터 비전의 핵심 개념을 익혔다.  
+CNN의 다양한 구성요소와 대표 아키텍처의 특징, 데이터 전처리와 정규화, 오버피팅 방지 기법 등 실전적인 내용을 학습함으로써,  
+이미지 분류 모델의 성능을 효과적으로 향상시키는 방법을 습득할 수 있었다.  
+향후에는 전이학습, 데이터 증강, 하이퍼파라미터 튜닝 등 고급 기법을 적극적으로 활용하여,  
+더 높은 성능과 실전 적용 능력을 갖춘 딥러닝 모델을 설계·활용할 수 있을 것이다.
