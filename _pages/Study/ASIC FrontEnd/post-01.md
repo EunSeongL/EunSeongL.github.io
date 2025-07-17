@@ -1,12 +1,15 @@
 ---
-title: "[ex46]"
+title: "Design RRC Filter"
 tags:
     - Study
-    - Language
-date: "2025-03-18"
-thumbnail: "/assets/img/AI/neural.png"
+    - System Verilog
+    - Design Compiler
+date: "2025-07-17"
+thumbnail: "/assets/img/ASIC/thumbnail.png"
 bookmark: true
 ---
-# 문제 설명
+# Design RRC Filter 
 ---
+## RRC Filter design
+- coefficient 생성하기
 
