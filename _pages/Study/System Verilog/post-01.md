@@ -7,8 +7,7 @@ date: "2025-08-06"
 thumbnail: "/assets/img/SV/thumbnail.png"
 bookmark: true
 ---
-# Design RRC Filter 
+# System Verilog 
 ---
-## RRC Filter design
-- coefficient 생성하기
+
 
