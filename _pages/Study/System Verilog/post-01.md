@@ -1,11 +1,10 @@
 ---
-title: "Design RRC Filter"
+title: "Day1"
 tags:
     - Study
     - System Verilog
-    - Design Compiler
-date: "2025-07-17"
-thumbnail: "/assets/img/ASIC/thumbnail.png"
+date: "2025-08-06"
+thumbnail: "/assets/img/SV/thumbnail.png"
 bookmark: true
 ---
 # Design RRC Filter 
