@@ -77,7 +77,7 @@ edge_reg[0] ← 현재 상태
 - 둘 다: 둘 중 하나라도 발생 시  
 ```
 
-```sv
+```systemverilog
 assign debounce = &sh_reg;
     //assign out_button = debounce;
 
