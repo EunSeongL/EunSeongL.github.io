@@ -4,7 +4,7 @@ date: "2025-08-07"
 thumbnail: "/assets/img/CPU/cpu_thumb.png"
 ---
 
-# DAY3
+# DAY2
 
 ---
 
