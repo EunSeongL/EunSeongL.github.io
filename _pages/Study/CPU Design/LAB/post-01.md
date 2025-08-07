@@ -32,6 +32,7 @@ thumbnail: "/assets/img/CPU/btn.png"
 ### ✅ shift_register 모듈 코드
 
 ```sv
+
 module shift_register (
     input  logic       clk,
     input  logic       reset,
@@ -77,7 +78,8 @@ edge_reg[0] ← 현재 상태
 - 둘 다: 둘 중 하나라도 발생 시  
 ```
 
-```systemverilog
+```sv
+
 assign debounce = &sh_reg;
     //assign out_button = debounce;
 
@@ -103,6 +105,7 @@ assign debounce = &sh_reg;
 ![alt text](../../../../assets/img/CPU/btn_detec.png)
 
 ```sv
+
 `timescale 1ns / 1ps
 
 module button_detector(
