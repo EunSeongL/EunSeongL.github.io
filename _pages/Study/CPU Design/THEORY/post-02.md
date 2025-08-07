@@ -1,0 +1,99 @@
+---
+title: "Day2"
+date: "2025-08-07"
+thumbnail: "/assets/img/CPU/cpu_thumb.png"
+---
+
+# DAY3
+---
+
+## 조합논리회로 vs 순차논리회로
+    - 가장 큰 차이점은 클럭(clk)에 동기화 되어 동작하는가?
+    
+    조합논리회로
+    -  현재 입력에 의해서만 출력이 결정됨
+    -  과거 입력이나 상태와는 상관없음
+
+    순차논리회로
+    - 클록 신호에 따라 동작 (동기식 설계)
+
+## Latch 와 Flip-Flop
+    - Latch는 클럭(clk)에 동기화되어 동작하는 것이 아니다.
+    - 공통점은 메모리 기능이 있다.
+  
+![alt text](../../../../assets/img/CPU/latch.png)
+
+<하나의 값이 고정되어 있는 회로>
+
+![alt text](../../../../assets/img/CPU/srlatch.png)
+
+    - Q와 /Q는 달라야 한다.
+    - 이유는? -> 이론상 계속 발진하기 때문에 (1,1) 다음에 (0,0)이 들어가면 (1,1) 다음은 (0,0) 다음은 (1,1)... 반복 
+
+![alt text](../../../../assets/img/CPU/srlatch1.png)
+    - 추상화
+
+![alt text](../../../../assets/img/CPU/dlatch.png)
+
+    - SR Latch는 (0,0)일 때 이전 값을 유지하지만
+    - D Latch는 이전 값을 유지하지 못한다. 즉, 메모리의 기능을 못한다.
+  
+    - S=0, R=0 → Q=유지, /Q=유지
+    - S=0, R=1 → Q=0, /Q=1  (Reset)
+    - S=1, R=0 → Q=1, /Q=0  (Set)
+    - S=1, R=1 → Q=0, /Q=0 
+
+![alt text](../../../../assets/img/CPU/gatedlatch.png)
+
+    - D Latch의 개선
+    - Gate 가 메모리의 역할을 한다.
+
+![alt text](../../../../assets/img/CPU/glatcht.png)
+
+    - D Flip-Flop은 Master-Slave 구조의 두 개의 D-Latch로 구성
+    - Master: 클록이 0일 때 입력 값을 저장
+    - Slave: 클록이 1일 때 Master의 값을 출력에 전달
+    - 따라서 클록의 상승/하강 엣지에만 출력이 바뀜 (엣지 트리거)
+  
+![alt text](../../../../assets/img/CPU/metastable.png)
+
+    - 클록 엣지 시점에 입력(D)이 변할 경우, 출력(Q)이 일정 시간 동안 정의되지 않은 상태(0도 1도 아닌 상태)에 머무를 수 있음
+    - Setup time에 값이 깨지면 meta stable현상이 나타난다.
+    - Setup Time: 클록 엣지 이전 일정 시간 동안 D 입력이 안정적으로 유지되어야 함
+    - Hold Time: 클록 엣지 이후 일정 시간 동안도 D 입력이 유지되어야 함
+    - meta stable 현상을 방지하기 위해서 Setup time, hold time이 중요하다.
+  
+![alt text](../../../../assets/img/CPU/synchronizer.png)
+
+    - 외부 신호(비동기 입력 등)는 클록 도메인에 따라 metastable 위험이 있음
+    - D Flip-Flop을 2개 이상 직렬로 연결
+    - 첫 번째 F/F는 신호를 잠시 받아들이고
+    - 두 번째 F/F는 클록에 동기화된 안정된 출력을 생성
+
+![alt text](../../../../assets/img/CPU/propagation.png)
+    
+    - 클럭(clk)가 상승하고 압력 -> 출력까지의 동작 시간을 전파지연 시간이라 한다.
+    - 입력 변화 이후 출력이 안정될 때까지의 시간 지연
+    - 조합 회로가 복잡하거나 깊이가 깊을수록 지연 시간이 길어짐
+    - 데이터 시트에 clock-to-q delay 또는 propagation확인
+    - 예: FFT filter 설계 시 곱셈 연산은 시간이 오래 걸리므로, 중간에 레지스터를 삽입하여 처리
+
+![alt text](../../../../assets/img/CPU/propa.png)
+
+![alt text](../../../../assets/img/CPU/glitch.png)
+
+    - 조합 회로에서 입력이 동시에 변할 때, 내부 게이트의 전파 지연 차이로 인해 일시적인 잘못된 출력이 발생할 수 있음
+    - 클록 엣지 직전까지 출력이 안정되지 않으면 시스템 오동작 가능성 존재
+    - 타이밍 때문에 조합논리로 회로를 만드는 것은 어렵다.
+
+![alt text](../../../../assets/img/CPU/sys.png)
+    - 연산 중간에 레지스터를 추가하여 연산 단계를 여러 클록 사이클로 분할
+    - 조합 논리의 길이를 줄여 glitch를 방지할 수 있음
+    - 복잡한 연산을 분할 처리해 클록 타이밍 여유 확보 가능
+    - 한 클럭 내에 연산이 끝나도록 회로를 구성하면 안정적인 시스템 설계 가능
+
+![alt text](../../../../assets/img/CPU/amba_glitch.png)
+    
+    - Amba APB protocol specification
+
+
