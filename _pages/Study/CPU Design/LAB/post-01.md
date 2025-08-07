@@ -31,7 +31,7 @@ thumbnail: "/assets/img/CPU/btn.png"
 
 ### ✅ shift_register 모듈 코드
 
-```systemverilog
+```sv
 module shift_register (
     input  logic       clk,
     input  logic       reset,
