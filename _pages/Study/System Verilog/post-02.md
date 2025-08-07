@@ -1,11 +1,11 @@
 ---
-title: "FFT"
+title: "Day2"
 tags:
     - Study
     - System Verilog
-    - Design Compiler
-date: "2025-07-17"
-thumbnail: "/assets/img/ASIC/thumbnail.png"
+    - FPGA
+date: "2025-08-07"
+thumbnail: "/assets/img/week1/thumbnail.png"
 bookmark: true
 ---
 # FFT (Fast Fourier Transform) 
