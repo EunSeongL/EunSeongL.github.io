@@ -189,6 +189,72 @@ endmodule
 
 ## ✅ 검증 (Test Bench)
 
+### 클래스 정의 (`transaction`)
+- `rand bit button` : 랜덤 생성 1비트 버튼 값
+- `function bit run_random()` : 현재 `button` 값을 반환
+
+```sv
+class transaction;
+    rand bit button;
+
+    function bit run_random();
+        return button;
+    endfunction
+
+endclass
+```
+  
+### 초기화
+1. `clk = 0`, `reset = 1`
+2. 10ns 후 `reset = 0`
+3. `in_button = 0`으로 초기화, 20ns 대기
+
+### 버튼 누름 (Push)
+1. `in_button = 1`로 변경
+2. 60회 반복:
+   - `tr.randomize()`로 버튼 값 랜덤 생성
+   - `in_button`에 랜덤 값 적용
+   - 1ns 대기
+3. `in_button = 1`로 고정, 150ns 대기
+
+```sv
+// push button
+        in_button = 1;
+        for(int i= 0; i < 60; i++)begin
+            tr.randomize();
+            in_button = tr.run_random();
+            #1;
+        end 
+        in_button = 1;
+        #150;
+```
+
+### 버튼 놓음 (Release)
+1. `in_button = 0`으로 변경
+2. 30회 반복:
+   - 랜덤 버튼 값 생성 및 적용
+   - 1ns 대기
+3. `in_button = 0`로 고정, 100ns 대기
+
+```sv
+in_button = 0;
+        for(int i= 0; i < 30; i++)begin
+            tr.randomize();
+            in_button = tr.run_random();
+            #1;
+        end
+        in_button = 0;
+        #100;
+        $finish;
+```
+
+---
+
+## 주요 특징
+- 버튼 입력 바운스(Bounce) 효과를 랜덤 패턴으로 구현
+- 상승/하강/양쪽 에지 검출 기능 검증
+- 클래스 기반 랜덤 입력 생성으로 테스트 확장성 확보
+
 ```sv
 
 ```
