@@ -33,6 +33,7 @@ thumbnail: "/assets/img/CPU/cpu_thumb.png"
    - 데이터 프레임 종료: **Stop bit(1)**  
    - 수신 측은 Start bit 감지 후 내부 타이머로 비트 샘플링
 3. **Baud Rate로 시간 동기화**  
+   - 속도, bps, 주파수, 시간
    - 정해놓은 `시간`마다 데이터를 주고 받음
    - 송신 측과 수신 측이 동일한 baud rate로 약속  
    - 클록이 없으므로, 오차 범위 내에서만 정상 수신 가능
