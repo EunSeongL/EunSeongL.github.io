@@ -11,7 +11,7 @@ thumbnail: "/assets/img/CPU/btn.png"
 ## ✅ 버튼 구조
 
 ![버튼 내부 구조](../../../../assets/img/CPU/btn1.png)  
-![버튼 Bounce 현상](../../../../assets/img/CPU/btn2.png)
+<img src="/assets/img/CPU/btn2.png" style="width:50%; height:50%; object-fit:contain;">
 
 - 버튼을 누를 때, **노이즈나 진동에 의해 짧은 시간 내에 ON/OFF가 반복됨**  
 - 이 현상을 **바운스(Bounce)** 라고 하며, **디바운싱(Debounce)** 처리가 필요
