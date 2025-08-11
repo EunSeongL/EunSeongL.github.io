@@ -89,4 +89,5 @@ halt;
   - C언어로 구현
   - DataPath 구조 설계
   - C언어의 순서를 ASM chart로 만들어서 Control Unit 설계
-  - top  
+  - top 
+  - 코드, 시뮬레이션, fnd 숫자 출력, 동작영상
