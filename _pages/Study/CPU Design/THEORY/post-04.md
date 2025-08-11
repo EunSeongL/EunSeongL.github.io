@@ -75,4 +75,8 @@ while (A < 10){
    A = A + 1;
 }
 halt;
+// A를 중심에 놓고 생각
+// A를 하드웨어적으로 구현한다 생각하면 -> A 레지스터
 ```
+
+![alt text](../../../../assets/img/CPU/dedicnt.png)
