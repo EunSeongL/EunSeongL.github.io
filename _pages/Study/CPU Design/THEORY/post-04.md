@@ -27,11 +27,11 @@ thumbnail: "/assets/img/CPU/cpu_thumb.png"
 
 - **MIPS(Microprocessor without Interlocked Pipeline Stages)**
    - 파이프라인 기술을 효율적으로 사용해 프로세서의 성능을 높이는 데에 초점을 맞춘 설계 방식
-   - 1. 고정 길이의 단순한 명령어
-   - 2. 파이프라인(Pipelining) 최적화
+   - 고정 길이의 단순한 명령어
+   - 파이프라인(Pipelining) 최적화
       - 파이프라인은 명령어 처리 과정을 '명령어 인출(IF) → 해석(ID) → 실행(EX) → 메모리 접근(MEM) → 결과 저장(WB)'의 5단계   
-   - 3. 로드-스토어 (Load-Store) 구조
-   - 4. 많은 수의 범용 레지스터
+   - 로드-스토어 (Load-Store) 구조
+   - 많은 수의 범용 레지스터
 
 ---
 
