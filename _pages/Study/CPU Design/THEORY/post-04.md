@@ -94,12 +94,12 @@ halt;
 
 ```c
 // C언어 관점
-A = 1;
+A = 0;
 SUM = 0;
 while (A < 11){
-   output = SUM;
    SUM = SUM + A;
    A = A + 1;
+   output = SUM;
 }
 halt;
 
