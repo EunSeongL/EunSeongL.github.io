@@ -45,3 +45,34 @@ thumbnail: "/assets/img/CPU/cpu_thumb.png"
 ![alt text](../../../../assets/img/CPU/har.png)
 
 - 하버드 구조 
+
+---
+
+## ✅ RISC-V
+
+- UC 버클리에서 개발중인 무료 오픈 소스 RISC 명령어셋 아키텍처
+- MIPS 구조와 거의 비슷하다.
+
+## ✅ 목표
+
+- 1. Single Cycle Processor
+  - 모든 명령어가 1clock 내에 실행 
+- 2. Multi Cycle Processor
+  - 명령어 종류에 따라 실행 clock수가 다르다.
+- 3. pipe-line 구조 CPU
+
+---
+
+## ✅ Dedicated Processor
+
+- 0~9까지 카운트하는 Processor를 설계하시오. 
+
+```c
+// C언어 관점
+A = 0;
+while (A < 10){
+   output = A;
+   A = A + 1;
+}
+halt;
+```
