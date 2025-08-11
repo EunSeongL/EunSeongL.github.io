@@ -37,8 +37,11 @@ thumbnail: "/assets/img/CPU/cpu_thumb.png"
 
 ## ✅ 폰노이만 구조 vs 하버드 구조
 
+![alt text](../../../../assets/img/CPU/von.png)
+
 - 폰노이만 구조
 
 
+![alt text](../../../../assets/img/CPU/har.png)
 
 - 하버드 구조 
