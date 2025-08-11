@@ -80,3 +80,5 @@ halt;
 ```
 
 ![alt text](../../../../assets/img/CPU/dedicnt.png)
+
+![alt text](../../../../assets/img/CPU/dedicnt2.png)
