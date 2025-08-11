@@ -81,4 +81,5 @@ halt;
 
 | Block Diagram | State Machine |
 | :---: | :---: |
-| <img src="/assets/img/CPU/dedicnt2.png" alt="Block Diagram" style="width:70%; object-fit:contain;"> | <img src="/assets/img/CPU/dedicnt.png" alt="State Machine" style="width:70%; object-fit:contain;"> |
+| <img src="/assets/img/CPU/dedicnt2.png" alt="Block Diagram" style="width:50%; object-fit:contain;"> | <img src="/assets/img/CPU/dedicnt.png" alt="State Machine" style="width:50%; object-fit:contain;"> |
+
