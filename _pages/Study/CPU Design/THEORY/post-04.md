@@ -44,4 +44,5 @@ thumbnail: "/assets/img/CPU/cpu_thumb.png"
 
 ![alt text](../../../../assets/img/CPU/har.png)
 
+- 임베디드 시스템
 - 하버드 구조 
