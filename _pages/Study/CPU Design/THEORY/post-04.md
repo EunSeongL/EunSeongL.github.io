@@ -79,6 +79,6 @@ halt;
 // A를 하드웨어적으로 구현한다 생각하면 -> A 레지스터
 ```
 
-<img src="/assets/img/CPU/dedicnt.png" style="width:50%; height:50%; object-fit:contain;">
-
-<img src="/assets/img/CPU/dedicnt2.png" style="width:50%; height:50%; object-fit:contain;">
+| 전문 공구 (전용 프로세서) | 스위스 만능 칼 (범용 프로세서) |
+| :---: | :---: |
+| <img src="/assets/img/CPU/dedicnt2.png" alt="Specialized Tools" style="width:70%; object-fit:contain;"> | <img src="/assets/img/CPU/dedicnt.png" alt="Swiss Army Knife" style="width:70%; object-fit:contain;"> |
