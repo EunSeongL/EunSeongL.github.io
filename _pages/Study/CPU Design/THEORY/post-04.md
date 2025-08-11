@@ -79,6 +79,6 @@ halt;
 // A를 하드웨어적으로 구현한다 생각하면 -> A 레지스터
 ```
 
-![alt text](../../../../assets/img/CPU/dedicnt.png)
+<img src="/assets/img/CPU/dedicnt.png" style="width:50%; height:50%; object-fit:contain;">
 
-![alt text](../../../../assets/img/CPU/dedicnt2.png)
+<img src="/assets/img/CPU/dedicnt2.png" style="width:50%; height:50%; object-fit:contain;">
