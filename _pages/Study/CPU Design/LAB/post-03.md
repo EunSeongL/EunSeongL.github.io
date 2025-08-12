@@ -10,9 +10,9 @@ thumbnail: "/assets/img/CPU/cpu_thumb.png"
 
 ## ✅ 과제
 
-<img src="/assets/img/CPU/hw.png" style="width:75%; object-fit:contain;">
+<img src="/assets/img/CPU/hw.png" style="width:50%; object-fit:contain;">
 
-<img src="/assets/img/CPU/hw2.png" style="width:75%; object-fit:contain;">
+<img src="/assets/img/CPU/hw2.png" style="width:50%; object-fit:contain;">
 
 ---
 
