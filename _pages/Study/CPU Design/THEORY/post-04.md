@@ -341,4 +341,4 @@ endmodule
 ```
 
 ### **시뮬레이션**
-<img src="/assets/img/CPU/dediaddersim.png" style="width:50%; object-fit:contain;">
+<img src="/assets/img/CPU/dediaddersim.png" style="width:100%; object-fit:contain;">
