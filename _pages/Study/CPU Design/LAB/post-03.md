@@ -371,6 +371,12 @@ module ControlUnit (
 
 ---
 
+## ✅ Schematic
+
+<img src="/assets/img/CPU/alusche.png" style="width:100%; object-fit:contain;">
+
+---
+
 ## ✅ 시뮬레이션
 
 <img src="/assets/img/CPU/hwdp.png" style="width:100%; object-fit:contain;">
