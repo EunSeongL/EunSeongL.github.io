@@ -110,7 +110,7 @@ halt;
 ---
 #### DedicatedProcessor_Adder.sv
 
-```v
+```verilog
 module DedicatedProcessor_Adder(
     input  logic        clk,
     input  logic        reset,
@@ -165,7 +165,7 @@ module DedicatedProcessor_Adder(
 
 #### DataPath.sv
 
-```v
+```verilog
 module DataPath(
         input  logic       clk,
         input  logic       reset,
@@ -241,7 +241,7 @@ module DataPath(
 
 #### ControlUnit.sv
 
-```v
+```verilog
 module ControlUnit(
     input  logic clk,
     input  logic reset,
@@ -317,7 +317,7 @@ module ControlUnit(
 
 #### TestBench
 
-```v
+```verilog
 `timescale 1ns / 1ps
 
 module tb_DedicatedProcessor_Adder ();
