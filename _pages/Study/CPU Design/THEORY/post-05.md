@@ -24,7 +24,7 @@ while(R1 <= 10){
 
 ## ✅ 동작방식
 
-<img src="/assets/img/CPU/regfile.png" style="width:75%; object-fit:contain;">
+<img src="/assets/img/CPU/regfile.png" style="width:50%; object-fit:contain;">
 
 ## RegAsm
 
