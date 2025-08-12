@@ -189,4 +189,6 @@ module comparator (
 
 ## ✅ 과제
 
-<img src="/assets/img/CPU/regasm.png" style="width:75%; object-fit:contain;">
+<img src="/assets/img/CPU/hw.png" style="width:75%; object-fit:contain;">
+
+<img src="/assets/img/CPU/hw2.png" style="width:75%; object-fit:contain;">
