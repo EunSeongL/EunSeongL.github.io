@@ -8,7 +8,7 @@ thumbnail: "/assets/img/CPU/cpu_thumb.png"
 
 ---
 
-## Register File
+## ✅ Dedicated Processor RegFile
 
 ```c
 R1 = 0;
@@ -22,7 +22,7 @@ while(R1 <= 10){
 
 ---
 
-## 동작방식
+## ✅ 동작방식
 
 <img src="/assets/img/CPU/regfile.png" style="width:75%; object-fit:contain;">
 
@@ -30,7 +30,7 @@ while(R1 <= 10){
 
 <img src="/assets/img/CPU/regasm.png" style="width:75%; object-fit:contain;">
 
-## 코드
+## ✅ 코드
 
 #### DataPath.sv
 
@@ -187,3 +187,6 @@ module comparator (
 
 ---
 
+## ✅ 과제
+
+<img src="/assets/img/CPU/regasm.png" style="width:75%; object-fit:contain;">
