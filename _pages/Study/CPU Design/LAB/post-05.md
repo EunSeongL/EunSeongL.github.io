@@ -1,10 +1,10 @@
 ---
-title: "DedicatedProcessor Counter"
-date: "2025-08-11"
+title: "DedicatedProcessor ALUOP"
+date: "2025-08-12"
 thumbnail: "/assets/img/CPU/cpu_thumb.png"
 ---
 
-# DedicatedProcessor Counter
+# DedicatedProcessor ALUOP
 
 ---
 

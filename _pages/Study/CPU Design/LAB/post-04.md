@@ -1,10 +1,10 @@
 ---
-title: "DedicatedProcessor Counter"
+title: "DedicatedProcessor Adder"
 date: "2025-08-11"
 thumbnail: "/assets/img/CPU/cpu_thumb.png"
 ---
 
-# DedicatedProcessor Counter
+# DedicatedProcessor Adder
 
 ---
 
