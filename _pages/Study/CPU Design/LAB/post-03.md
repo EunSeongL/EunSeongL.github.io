@@ -378,6 +378,9 @@ module ControlUnit (
 <img src="/assets/img/CPU/hwcu.png" style="width:100%; object-fit:contain;">
 
 ---
+
+## ✅ 분석
+
 ### 반복별 레지스터 값
 - 1회: R1=3,   R2=2,   R3=3,   R4=5   → Yes
 - 2회: R1=7,   R2=6,   R3=9,   R4=15  → Yes
@@ -447,4 +450,3 @@ module ControlUnit (
 - R4=126+219=345 → **8비트 래핑** R4=126+189=315 → 315−256=**59** → (127,126,189,59)
 - R4 > R2 59 > 126 → **No ⇒ halt**
 
- 
