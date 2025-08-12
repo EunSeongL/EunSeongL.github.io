@@ -341,5 +341,9 @@ module tb_DedicatedProcessor_Adder ();
 endmodule
 ```
 
+---
 ### **시뮬레이션**
 <img src="/assets/img/CPU/dediaddersim.png" style="width:100%; object-fit:contain;">
+
+---
+### **동작 영상**
