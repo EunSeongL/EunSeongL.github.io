@@ -105,14 +105,15 @@ halt;
 
 <img src="/assets/img/CPU/dpadder.png" style="width:75%; object-fit:contain;">
 
-<img src="/assets/img/CPU/addasm.png" style="width:75%; object-fit:contain;">
-
 ---
 
 #### **ASM chart -> Control Unit 설계**
 
 ![alt text](../../../../assets/img/CPU/addsig.png)
 
+<img src="/assets/img/CPU/addasm.png" style="width:75%; object-fit:contain;">
+
+---
 
   - top 
   - 코드, 시뮬레이션, fnd 숫자 출력, 동작영상
