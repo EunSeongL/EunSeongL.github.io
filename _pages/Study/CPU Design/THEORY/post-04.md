@@ -105,6 +105,8 @@ halt;
 
 <img src="/assets/img/CPU/dpadder.png" style="width:75%; object-fit:contain;">
 
+<img src="/assets/img/CPU/addasm.png" style="width:75%; object-fit:contain;">
+
 ---
 
 #### **ASM chart -> Control Unit 설계**
