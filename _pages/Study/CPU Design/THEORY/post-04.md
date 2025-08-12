@@ -113,8 +113,6 @@ halt;
 
 <img src="/assets/img/CPU/addasm.png" style="width:75%; object-fit:contain;">
 
----
-
 ### **코드**
 ---
 #### DedicatedProcessor_Adder.sv
