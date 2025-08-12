@@ -184,10 +184,12 @@ module clk_divider (
    end
    
    endmodule
+
 ---
+
 #### DedicatedProcessor_Adder.sv
 
-```verilog
+```systemverilog
 `timescale 1ns / 1ps
 
 module DedicatedProcessor_Adder(
@@ -423,7 +425,7 @@ module ControlUnit(
       endcase
    end
 
-   endmodule
+endmodule
 
 ```
 
