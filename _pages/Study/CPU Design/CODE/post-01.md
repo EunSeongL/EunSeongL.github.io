@@ -8,7 +8,7 @@ thumbnail: "/assets/img/CPU/cpu_thumb.png"
 
 ---
 
-#### top.sv
+### ✅ top.sv
 
 ```verilog
 `timescale 1ns / 1ps
@@ -73,7 +73,7 @@ module clk_divider (
    endmodule
 ```
 
-#### DedicatedProcessor_Adder.sv
+### ✅ DedicatedProcessor_Adder.sv
 
 ```verilog
 `timescale 1ns / 1ps
@@ -123,7 +123,7 @@ module DedicatedProcessor_Adder(
 
 ---
 
-#### DataPath.sv
+### ✅ DataPath.sv
 
 ```verilog
 `timescale 1ns / 1ps
@@ -207,7 +207,7 @@ module DataPath(
 
 ---
 
-#### ControlUnit.sv
+### ✅ ControlUnit.sv
 
 ```verilog
 `timescale 1ns / 1ps
