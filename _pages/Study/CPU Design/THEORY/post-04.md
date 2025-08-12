@@ -95,8 +95,6 @@ halt;
 
 ---
 
----
-
 ## ✅ Dedicated Processor Adder
 
 - 0~10까지 누적으로 더하는 Dedicated Processor를 설계하시오.
