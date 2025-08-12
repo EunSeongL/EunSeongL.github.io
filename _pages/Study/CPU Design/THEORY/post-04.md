@@ -86,7 +86,8 @@ halt;
 <img src="/assets/img/CPU/deditop.png" style="width:50%; object-fit:contain;">
 
 - 0~10까지 누적으로 더하는 Dedicated Processor를 설계하시오.
-  - C언어로 구현
+
+#### **C 구현**
 
 ```c
 // C언어 관점
