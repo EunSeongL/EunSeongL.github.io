@@ -26,6 +26,10 @@ while(R1 <= 10){
 
 <img src="/assets/img/CPU/regfile.png" style="width:75%; object-fit:contain;">
 
+## RegAsm
+
+<img src="/assets/img/CPU/regasm.png" style="width:75%; object-fit:contain;">
+
 ## 코드
 
 #### DataPath.sv
