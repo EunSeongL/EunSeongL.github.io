@@ -63,7 +63,7 @@ thumbnail: "/assets/img/CPU/cpu_thumb.png"
 
 ---
 
-## ✅ Dedicated Processor
+## ✅ Dedicated Processor Counter
 
 - 0~9까지 카운트하는 Processor를 설계하시오. 
 
@@ -84,6 +84,10 @@ halt;
 | <img src="/assets/img/CPU/dedicnt2.png" alt="Block Diagram" style="width:50%; object-fit:contain;"> | <img src="/assets/img/CPU/dedicnt.png" alt="State Machine" style="width:50%; object-fit:contain;"> |
 
 <img src="/assets/img/CPU/deditop.png" style="width:50%; object-fit:contain;">
+
+---
+
+## ✅ Dedicated Processor Adder
 
 - 0~10까지 누적으로 더하는 Dedicated Processor를 설계하시오.
 
