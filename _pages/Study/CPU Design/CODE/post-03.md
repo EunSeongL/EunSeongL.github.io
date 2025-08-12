@@ -8,310 +8,353 @@ thumbnail: "/assets/img/CPU/cpu_thumb.png"
 
 ---
 
-## ✅ top.sv
+## ✅ DedicatedProcessor_ALUOP.sv
 
 ```verilog
 `timescale 1ns / 1ps
 
-module top(
-   input  logic       clk,
-   input  logic       reset,
-   output logic [3:0] fndCom,
-   output logic [7:0] fndFont
-   );
+module DedicatedProcessor_ALUOP(
+    input  logic        clk,
+    input  logic        reset,
+    output logic [7:0]  OutPort
+    );
 
-   logic [ 7:0] OutPort;
-   logic        clk_10hz;
-   
-   clk_divider U_CLK_DIV (
-       .clk            (clk),
-       .reset          (reset),
-       .clk_10hz       (clk_10hz)
-   );
+    logic       RFSrcMuxSel;
+    logic [2:0] RAddr1;
+    logic [2:0] RAddr2;
+    logic [2:0] WAddr;
+    logic [1:0] AluOpMuxSel;
+    logic       we;
+    logic       Lt;
+    logic       OutPortEn;
 
-   DedicatedProcessor_Adder U_DedicatedProcessor_Adder (
-       .clk            (clk_10hz),
-       .reset          (reset),
-       .OutPort        (OutPort)
-   );
+    DataPath U_DataPath (
+        .clk        (clk),
+        .reset      (reset),
+        .RFSrcMuxSel(RFSrcMuxSel),
+        .RAddr1     (RAddr1),
+        .RAddr2     (RAddr2),
+        .WAddr      (WAddr),
+        .AluOpMuxSel(AluOpMuxSel),
+        .we         (we),
+        .Lt         (Lt),
+        .OutPortEn  (OutPortEn),
+        .OutPort    (OutPort)
+    );
 
-   fndController U_fndController (
-       .clk            (clk),
-       .reset          (reset),
-       .number         (OutPort),
-       .fndCom         (fndCom),
-       .fndFont        (fndFont)
-   );
-    
+    ControlUnit U_ControlUnit (
+        .clk        (clk),
+        .reset      (reset),
+        .RFSrcMuxSel(RFSrcMuxSel),
+        .RAddr1     (RAddr1),
+        .RAddr2     (RAddr2),
+        .WAddr      (WAddr),
+        .AluOpMuxSel(AluOpMuxSel),
+        .we         (we),
+        .Lt         (Lt),
+        .OutPortEn  (OutPortEn)
+    );
+
 endmodule
-
-module clk_divider (
-   input  logic  clk,
-   input  logic  reset,
-   output logic  clk_10hz
-   );
-
-   logic [$clog2(10_000_000)-1:0] div_counter;
-
-   always_ff @(posedge clk or posedge reset) begin
-       if(reset) begin
-           div_counter <= 0;
-           clk_10hz    <= 0;
-       end
-       else begin
-           if(div_counter == 10_000_000 - 1)begin
-               div_counter <= 0;
-               clk_10hz    <= 1;
-           end
-           else begin
-               div_counter <= div_counter + 1;
-               clk_10hz    <= 0;
-           end
-       end
-   end
-   
-   endmodule
 ```
-
-## ✅ DedicatedProcessor_Adder.sv
-
-```verilog
-`timescale 1ns / 1ps
-
-module DedicatedProcessor_Adder(
-   input  logic        clk,
-   input  logic        reset,
-   output logic [ 7:0] OutPort
-    
-   );
-
-   logic       SumSrcMuxSel;
-   logic       ISrcMuxSel;
-   logic       AdderSrcMuxSel;  
-   logic       SumEn;
-   logic       IEn;
-   logic       ILe10;
-   logic       OutPortEn;
-
-   DataPath U_DataPath (
-       .clk            (clk),
-       .reset          (reset),
-       .SumSrcMuxSel   (SumSrcMuxSel),
-       .ISrcMuxSel     (ISrcMuxSel),
-       .AdderSrcMuxSel (AdderSrcMuxSel),     
-       .SumEn          (SumEn),
-       .IEn            (IEn),
-       .ILe10          (ILe10),
-       .OutPortEn      (OutPortEn),
-       .OutPort        (OutPort)
-   );
-
-   ControlUnit U_ControlUnit (
-       .clk            (clk),
-       .reset          (reset),
-       .ILe10          (ILe10),
-       .SumSrcMuxSel   (SumSrcMuxSel),
-       .ISrcMuxSel     (ISrcMuxSel),
-       .AdderSrcMuxSel (AdderSrcMuxSel),     
-       .SumEn          (SumEn),
-       .IEn            (IEn),
-       .OutPortEn      (OutPortEn)
-   );
-
-   endmodule
-```
-
----
 
 ## ✅ DataPath.sv
 
 ```verilog
 `timescale 1ns / 1ps
 
-module DataPath(
-   input  logic       clk,
-   input  logic       reset,
-   input  logic       SumSrcMuxSel,
-   input  logic       ISrcMuxSel,
-   input  logic       AdderSrcMuxSel,     
-   input  logic       SumEn,
-   input  logic       IEn,
-   output logic       ILe10,
-   input  logic       OutPortEn,
-   output logic [7:0] OutPort 
-   );
+module DataPath (
+    input  logic       clk,
+    input  logic       reset,
+    input  logic       RFSrcMuxSel,
+    input  logic [2:0] RAddr1,
+    input  logic [2:0] RAddr2,
+    input  logic [2:0] WAddr,
+    input  logic [1:0] AluOpMuxSel,
+    input  logic       we,
+    output logic       Lt,
+    input  logic       OutPortEn,
+    output logic [7:0] OutPort
+);
 
-   logic [7:0] SumSrcMuxOut, ISrcMuxOut;
-   logic [7:0] SumRegOut, IRegOut;
-   logic [7:0] AdderResult, AdderSrcMuxOut;
+    logic [7:0] AdderResult, RFSrcMuxOut;
+    logic [7:0] RData1, RData2;
 
-   mux_2X1 U_SumSrcMux (
-      .sel  (SumSrcMuxSel),
-      .x0   (0),
-      .x1   (AdderResult),
-      .y    (SumSrcMuxOut)
-   );
+    mux_2x1 U_RFSrcMux (
+        .sel(RFSrcMuxSel),
+        .x0 (AdderResult),
+        .x1 (1),
+        .y  (RFSrcMuxOut)
+    );
 
-   mux_2X1 U_ISrcMux (
-      .sel  (ISrcMuxSel),
-      .x0   (0),
-      .x1   (AdderResult),
-      .y    (ISrcMuxOut)
-   );
+    RegFile U_RegFile (
+        .clk   (clk),
+        .RAddr1(RAddr1),
+        .RAddr2(RAddr2),
+        .WAddr (WAddr),
+        .we    (we),
+        .WData (RFSrcMuxOut),
+        .RData1(RData1),
+        .RData2(RData2)
+    );
 
-   register U_SUM_REG (
-      .clk    (clk),
-      .reset  (reset),
-      .en     (SumEn),
-      .d      (SumSrcMuxOut),
-      .q      (SumRegOut)
-   );
+    comparator U_comparator (
+        .a      (RData1),
+        .b      (RData2),
+        .lt     (Lt)
+    );
 
-   register U_I_Reg (
-      .clk    (clk),
-      .reset  (reset),
-      .en     (IEn),
-      .d      (ISrcMuxOut),
-      .q      (IRegOut)
-   );
+    alu_op U_ALU_OP (
+        .x0         (RData1),
+        .x1         (RData2),
+        .AluOpMuxSel(AluOpMuxSel),
+        .y          (AdderResult)
+    );
 
-   comparator U_ILe10 (
-      .a      (IRegOut),
-      .b      (8'd10),
-      .lt     (ILe10)
-   );
+    register U_OutPort (
+        .clk  (clk),
+        .reset(reset),
+        .en   (OutPortEn),
+        .d    (RData1),
+        .q    (OutPort)
+    );
 
-   mux_2X1 U_AdderSrcMux (
-      .sel  (AdderSrcMuxSel),
-      .x0   (SumRegOut),
-      .x1   (1),
-      .y    (AdderSrcMuxOut)
-   );
+endmodule
+```
 
-   adder U_Adder (
-      .a      (AdderSrcMuxOut),
-      .b      (IRegOut),
-      .sum    (AdderResult)    
-   );
+## ✅ alu_op 추가
 
-   register U_OutPort (
-      .clk    (clk),
-      .reset  (reset),
-      .en     (OutPortEn),
-      .d      (SumRegOut),
-      .q      (OutPort)
-   );
+```verilog
+module alu_op (
+    input  logic [7:0] x0,
+    input  logic [7:0] x1,
+    input  logic [1:0] AluOpMuxSel,
+    output logic [7:0] y
+);
+
+    always_comb begin
+        y = 8'b00;
+        case (AluOpMuxSel)
+            2'b00: begin
+                y = x0 + x1;
+            end
+            2'b01: begin
+                y = x0 - x1;
+            end
+            2'b10: begin
+                y = x0 & x1;
+            end
+            2'b11: begin
+                y = x0 | x1;
+            end
+        endcase
+    end
     
-   endmodule
+endmodule
 ```
 
 ---
 
-## ✅ ControlUnit.sv
+## ✅ ControlUnit
 
 ```verilog
 `timescale 1ns / 1ps
 
-module ControlUnit(
-   input  logic       clk,
-   input  logic       reset,
-   input  logic       ILe10,
-   output logic       SumSrcMuxSel,
-   output logic       ISrcMuxSel,
-   output logic       AdderSrcMuxSel,     
-   output logic       SumEn,
-   output logic       IEn,
-   output logic       OutPortEn
-   );
+module ControlUnit (
+    input   logic       clk,
+    input   logic       reset,
+    output  logic       RFSrcMuxSel,
+    output  logic [2:0] RAddr1,
+    output  logic [2:0] RAddr2,
+    output  logic [2:0] WAddr,
+    output  logic [1:0] AluOpMuxSel,
+    output  logic       we,
+    input   logic       Lt,
+    output  logic       OutPortEn
+    );
 
-   typedef enum {
-      S0,
-      S1, 
-      S2, 
-      S3, 
-      S4,
-      S5  
-   } state_e;
+    typedef enum {
+        S0,
+        S1, 
+        S2, 
+        S3, 
+        S4,
+        S5,
+        S6,
+        S7,
+        S8,
+        S9,
+        S10,
+        S11,
+        S12,
+        S13  
+    } state_e;
 
-   state_e state, next_state;
+    state_e state, next_state;
 
-   always_ff @(posedge clk or posedge reset) begin
-      if(reset) begin
-         state <= S0;
-      end
-      else begin
-         state <= next_state;
-      end
-   end
+    always_ff @(posedge clk or posedge reset) begin
+        if(reset) begin
+            state <= S0;
+        end
+        else begin
+            state <= next_state;
+        end
+    end
 
-   always_comb begin
-      next_state = state;
-      SumSrcMuxSel   = 0;
-      ISrcMuxSel     = 0;
-      SumEn          = 0;
-      IEn            = 0;
-      AdderSrcMuxSel = 0;
-      OutPortEn      = 0;
-      case (state)
-            S0:begin
-               SumSrcMuxSel   = 0;
-               ISrcMuxSel     = 0;
-               SumEn          = 1;
-               IEn            = 1;
-               AdderSrcMuxSel = 0;
-               OutPortEn      = 0;
-               next_state     = S1;
+    always_comb begin
+        next_state = state;
+        RFSrcMuxSel    = 0;
+        RAddr1         = 0;
+        RAddr2         = 0;
+        WAddr          = 0;
+        AluOpMuxSel    = 0;
+        we             = 0;
+        OutPortEn      = 0;
+        case (state)
+            S0:begin   // R1 = 1
+                RFSrcMuxSel    = 1;
+                RAddr1         = 0;
+                RAddr2         = 0;
+                WAddr          = 1;
+                AluOpMuxSel    = 0;
+                we             = 1;
+                OutPortEn      = 0;
+                next_state     = S1;
             end 
-            S1:begin
-               SumSrcMuxSel   = 0;
-               ISrcMuxSel     = 0;
-               SumEn          = 0;
-               IEn            = 0;
-               AdderSrcMuxSel = 0;
-               OutPortEn      = 0;
-               if(ILe10)  next_state = S2;
-               else       next_state = S5;
+            S1:begin    // R2 = 0
+                RFSrcMuxSel    = 0;
+                RAddr1         = 0;
+                RAddr2         = 0;
+                WAddr          = 3'h2;
+                AluOpMuxSel    = 0;
+                we             = 1;
+                OutPortEn      = 0;
+                next_state     = S2;
             end  
-            S2:begin
-               SumSrcMuxSel   = 1;
-               ISrcMuxSel     = 1;
-               SumEn          = 1;
-               IEn            = 0;
-               AdderSrcMuxSel = 0;
-               OutPortEn      = 0;
-               next_state     = S3;
+            S2:begin    // R3 = 0
+                RFSrcMuxSel    = 0;
+                RAddr1         = 0;
+                RAddr2         = 0;
+                WAddr          = 3'h3;
+                AluOpMuxSel    = 0;
+                we             = 1;
+                OutPortEn      = 0;
+                next_state     = S3;
             end  
-            S3:begin
-               SumSrcMuxSel   = 1;
-               ISrcMuxSel     = 1;
-               SumEn          = 0;
-               IEn            = 1;
-               AdderSrcMuxSel = 1;
-               OutPortEn      = 0;
-               next_state     = S4;
+            S3:begin    // R4 = 0
+                RFSrcMuxSel    = 0;
+                RAddr1         = 0;
+                RAddr2         = 0;
+                WAddr          = 3'h4;
+                AluOpMuxSel    = 0;
+                we             = 1;
+                OutPortEn      = 0;
+                next_state     = S4;
             end  
-            S4:begin
-               SumSrcMuxSel   = 1;
-               ISrcMuxSel     = 1;
-               SumEn          = 0;
-               IEn            = 0;
-               AdderSrcMuxSel = 0;
-               OutPortEn      = 1;
-               next_state     = S1;
+            S4:begin    // R2 = R1 + R1
+                RFSrcMuxSel    = 0;
+                RAddr1         = 1;
+                RAddr2         = 1;
+                WAddr          = 3'h2;
+                AluOpMuxSel    = 0;
+                we             = 1;
+                OutPortEn      = 0;
+                next_state     = S5;
             end
-            S5:begin
-               SumSrcMuxSel   = 1;
-               ISrcMuxSel     = 1;
-               SumEn          = 0;
-               IEn            = 0;
-               AdderSrcMuxSel = 0;
-               OutPortEn      = 0;
-               next_state     = S5;
-            end    
-      endcase
-   end
-
-endmodule
+            S5:begin    // R3 = R2 + R1
+                RFSrcMuxSel    = 0;
+                RAddr1         = 3'h2;
+                RAddr2         = 1;
+                WAddr          = 3'h3;
+                AluOpMuxSel    = 0;
+                we             = 1;
+                OutPortEn      = 0;
+                next_state     = S6;
+            end
+            S6:begin    // R4 = R3 - R1 
+                RFSrcMuxSel    = 0;
+                RAddr1         = 3'h3;
+                RAddr2         = 1;
+                WAddr          = 3'h4;
+                AluOpMuxSel    = 1;
+                we             = 1;
+                OutPortEn      = 0;
+                next_state     = S7;
+            end
+            S7:begin    // R1 = R1 | R2
+                RFSrcMuxSel    = 0;
+                RAddr1         = 3'h1;
+                RAddr2         = 3'h2;
+                WAddr          = 3'h1;
+                AluOpMuxSel    = 2'h3;
+                we             = 1;
+                OutPortEn      = 0;
+                next_state     = S8;
+            end
+            S8:begin    // R4 < R2
+                RFSrcMuxSel    = 0;
+                RAddr1         = 3'h4;
+                RAddr2         = 3'h2;
+                WAddr          = 0;
+                AluOpMuxSel    = 0;
+                we             = 0;
+                OutPortEn      = 0;
+                if(Lt) next_state = S6;
+                else next_state = S9; 
+            end
+            S9:begin    // R4 = R4 & R3
+                RFSrcMuxSel    = 0;
+                RAddr1         = 3'h4;
+                RAddr2         = 3'h3;
+                WAddr          = 3'h4;
+                AluOpMuxSel    = 2'h2;
+                we             = 1;
+                OutPortEn      = 0;
+                next_state     = S10;
+            end
+            S10:begin    // R4 = R2 + R3
+                RFSrcMuxSel    = 0;
+                RAddr1         = 3'h2;
+                RAddr2         = 3'h3;
+                WAddr          = 3'h4;
+                AluOpMuxSel    = 2'h0;
+                we             = 1;
+                OutPortEn      = 0;
+                next_state     = S11;
+            end
+            S11:begin    // R4 > R2
+                RFSrcMuxSel    = 0;
+                RAddr1         = 3'h4;
+                RAddr2         = 3'h2;
+                WAddr          = 0;
+                AluOpMuxSel    = 0;
+                we             = 0;
+                OutPortEn      = 0;
+                if(Lt) next_state = S12;
+                else   next_state = S4;
+            end
+            S12:begin   // OutPut    
+                RFSrcMuxSel    = 0;
+                RAddr1         = 3'h4;
+                RAddr2         = 0;
+                WAddr          = 0;
+                AluOpMuxSel    = 0;
+                we             = 0;
+                OutPortEn      = 1;
+                next_state     = S13;
+            end
+            S13:begin   // halt    
+                RFSrcMuxSel    = 0;
+                RAddr1         = 0;
+                RAddr2         = 0;
+                WAddr          = 0;
+                AluOpMuxSel    = 0;
+                we             = 0;
+                OutPortEn      = 0;
+                next_state     = S13;
+            end 
+        endcase
+    end
+    endmodule
 
 ```
-
