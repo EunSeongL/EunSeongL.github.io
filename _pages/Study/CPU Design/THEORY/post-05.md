@@ -26,7 +26,7 @@ while(R1 <= 10){
 
 <img src="/assets/img/CPU/regfile.png" style="width:50%; object-fit:contain;">
 
-## RegAsm
+## ✅ RegFile Asm
 
 <img src="/assets/img/CPU/regasm.png" style="width:75%; object-fit:contain;">
 
