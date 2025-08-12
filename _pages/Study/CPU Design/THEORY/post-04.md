@@ -109,7 +109,7 @@ halt;
 ### **코드**
 #### DedicatedProcessor_Adder.sv
 
-```sv
+```v
 module DedicatedProcessor_Adder(
     input  logic        clk,
     input  logic        reset,
@@ -164,7 +164,7 @@ module DedicatedProcessor_Adder(
 
 #### DataPath.sv
 
-```sv
+```v
 module DataPath(
         input  logic       clk,
         input  logic       reset,
@@ -240,7 +240,7 @@ module DataPath(
 
 #### ControlUnit.sv
 
-```sv
+```v
 module ControlUnit(
     input  logic clk,
     input  logic reset,
@@ -315,7 +315,8 @@ module ControlUnit(
 ---
 
 #### TestBench
-```sv
+
+```v
 `timescale 1ns / 1ps
 
 module tb_DedicatedProcessor_Adder ();
