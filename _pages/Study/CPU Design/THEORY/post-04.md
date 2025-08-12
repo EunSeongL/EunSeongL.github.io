@@ -105,3 +105,238 @@ halt;
   - top 
   - 코드, 시뮬레이션, fnd 숫자 출력, 동작영상
 
+### **코드**
+#### DedicatedProcessor_Adder.sv
+
+```sv
+module DedicatedProcessor_Adder(
+    input  logic        clk,
+    input  logic        reset,
+    output logic [ 3:0] fndCom,
+    output logic [ 7:0] fndFont
+    );
+
+    logic ASrcMuxsel, AdderSrcMuxsel, AEn, ALt11;
+    logic [7:0] OutData;
+    logic [$clog2(10_000_000)-1:0] div_counter;
+    logic clk_10hz;
+
+    always_ff @(posedge clk or posedge reset) begin
+        if(reset) begin
+            div_counter <= 0;
+            clk_10hz <= 0;
+        end
+        else begin
+            if(div_counter == 10_000_000 - 1) begin
+                div_counter <= 0;
+                clk_10hz <= 1;
+            end
+            else begin
+                div_counter <= div_counter + 1;
+                clk_10hz <= 0;
+            end
+        end
+    end
+
+    DataPath U_DataPath (
+        .clk(clk_10hz),
+        .*
+    );
+
+    ControlUnit U_ControlUnit (
+        .clk(clk_10hz),
+        .*
+    );
+
+    fndController U_fndController (
+        .clk     (clk),
+        .reset   (reset),
+        .number  (OutData),        //14bit
+        .fndCom  (fndCom),
+        .fndFont (fndFont)
+    );
+
+    endmodule
+```
+
+---
+
+#### DataPath.sv
+
+```sv
+module DataPath(
+        input  logic       clk,
+        input  logic       reset,
+        input  logic       ASrcMuxsel,
+        input  logic       AEn,
+        input  logic       AdderSrcMuxsel,
+        output logic       ALt11,
+        output logic [7:0] OutData
+    );
+
+    logic [7:0] AdderResult, ASrcMuxOut, SUMRegOut, ARegOut, SUMSrcMuxOut, A_SUM_Result;
+
+    mux_2X1 U_MUX_A(
+        .sel    (ASrcMuxsel),
+        .x0     (8'b0), 
+        .x1     (AdderResult),
+        .y      (ASrcMuxOut)
+    );
+
+    mux_2X1 U_Mux_SUM (
+        .sel    (ASrcMuxsel),
+        .x0     (8'b0),
+        .x1     (A_SUM_Result),
+        .y      (SUMSrcMuxOut)
+    );
+
+    register U_A_REG (
+        .clk    (clk),
+        .reset  (reset),
+        .en     (AEn),
+        .d      (ASrcMuxOut),
+        .q      (ARegOut)
+    );
+
+    register U_SUM_REG (
+        .clk    (clk),
+        .reset  (reset),
+        .en     (AEn),
+        .d      (SUMSrcMuxOut),
+        .q      (SUMRegOut)
+    );
+
+    comparator U_ALt11 (
+        .a      (ARegOut),
+        .b      (8'd11),
+        .lt     (ALt11)
+    );
+
+    adder U_Adder_A (
+        .a      (ARegOut),
+        .b      (8'b1),
+        .sum    (AdderResult)
+    );
+
+    adder U_Adder_SUM (
+        .a      (AdderResult),
+        .b      (SUMRegOut),
+        .sum    (A_SUM_Result)
+    );
+
+    register U_OUT_REG (
+        .clk    (clk),
+        .reset  (reset),
+        .en     (AdderSrcMuxsel),
+        .d      (SUMRegOut),
+        .q      (OutData)
+    );
+    
+    endmodule
+```
+
+---
+
+#### ControlUnit.sv
+
+```sv
+module ControlUnit(
+    input  logic clk,
+    input  logic reset,
+    input  logic ALt11,
+    output logic ASrcMuxsel,
+    output logic AEn,
+    output logic AdderSrcMuxsel   
+    );
+
+    typedef enum {
+        S0,
+        S1, 
+        S2, 
+        S3, 
+        S4
+    } state_e;
+
+    state_e state, next_state;
+
+    always_ff @(posedge clk or posedge reset) begin
+        if(reset) begin
+            state <= S0;
+        end
+        else begin
+            state <= next_state;
+        end
+    end
+
+    always_comb begin
+        ASrcMuxsel      = 1'b0;
+        AEn             = 1'b0;
+        AdderSrcMuxsel  = 1'b0;
+        next_state      = state;
+        case (state)
+            S0: begin
+                ASrcMuxsel      = 1'b0;
+                AEn             = 1'b1;
+                AdderSrcMuxsel  = 1'b0;
+                next_state      = S1;
+            end
+            S1: begin
+                ASrcMuxsel      = 1'b1;
+                AEn             = 1'b0;
+                AdderSrcMuxsel  = 1'b0;
+                if (ALt11)   next_state = S2;
+                else         next_state = S4;
+            end 
+            S2: begin
+                ASrcMuxsel      = 1'b1;
+                AEn             = 1'b0;
+                AdderSrcMuxsel  = 1'b1;
+                next_state      = S3;
+            end 
+            S3: begin
+                ASrcMuxsel      = 1'b1;
+                AEn             = 1'b1;
+                AdderSrcMuxsel  = 1'b0;
+                next_state      = S1;
+            end 
+            S4: begin
+                ASrcMuxsel      = 1'b1;
+                AEn             = 1'b0;
+                AdderSrcMuxsel  = 1'b0;
+                next_state      = S4;
+            end
+        endcase
+    end
+
+    endmodule
+```
+
+---
+
+#### TestBench
+```sv
+`timescale 1ns / 1ps
+
+module tb_DedicatedProcessor_Adder ();
+
+    logic       clk;
+    logic       reset;
+    logic [3:0] fndCom;
+    logic [7:0] fndFont;
+    
+    DedicatedProcessor_Adder U_DedicatedProcessor_Adder (.*);
+
+    always #5 clk = ~clk;
+
+    initial begin
+        clk = 0;
+        reset = 1;
+        #10;
+        reset = 0;
+    end
+    
+endmodule
+```
+
+### **시뮬레이션**
+<img src="/assets/img/CPU/dediaddersim.png" style="width:50%; object-fit:contain;">
