@@ -120,6 +120,9 @@ halt;
 <img src="/assets/img/CPU/simdp.png" style="width:75%; object-fit:contain;">
 
 ### **코드**
+
+[⚒️[DedicatedProcessor_Adder]](_pages\Study\CPU Design\CODE\post-01.md)
+
 ---
 #### top.sv
 
