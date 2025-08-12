@@ -117,6 +117,8 @@ halt;
 
 <img src="/assets/img/CPU/addasm.png" style="width:75%; object-fit:contain;">
 
+<img src="/assets/img/CPU/simdp.png" style="width:75%; object-fit:contain;">
+
 ### **코드**
 ---
 #### DedicatedProcessor_Adder.sv
@@ -392,7 +394,10 @@ endmodule
 
 ---
 ### **시뮬레이션**
-<img src="/assets/img/CPU/dediaddersim.png" style="width:100%; object-fit:contain;">
+
+<img src="/assets/img/CPU/dpsim.png" style="width:100%; object-fit:contain;">
+
+<img src="/assets/img/CPU/cusim.png" style="width:100%; object-fit:contain;">
 
 ---
 ### **동작 영상**
