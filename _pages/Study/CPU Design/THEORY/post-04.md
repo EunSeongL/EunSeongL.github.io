@@ -117,7 +117,7 @@ halt;
 ---
 #### DedicatedProcessor_Adder.sv
 
-```verilog
+```systemverilog
 module DedicatedProcessor_Adder(
     input  logic        clk,
     input  logic        reset,
