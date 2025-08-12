@@ -38,16 +38,16 @@ while(R1 <= 10){
 `timescale 1ns / 1ps
 
 module DataPath(
-    input   logic       clk,
-    input   logic       reset,
-    input   logic       RFSrcMuxSel,
-    input   logic [2:0] RAddr1,
-    input   logic [2:0] RAddr2,
-    input   logic [2:0] WAddr,
-    input   logic       we,
-    output  logic       R1Le10,
-    input   logic       OutPortEn,
-    output  logic [7:0] OutPort
+    input  logic       clk,
+    input  logic       reset,
+    input  logic       RFSrcMuxSel,
+    input  logic [2:0] RAddr1,
+    input  logic [2:0] RAddr2,
+    input  logic [2:0] WAddr,
+    input  logic       we,
+    output logic       R1Le10,
+    input  logic       OutPortEn,
+    output logic [7:0] OutPort
     );
 
     logic [7:0] AdderResult, RFSrcMuxOut;
@@ -90,7 +90,6 @@ module DataPath(
         .d       (RData1),
         .q       (OutPort)
     );
-
 
 endmodule
 
