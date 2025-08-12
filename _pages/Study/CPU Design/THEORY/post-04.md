@@ -127,7 +127,7 @@ halt;
 
 ### ⚒️ **코드** ⚒️
 
-[⚒️[DedicatedProcessor Adder.sv]](https://eunseongl.github.io/Study/CPU%20Design/CODE/post-01.html)
+[⚒️[DedicatedProcessor Adder.sv]](https://eunseongl.github.io/Study/CPU%20Design/CODE/post-02.html)
 
 ---
 
