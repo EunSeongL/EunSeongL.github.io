@@ -67,6 +67,8 @@ thumbnail: "/assets/img/CPU/cpu_thumb.png"
 
 - 0~9까지 카운트하는 Processor를 설계하시오. 
 
+#### **C 구현**
+
 ```c
 // C언어 관점
 A = 0;
@@ -78,6 +80,8 @@ halt;
 // A를 중심에 놓고 생각
 // A를 하드웨어적으로 구현한다 생각하면 -> A 레지스터
 ```
+
+#### **DataPath 구조 설계 및 ASM chart -> Control Unit 설계**
 
 | Block Diagram | State Machine |
 | :---: | :---: |
@@ -125,7 +129,7 @@ halt;
 
 ---
 
-#### TestBench
+### ✅ **TestBench**
 
 ```verilog
 `timescale 1ns / 1ps
@@ -159,4 +163,5 @@ endmodule
 <img src="/assets/img/CPU/cusim.png" style="width:100%; object-fit:contain;">
 
 ---
-### **동작 영상**
+
+### ✅ **동작 영상**
