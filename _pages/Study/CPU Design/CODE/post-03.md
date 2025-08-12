@@ -4,7 +4,7 @@ date: "2025-08-12"
 thumbnail: "/assets/img/CPU/cpu_thumb.png"
 ---
 
-# DedicatedProcessor Adder
+# DedicatedProcessor ALUOP
 
 ---
 

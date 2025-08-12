@@ -16,8 +16,9 @@ thumbnail: "/assets/img/CPU/cpu_thumb.png"
 
 ---
 
-## ✅ 코드
+## ⚒️ **코드** ⚒️
 
+[⚒️[DedicatedProcessor ALUOP.sv]](https://eunseongl.github.io/Study/CPU%20Design/CODE/post-03.html)
 
 ---
 
