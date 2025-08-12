@@ -189,7 +189,7 @@ module clk_divider (
 
 #### DedicatedProcessor_Adder.sv
 
-```systemverilog
+```verilog
 `timescale 1ns / 1ps
 
 module DedicatedProcessor_Adder(
