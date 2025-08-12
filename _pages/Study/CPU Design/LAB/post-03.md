@@ -1,10 +1,10 @@
 ---
-title: "HomeWork"
+title: "DedicatedProcessor ALUOP"
 date: "2025-08-12"
 thumbnail: "/assets/img/CPU/cpu_thumb.png"
 ---
 
-# DAY3
+# DedicatedProcessor ALUOP
 
 ---
 
