@@ -115,9 +115,6 @@ halt;
 
 ---
 
-  - top 
-  - 코드, 시뮬레이션, fnd 숫자 출력, 동작영상
-
 ### **코드**
 ---
 #### DedicatedProcessor_Adder.sv
