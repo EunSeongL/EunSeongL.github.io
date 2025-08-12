@@ -89,6 +89,12 @@ halt;
 
 <img src="/assets/img/CPU/deditop.png" style="width:50%; object-fit:contain;">
 
+### ⚒️ **코드** ⚒️
+
+[⚒️[DedicatedProcessor_Adder.sv]](https://eunseongl.github.io/Study/CPU%20Design/CODE/post-01.html)
+
+---
+
 ---
 
 ## ✅ Dedicated Processor Adder
