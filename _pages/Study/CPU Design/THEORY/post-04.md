@@ -184,7 +184,7 @@ module clk_divider (
    end
    
    endmodule
-
+```
 ---
 
 #### DedicatedProcessor_Adder.sv
