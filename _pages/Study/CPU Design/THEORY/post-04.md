@@ -113,8 +113,6 @@ halt;
 
 <img src="/assets/img/CPU/dpadder.png" style="width:75%; object-fit:contain;">
 
----
-
 #### **ASM chart -> Control Unit 설계**
 
 ![alt text](../../../../assets/img/CPU/addsig.png)
@@ -123,7 +121,7 @@ halt;
 
 <img src="/assets/img/CPU/simdp.png" style="width:75%; object-fit:contain;">
 
-### **코드**
+### ⚒️ **코드** ⚒️
 
 [⚒️[DedicatedProcessor_Adder.sv]](https://eunseongl.github.io/Study/CPU%20Design/CODE/post-01.html)
 
