@@ -373,7 +373,7 @@ module ControlUnit (
 
 ## ✅ 시뮬레이션
 
-<img src="/assets/img/CPU/hwdp.png" style="width:75%; object-fit:contain;">
+<img src="/assets/img/CPU/hwdp.png" style="width:100%; object-fit:contain;">
 
-<img src="/assets/img/CPU/hwcu.png" style="width:75%; object-fit:contain;">
+<img src="/assets/img/CPU/hwcu.png" style="width:100%; object-fit:contain;">
 
