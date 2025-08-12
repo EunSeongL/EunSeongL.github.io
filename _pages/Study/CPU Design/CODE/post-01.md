@@ -1,6 +1,6 @@
 ---
 title: "DedicatedProcessor Counter"
-date: "2025-08-07"
+date: "2025-08-11"
 thumbnail: "/assets/img/CPU/cpu_thumb.png"
 ---
 
