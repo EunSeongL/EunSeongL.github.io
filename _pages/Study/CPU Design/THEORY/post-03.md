@@ -66,7 +66,7 @@ thumbnail: "/assets/img/CPU/cpu_thumb.png"
 ![alt text](../../../../assets/img/CPU/SPI.png)
 
 
-## 8. 비교 (UART vs SPI vs I2C)
+## ✅ 비교 (UART vs SPI vs I2C)
 
 | 구분   | UART          | SPI                | I2C                   |
 |--------|--------------|--------------------|-----------------------|
