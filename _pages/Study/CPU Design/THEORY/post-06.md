@@ -26,7 +26,7 @@ bookmark: true
 
 - 특징 : 명령어 Type별 동작 CLK 수가 다르다. 
 - 장점 : Single-Cycle보다는 빠르다.
-- 단점 : Single-Cycle보다 조금 복잡하다.
+- 단점 : Single-Cycle보다 구조가 복잡하다.
 
 ## ✅ RegFile Asm
 
