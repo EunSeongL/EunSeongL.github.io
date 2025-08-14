@@ -77,3 +77,4 @@ ADD X5, X3, X4
 
 ## ⚒️ 코드 ⚒️
 
+[⚒️[RV32I_R_Type.sv]](https://eunseongl.github.io/Study/CPU%20Design/CODE/post-04.html)
