@@ -13,9 +13,20 @@ bookmark: true
 
 ---
 
-## ✅ Dedicated Processor RegFile
+## ✅ RISC-V
+> UC버클리에서 개발중인 무료 오픈소스 RISC 명령어셋 아키텍처
 
-## ✅ 동작방식
+## ✅ Single-Cycle Architecture
+
+- 특징 : 모든 명령어가 (1CLK) 내에 동작
+- 장점 : 구조가 매우 simple하다.
+- 단점 : 한 클럭 내에 동작해야되기 때문에 느리다.
+
+## ✅ Multi-Cycle Architecture
+
+- 특징 : 명령어 Type별 동작 CLK 수가 다르다. 
+- 장점 : Single-Cycle보다는 빠르다.
+- 단점 : Single-Cycle보다 조금 복잡하다.
 
 ## ✅ RegFile Asm
 
