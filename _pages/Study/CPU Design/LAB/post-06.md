@@ -7,7 +7,7 @@ date: "2025-08-14"
 thumbnail: "/assets/img/CPU/cpu_thumb.png"
 ---
 
-# DedicatedProcessor ALUOP
+# RV32I_R_Type
 
 ---
 
@@ -22,8 +22,8 @@ thumbnail: "/assets/img/CPU/cpu_thumb.png"
 ---
 
 ## ✅ Schematic
-
-<img src="/assets/img/CPU/alusche.png" style="width:100%; object-fit:contain;">
+> DataPath
+<img src="/assets/img/CPU/rvdpsche.png" style="width:100%; object-fit:contain;">
 
 ---
 
