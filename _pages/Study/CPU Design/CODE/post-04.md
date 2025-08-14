@@ -140,6 +140,7 @@ module adder (
 ```
 
 > Test를 위한 regFile 수정
+
 ```verilog
 module RegisterFile (
     input  logic        clk,
@@ -171,6 +172,8 @@ module RegisterFile (
     
     endmodule
 ```
+
+---
 
 ## ✅ ControlUnit.sv
 > // Single-Cycle은 combinational logic으로 구현
