@@ -51,6 +51,7 @@ bookmark: true
 
 <img src="/assets/img/CPU/mcu.png" style="width:50%; object-fit:contain;">
 
+<img src="/assets/img/CPU/stateelements.png" style="width:50%; object-fit:contain;">
 
 ## ⚒️ 코드 ⚒️
 
