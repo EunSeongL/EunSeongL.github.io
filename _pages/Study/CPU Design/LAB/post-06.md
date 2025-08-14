@@ -7,7 +7,7 @@ date: "2025-08-14"
 thumbnail: "/assets/img/CPU/cpu_thumb.png"
 ---
 
-# RV32I_R_Type
+# RV32I_R_Type (Single-Cycle)
 
 ---
 
@@ -24,6 +24,8 @@ thumbnail: "/assets/img/CPU/cpu_thumb.png"
 ## ✅ Schematic
 > DataPath
 <img src="/assets/img/CPU/rvdpsche.png" style="width:100%; object-fit:contain;">
+
+> ControlUnit
 
 ---
 
