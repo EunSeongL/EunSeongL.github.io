@@ -16,6 +16,14 @@ bookmark: true
 ## ✅ RISC-V
 > UC버클리에서 개발중인 무료 오픈소스 RISC 명령어셋 아키텍처
 
+<img src="/assets/img/CPU/regstate.png" style="width:50%; object-fit:contain;">
+
+<img src="/assets/img/CPU/instr.png" style="width:50%; object-fit:contain;">
+
+```
+명령어 길이가 모두 32bit로 동일
+```
+
 ## ✅ Single-Cycle Architecture
 
 - 특징 : 모든 명령어가 (1CLK) 내에 동작.
@@ -34,8 +42,15 @@ bookmark: true
 - 장점 : Single-Cycle보다 **많이** 빠르다.
 - 단점 : Single-Cycle보다 구조가 **많이** 복잡하다.
 
+## ✅ CPU 기본 모듈 (하버드 구조)
+- RegisterFile
+- ALU
+- ROM/Flash(Instruction Memory)
+- RAM(DataMemory)
+- PC(Program Counter)
 
-## ✅ RegFile Asm
+<img src="/assets/img/CPU/mcu.png" style="width:50%; object-fit:contain;">
+
 
 ## ⚒️ 코드 ⚒️
 
