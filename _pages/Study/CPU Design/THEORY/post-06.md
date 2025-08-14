@@ -18,7 +18,7 @@ bookmark: true
 
 <img src="/assets/img/CPU/regstate.png" style="width:50%; object-fit:contain;">
 
-<img src="/assets/img/CPU/instr.png" style="width:50%; object-fit:contain;">
+<img src="/assets/img/CPU/instr.png" style="width:100%; object-fit:contain;">
 
 ```
 명령어 길이가 모두 32bit로 동일
@@ -49,9 +49,9 @@ bookmark: true
 - RAM(DataMemory)
 - PC(Program Counter)
 
-<img src="/assets/img/CPU/mcu.png" style="width:50%; object-fit:contain;">
+<img src="/assets/img/CPU/mcu.png" style="width:75%; object-fit:contain;">
 
-<img src="/assets/img/CPU/stateelements.png" style="width:50%; object-fit:contain;">
+<img src="/assets/img/CPU/stateelements.png" style="width:100%; object-fit:contain;">
 
 ## ⚒️ 코드 ⚒️
 
