@@ -1,5 +1,5 @@
 ---
-title: "DedicatedProcessor ALUOP"
+title: "RV32I_R_Type"
 tags:
     - Code
     - CPU Design
@@ -7,7 +7,7 @@ date: "2025-08-14"
 thumbnail: "/assets/img/CPU/cpu_thumb.png"
 ---
 
-# DedicatedProcessor ALUOP
+# RV32I_R_Type
 
 ---
 

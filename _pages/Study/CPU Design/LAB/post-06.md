@@ -1,5 +1,5 @@
 ---
-title: "DedicatedProcessor ALUOP"
+title: "RV32I_R_Type"
 tags:
     - LAB
     - CPU Design
@@ -11,13 +11,13 @@ thumbnail: "/assets/img/CPU/cpu_thumb.png"
 
 ---
 
-## ✅ 과제
+## ✅ 
 
 ---
 
 ## ⚒️ **코드** ⚒️
 
-[⚒️[DedicatedProcessor ALUOP.sv]](https://eunseongl.github.io/Study/CPU%20Design/CODE/post-04.html)
+[⚒️[RV32I_R_Type.sv]](https://eunseongl.github.io/Study/CPU%20Design/CODE/post-04.html)
 
 ---
 
