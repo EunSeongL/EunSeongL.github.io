@@ -69,7 +69,7 @@ Funct3 어떤 연산인지를 선택할 수 있음.
 ### 연습
 - ADD X5, X3, X4
 
-> Funct7 = 7'd0 RS2 = 5'd4 RS1 = 5'd3 Funct3 = 3'd0 RD = 5'd5 OpCode = 7'b0110011
+> **Funct7** = 7'd0 **RS2** = 5'd4 **RS1** = 5'd3 **Funct3** = 3'd0 **RD** = 5'd5 **OpCode** = 7'b0110011
 <img src="/assets/img/CPU/addexam.png" style="width:100%; object-fit:contain;">
 
 
