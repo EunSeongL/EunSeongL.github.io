@@ -27,9 +27,14 @@ thumbnail: "/assets/img/CPU/cpu_thumb.png"
 
 > ControlUnit
 
+> MCU
+<img src="/assets/img/CPU/mcu1.png" style="width:100%; object-fit:contain;">
+
 ---
 
 ## ✅ 시뮬레이션
+
+<img src="/assets/img/CPU/rv32isim.png" style="width:100%; object-fit:contain;">
 
 ---
 
