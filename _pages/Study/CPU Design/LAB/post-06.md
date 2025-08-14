@@ -1,5 +1,8 @@
 ---
 title: "DedicatedProcessor ALUOP"
+tags:
+    - LAB
+    - CPU Design
 date: "2025-08-14"
 thumbnail: "/assets/img/CPU/cpu_thumb.png"
 ---
