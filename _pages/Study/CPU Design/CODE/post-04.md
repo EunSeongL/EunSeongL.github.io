@@ -198,7 +198,7 @@ module ControlUnit (
     ); 
 
     wire [6:0] opcode = instrCode[6:0];
-    wire [3:0] operator = {instrCode[30], instrCode[14:12]}; // function
+    wire [3:0] operator = {instrCode[30], instrCode[14:12]}; // funct
 
     always_comb begin
         regFileWe = 1'b0;
@@ -298,7 +298,7 @@ module MCU(
 endmodule
 ```
 
-## ✅ TestBench
+## ✅ TestBench 검증 
 
 ```verilog
 `timescale 1ns / 1ps
