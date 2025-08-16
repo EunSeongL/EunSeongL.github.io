@@ -651,5 +651,7 @@ task init;
 > [Passed]
 <img src="/assets/img/CPU/passed.png" style="width:100%; object-fit:contain;">
 
+> [Simulation_Result]
+<img src="/assets/img/CPU/simrtype.png" style="width:100%; object-fit:contain;">
 
 
