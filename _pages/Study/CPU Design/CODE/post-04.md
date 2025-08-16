@@ -21,7 +21,7 @@ module DataPath (
     input  logic        reset,
     input  logic [31:0] instrCode,
     input  logic        regFileWe,
-    input  logic [ 1:0] aluControl,
+    input  logic [ 3:0] aluControl,
     output logic [31:0] instrMemAddr
 );
 
@@ -66,7 +66,7 @@ module DataPath (
 endmodule
 
 module alu (
-    input  logic  [1:0] aluControl,
+    input  logic  [ 3:0] aluControl,
     input  logic  [31:0] a,
     input  logic  [31:0] b,
     output logic  [31:0] result
@@ -75,10 +75,16 @@ module alu (
     always_comb begin
         result = 32'bx;
         case (aluControl)
-            2'b00: result = a + b;
-            2'b01: result = a - b;
-            2'b10: result = a & b;
-            2'b11: result = a | b; 
+            4'b0000: result = a + b;            // add
+            4'b0001: result = a - b;            // sub
+            4'b0010: result = a & b;            // and
+            4'b0011: result = a | b;            // or
+            4'b0100: result = a << b;           // sll
+            4'b0101: result = a >> b;           // srl
+            4'b0110: result = $signed(a) >>> b; // sra
+            4'b0111: result = ($signed(a) < $signed(b)) ? 1 : 0;  // slt
+            4'b1000: result = (a < b) ? 1 : 0;  // sltu
+            4'b1001: result = a ^ b;            // xor
         endcase
     end
     
@@ -194,11 +200,11 @@ assign operator = {instrCode[30], instrCode[14:12]};
 module ControlUnit (
     input  logic [31:0] instrCode,
     output logic        regFileWe,
-    output logic [ 1:0] aluControl
+    output logic [ 3:0] aluControl
     ); 
 
     wire [6:0] opcode = instrCode[6:0];
-    wire [3:0] operator = {instrCode[30], instrCode[14:12]}; // funct
+    wire [3:0] operator = {instrCode[30], instrCode[14:12]}; // function
 
     always_comb begin
         regFileWe = 1'b0;
@@ -213,12 +219,18 @@ module ControlUnit (
             7'b0110011: begin   // R-Type
                 aluControl = 2'bx;
                 case (operator)
-                    4'b0000: aluControl = 2'b00;    // ADD
-                    4'b1000: aluControl = 2'b01;    // SUB
-                    4'b0111: aluControl = 2'b10;    // AND
-                    4'b0110: aluControl = 2'b11;    // OR
+                    4'b0000: aluControl = 4'b0000;    // ADD
+                    4'b1000: aluControl = 4'b0001;    // SUB
+                    4'b0111: aluControl = 4'b0010;    // AND
+                    4'b0110: aluControl = 4'b0011;    // OR
+                    4'b0001: aluControl = 4'b0100;    // SLL 
+                    4'b0101: aluControl = 4'b0101;    // SRL 
+                    4'b1101: aluControl = 4'b0110;    // SRA
+                    4'b0010: aluControl = 4'b0111;    // SLT 
+                    4'b0011: aluControl = 4'b1000;    // SLTU
+                    4'b0100: aluControl = 4'b1001;    // XOR
                 endcase
-            end 
+            end
         endcase
     end
 
@@ -298,7 +310,7 @@ module MCU(
 endmodule
 ```
 
-## ✅ TestBench 검증 
+## ✅ TestBench
 
 ```verilog
 `timescale 1ns / 1ps
