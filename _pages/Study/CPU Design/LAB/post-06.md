@@ -38,7 +38,7 @@ thumbnail: "/assets/img/CPU/cpu_thumb.png"
 
 ---
 
-## ✅ 분석
+## ✅ 검증
 
 ```bash
 
