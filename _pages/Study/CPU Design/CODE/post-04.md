@@ -176,13 +176,17 @@ module RegisterFile (
 ---
 
 ## ✅ ControlUnit.sv
-> // Single-Cycle은 combinational logic으로 구현
-wire로 선언한 이유는 logic으로는 {instrCode[30], instrCode[14:12]}이게 안됌.
-사용하려면 assign으로 연결
+> Single-Cycle은 combinational logic으로 구현.<br>
+wire로 선언한 이유?<br> 
+=> logic으로는 {instrCode[30], instrCode[14:12]}이게 안됌.<br>
+=> 사용하려면 assign으로 연결<br>
+
+```verilog
 logic [6:0] opcode;
 logic [3:0] operator;
 assign opcode = instrCode[6:0];
 assign operator = {instrCode[30], instrCode[14:12]};
+```
 
 ```verilog
 `timescale 1ns / 1ps
