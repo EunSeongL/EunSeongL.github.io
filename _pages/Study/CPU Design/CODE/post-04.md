@@ -492,7 +492,7 @@ module tb_RV32I();
 endmodule
 ```
 
-> 1. 경로 매크로 설정
+>1. 경로 매크로 설정
 
 ```verilog
 // 레지스터 파일(Register File)
@@ -502,7 +502,7 @@ endmodule
 `define INSTR_PATH U_MCU.U_ROM
 ```
 
-> 2. 명령어 및 함수 코드 매크로
+>2. 명령어 및 함수 코드 매크로
 
 ```verilog
 // List of RISC-V opcodes and funct codes.
@@ -532,7 +532,7 @@ endmodule
 `endif //OPCODE
 ```
 
-> 3. 테스트 초기화 / 리셋<br>
+>3. 테스트 초기화 / 리셋<br>
 레지스터 파일(RF)과 명령어 메모리(ROM)를 모두 0으로 초기화
 CPU reset
 
