@@ -492,7 +492,7 @@ module tb_RV32I();
 endmodule
 ```
 
->1. 경로 매크로 설정
+> 경로 매크로 설정
 
 ```verilog
 // 레지스터 파일(Register File)
@@ -502,7 +502,7 @@ endmodule
 `define INSTR_PATH U_MCU.U_ROM
 ```
 
->2. 명령어 및 함수 코드 매크로
+> 명령어 및 함수 코드 매크로
 
 ```verilog
 // List of RISC-V opcodes and funct codes.
@@ -532,7 +532,7 @@ endmodule
 `endif //OPCODE
 ```
 
->3. 테스트 초기화 / 리셋<br>
+> 테스트 초기화 / 리셋<br>
 레지스터 파일(RF)과 명령어 메모리(ROM)를 모두 0으로 초기화
 CPU reset
 
@@ -557,7 +557,7 @@ task init;
     endtask
 ```
 
-> 4. 테스트 결과 검증 및 타임아웃 관리
+> 테스트 결과 검증 및 타임아웃 관리
 각 테스트 결과를 자동 검증, 일정 Cycle내에 결과가 나오지 않으면 에러 메시지 출력 후 종료 
 실패 시 어떤 테스트에서 어떤 값이 잘못되었는지 상세 정보 출력
 
@@ -595,7 +595,7 @@ task init;
     endtask
 ```
 
-> 5. R-Type 명령어 테스트
+> R-Type 명령어 테스트
 
 ```verilog
 // R-Type TEST
