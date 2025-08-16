@@ -345,7 +345,7 @@ module tb_RV32I();
 endmodule
 ```
 
-## ✅ 개선한 TestBench
+## ✅ 자동 검증 TestBench
 
 ```verilog
 `timescale 1ns / 1ps
