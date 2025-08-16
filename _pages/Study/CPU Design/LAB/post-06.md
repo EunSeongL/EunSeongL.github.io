@@ -26,6 +26,7 @@ thumbnail: "/assets/img/CPU/cpu_thumb.png"
 <img src="/assets/img/CPU/rvdpsche.png" style="width:100%; object-fit:contain;">
 
 > ControlUnit
+<img src="/assets/img/CPU/controlsche.png" style="width:100%; object-fit:contain;">
 
 > MCU
 <img src="/assets/img/CPU/mcu1.png" style="width:100%; object-fit:contain;">
