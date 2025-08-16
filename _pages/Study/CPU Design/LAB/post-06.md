@@ -29,7 +29,7 @@ thumbnail: "/assets/img/CPU/cpu_thumb.png"
 
 ---
 
-## ✅ 검증
+## ✅ 코드 및 검증
 
 [⚒️[tb_RV32I_R_Type.sv]](https://eunseongl.github.io/Study/CPU%20Design/CODE/post-04.html)
 
