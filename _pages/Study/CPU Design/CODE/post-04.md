@@ -538,23 +538,23 @@ CPU reset
 
 ```verilog
 task init;
-        int i;
-        for (int i = 0; i < 62; i++) begin
-            `INSTR_PATH.rom[i] = 32'h00000000;
-        end
-        for (int i = 0; i < 32; i++) begin
-            `RF_PATH.mem[i] = 32'h00000000;
-        end
-    endtask
+    int i;
+    for (int i = 0; i < 62; i++) begin
+        `INSTR_PATH.rom[i] = 32'h00000000;
+    end
+    for (int i = 0; i < 32; i++) begin
+        `RF_PATH.mem[i] = 32'h00000000;
+    end
+endtask
 
-    task reset_cpu; 
-        repeat(3) begin
-            @(posedge clk);
-            reset = 1;
-        end
+task reset_cpu; 
+    repeat(3) begin
         @(posedge clk);
-        reset = 0;
-    endtask
+        reset = 1;
+    end
+    @(posedge clk);
+    reset = 0;
+endtask
 ```
 
 > 테스트 결과 검증 및 타임아웃 관리
