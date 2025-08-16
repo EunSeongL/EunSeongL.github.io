@@ -562,37 +562,36 @@ endtask
 실패 시 어떤 테스트에서 어떤 값이 잘못되었는지 상세 정보 출력
 
 ```verilog
+wire [31:0] timeout_cycle = 25;
 
-    wire [31:0] timeout_cycle = 25;
+initial begin
+    while (all_tests_passed === 0) begin
+    @(posedge clk);
+        if (cycle === timeout_cycle) begin
+            $display("[Failed] Timeout at [%d] test %s, expected_result = %h, got = %h", current_test_id, current_test_type, current_result, current_output);
+            $finish();
+        end
+    end
+end
 
-    initial begin
-        while (all_tests_passed === 0) begin
+always_ff @(posedge clk) begin
+    if (done === 0) cycle <= cycle + 1;
+    else cycle <= 0;
+end
+
+task check_result (input logic [4:0] addr, input [31:0] expect_value, input [255:0] test_type);
+    done = 0;
+    current_test_id   = current_test_id + 1;
+    current_test_type = test_type;
+    current_result    = expect_value;
+    while (`RF_PATH.mem[addr] !== expect_value) begin
+        current_output = `RF_PATH.mem[addr];
         @(posedge clk);
-            if (cycle === timeout_cycle) begin
-                $display("[Failed] Timeout at [%d] test %s, expected_result = %h, got = %h", current_test_id, current_test_type, current_result, current_output);
-                $finish();
-            end
-        end
     end
-
-    always_ff @(posedge clk) begin
-        if (done === 0) cycle <= cycle + 1;
-        else cycle <= 0;
-    end
-
-    task check_result (input logic [4:0] addr, input [31:0] expect_value, input [255:0] test_type);
-        done = 0;
-        current_test_id   = current_test_id + 1;
-        current_test_type = test_type;
-        current_result    = expect_value;
-        while (`RF_PATH.mem[addr] !== expect_value) begin
-            current_output = `RF_PATH.mem[addr];
-            @(posedge clk);
-        end
-        cycle = 0;
-        done = 1;
-        $display("[%d] Test %s passed!", current_test_id, test_type);
-    endtask
+    cycle = 0;
+    done = 1;
+    $display("[%d] Test %s passed!", current_test_id, test_type);
+endtask
 ```
 
 > R-Type 명령어 테스트
