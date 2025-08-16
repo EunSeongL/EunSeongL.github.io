@@ -344,3 +344,215 @@ module tb_RV32I();
 
 endmodule
 ```
+
+## ✅ 개선한 TestBench
+
+```verilog
+`timescale 1ns / 1ps
+
+`include "../../sources_1/new/opcode.vh"
+`include "../../sources_1/new/mem_path.vh"
+
+module tb_RV32I();
+
+    logic clk;
+    logic reset;
+
+    MCU U_MCU (
+      .clk  (clk),
+      .reset(reset)
+    );
+
+    always#5 clk = ~clk;
+
+    task init;
+        int i;
+        for (int i = 0; i < 62; i++) begin
+            `INSTR_PATH.rom[i] = 32'h00000000;
+        end
+        for (int i = 0; i < 32; i++) begin
+            `RF_PATH.mem[i] = 32'h00000000;
+        end
+    endtask
+
+    task reset_cpu; 
+        repeat(3) begin
+            @(posedge clk);
+            reset = 1;
+        end
+        @(posedge clk);
+        reset = 0;
+    endtask
+
+    logic [31:0] cycle;
+    logic done;
+    logic [31:0]  current_test_id = 0;
+    logic [255:0] current_test_type;
+    logic [31:0]  current_output;
+    logic [31:0]  current_result;
+    logic all_tests_passed = 0;
+
+    wire [31:0] timeout_cycle = 25;
+
+    initial begin
+        while (all_tests_passed === 0) begin
+        @(posedge clk);
+            if (cycle === timeout_cycle) begin
+                $display("[Failed] Timeout at [%d] test %s, expected_result = %h, got = %h", current_test_id, current_test_type, current_result, current_output);
+                $finish();
+            end
+        end
+    end
+
+    always_ff @(posedge clk) begin
+        if (done === 0) cycle <= cycle + 1;
+        else cycle <= 0;
+    end
+
+    task check_result (input logic [4:0] addr, input [31:0] expect_value, input [255:0] test_type);
+        done = 0;
+        current_test_id   = current_test_id + 1;
+        current_test_type = test_type;
+        current_result    = expect_value;
+        while (`RF_PATH.mem[addr] !== expect_value) begin
+            current_output = `RF_PATH.mem[addr];
+            @(posedge clk);
+        end
+        cycle = 0;
+        done = 1;
+        $display("[%d] Test %s passed!", current_test_id, test_type);
+    endtask
+
+    logic [ 4:0] RS0, RS1, RS2, RS3, RS4, RS5;
+    logic [31:0] RD0, RD1, RD2, RD3, RD4, RD5;
+
+    initial begin
+        clk = 0;
+        reset = 1;
+        #10;
+        reset = 0;
+        #10;
+
+        // R-Type TEST
+        if(1) begin
+            init();
+            RS0 = 0; RD0 = 32'h0000_0000;
+            RS1 = 1; RD1 = 32'h0000_0001;
+            RS2 = 2; RD2 = 32'h7FFF_FFFF;
+            RS3 = 3; RD3 = 32'hFFFF_FFFF;
+            RS4 = 4; RD4 = 32'h8000_0000;
+            RS5 = 5; RD5 = 32'h0000_001F;
+
+            `RF_PATH.mem[RS1] = RD1; //x1 data
+            `RF_PATH.mem[RS2] = RD2; //x2 data
+            `RF_PATH.mem[RS3] = RD3; //x3 data
+            `RF_PATH.mem[RS4] = RD4; //x4 data
+            `RF_PATH.mem[RS5] = RD5; //x5 data
+
+            // Format: {funct7, rs2, rs1, funct3, rd, opcode}
+            `INSTR_PATH.rom[0] = {`FNC7_0, RS1, RS2, `FNC_ADD_SUB, 5'd8, `OPC_ARI_RTYPE};  // add  x8, x2, x1
+            `INSTR_PATH.rom[1] = {`FNC7_1, RS2, RS1, `FNC_ADD_SUB, 5'd9, `OPC_ARI_RTYPE};  // sub  x9, x1, x2
+            `INSTR_PATH.rom[2] = {`FNC7_0, RS4, RS3, `FNC_AND,     5'd10, `OPC_ARI_RTYPE}; // and  x10, x3, x4
+            `INSTR_PATH.rom[3] = {`FNC7_0, RS3, RS4, `FNC_OR,      5'd11, `OPC_ARI_RTYPE}; // or   x11, x4, x3
+            `INSTR_PATH.rom[4] = {`FNC7_0, RS5, RS1, `FNC_SLL,     5'd12, `OPC_ARI_RTYPE}; // sll  x12, x1, x5
+            `INSTR_PATH.rom[5] = {`FNC7_0, RS5, RS4, `FNC_SRL_SRA, 5'd13, `OPC_ARI_RTYPE}; // srl  x13, x4, x5
+            `INSTR_PATH.rom[6] = {`FNC7_1, RS5, RS4, `FNC_SRL_SRA, 5'd14, `OPC_ARI_RTYPE}; // sra  x14, x4, x5
+            `INSTR_PATH.rom[7] = {`FNC7_0, RS2, RS4, `FNC_SLT,     5'd15, `OPC_ARI_RTYPE}; // slt  x15, x4, x2
+            `INSTR_PATH.rom[8] = {`FNC7_0, RS0, RS3, `FNC_SLTU,    5'd16, `OPC_ARI_RTYPE}; // sltu x16, x3, x0
+            `INSTR_PATH.rom[9] = {`FNC7_0, RS4, RS3, `FNC_XOR,     5'd17, `OPC_ARI_RTYPE}; // xor  x17, x3, x4
+
+            reset_cpu();
+
+            #10; check_result(8,  32'h8000_0000, "R-Type ADD");
+            #10; check_result(9,  32'h8000_0002, "R-Type SUB");
+            #10; check_result(10, 32'h8000_0000, "R-Type AND");
+            #10; check_result(11, 32'hFFFF_FFFF, "R-Type OR");
+            #10; check_result(12, 32'h8000_0000, "R-Type SLL");
+            #10; check_result(13, 32'h0000_0001, "R-Type SRL");
+            #10; check_result(14, 32'hFFFF_FFFF, "R-Type SRA");
+            #10; check_result(15, 32'h0000_0001, "R-Type SLT");
+            #10; check_result(16, 32'h0000_0000, "R-Type SLTU");
+            #10; check_result(17, 32'h7FFF_FFFF, "R-Type XOR");
+        end
+
+        // I-Type TEST
+        if(0) begin
+            init();
+
+            reset_cpu();
+        end
+    
+    all_tests_passed = 1'b1;
+
+    repeat(10) @(posedge clk);
+    $display("All tests passed!");
+    $finish();
+    end
+
+endmodule
+```
+
+> 1. 경로 매크로 설정
+
+```verilog
+// 레지스터 파일(Register File)
+`define RF_PATH   U_MCU.U_CPU_RV32I.U_DataPath.U_RegFile
+
+// 명령어 메모리(Instruction Memory)
+`define INSTR_PATH U_MCU.U_ROM
+```
+
+> 2. 명령어 및 함수 코드 매크로
+
+```verilog
+// List of RISC-V opcodes and funct codes.
+// Use `include "opcode.vh" to use these in the decoder
+
+`ifndef OPCODE
+`define OPCODE
+
+// Arithmetic instructions
+`define OPC_ARI_RTYPE   7'b0110011
+
+// ***** 5-bit Opcodes *****
+`define OPC_ARI_RTYPE_5 5'b01100
+
+// Arithmetic R-type and I-type functions codes
+`define FNC_ADD_SUB     3'b000
+`define FNC_SLL         3'b001
+`define FNC_SLT         3'b010
+`define FNC_SLTU        3'b011
+`define FNC_XOR         3'b100
+`define FNC_OR          3'b110
+`define FNC_AND         3'b111
+`define FNC_SRL_SRA     3'b101
+
+`define FNC7_0  7'b0000000 // ADD, SRL
+`define FNC7_1  7'b0100000 // SUB, SRA
+`endif //OPCODE
+```
+
+> 3. 테스트 초기화 / 리셋<br>
+레지스터 파일(RF)과 명령어 메모리(ROM)를 모두 0으로 초기화
+CPU reset
+
+```verilog
+task init;
+        int i;
+        for (int i = 0; i < 62; i++) begin
+            `INSTR_PATH.rom[i] = 32'h00000000;
+        end
+        for (int i = 0; i < 32; i++) begin
+            `RF_PATH.mem[i] = 32'h00000000;
+        end
+    endtask
+
+    task reset_cpu; 
+        repeat(3) begin
+            @(posedge clk);
+            reset = 1;
+        end
+        @(posedge clk);
+        reset = 0;
+    endtask
+```
