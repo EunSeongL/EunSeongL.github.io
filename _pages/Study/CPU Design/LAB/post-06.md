@@ -11,16 +11,6 @@ thumbnail: "/assets/img/CPU/cpu_thumb.png"
 
 ---
 
-## ✅ 
-
----
-
-## ⚒️ **코드** ⚒️
-
-[⚒️[RV32I_R_Type.sv]](https://eunseongl.github.io/Study/CPU%20Design/CODE/post-04.html)
-
----
-
 ## ✅ Schematic
 > DataPath
 <img src="/assets/img/CPU/rvdpsche.png" style="width:100%; object-fit:contain;">
