@@ -628,7 +628,7 @@ task init;
         `INSTR_PATH.rom[9] = {`FNC7_0, RS4, RS3, `FNC_XOR,     5'd17, `OPC_ARI_RTYPE}; // xor  x17, x3, x4
 
         reset_cpu();
-        
+
         #10; check_result(8,  32'h8000_0000, "R-Type ADD");
         #10; check_result(9,  32'h8000_0002, "R-Type SUB");
         #10; check_result(10, 32'h8000_0000, "R-Type AND");
@@ -641,3 +641,15 @@ task init;
         #10; check_result(17, 32'h7FFF_FFFF, "R-Type XOR");
     end
 ```
+
+---
+
+## ✅ 결과
+> [Failed]
+<img src="/assets/img/CPU/failed.png" style="width:100%; object-fit:contain;">
+
+> [Passed]
+<img src="/assets/img/CPU/passed.png" style="width:100%; object-fit:contain;">
+
+
+
